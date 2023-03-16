@@ -75,6 +75,7 @@ pre {
  */
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 
 /**
@@ -94,6 +95,11 @@ abbr[title] {
 b,
 strong {
   font-weight: bolder;
+}
+
+ul,
+li {
+  list-style-type: none;
 }
 
 /**
@@ -332,10 +338,25 @@ template {
   grid-row-start: 2;
   grid-row-end: 4;
   grid-column-end: 3;
+  justify-items: center;
+}
+.veiaco-sidebar .veiaco-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 130px;
+}
+.veiaco-sidebar .veiaco-nav .veiaco-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.veiaco-sidebar .veiaco-nav .veiaco-container .veiaco-link {
+  color: white;
 }
 
 .veiaco-header {
-  height: 90px;
+  height: 8vh;
   display: grid;
   grid-column-start: 1;
   grid-column-end: 13;
@@ -358,15 +379,12 @@ body {
   background-color: #fbfaf4;
   border-radius: 35px;
   box-shadow: 0px 0px 0px rgba(0, 19, 51, 0.1), 0px 2px 5px rgba(0, 19, 51, 0.1), 0px 9px 9px rgba(0, 19, 51, 0.09), 0px 21px 13px rgba(0, 19, 51, 0.05), 0px 38px 15px rgba(0, 19, 51, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0 30px;
   height: 82vh;
-  display: grid;
   grid-row-start: 2;
   grid-row-end: 4;
   grid-column-start: 3;
   grid-column-end: 12;
-}
-.outlet div {
-  padding: 30px 60px;
 }
 
 /********************

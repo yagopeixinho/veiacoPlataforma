@@ -9,15 +9,12 @@ body {
     0px 9px 9px rgba(0, 19, 51, 0.09), 0px 21px 13px rgba(0, 19, 51, 0.05),
     0px 38px 15px rgba(0, 19, 51, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+  padding: 0 30px;
+
   // # Grid related to ./_VeiacoGrid.scss
   height: 82vh;
-  display: grid;
   grid-row-start: 2;
   grid-row-end: 4;
   grid-column-start: 3;
   grid-column-end: 12;
-
-  div {
-    padding: 30px 60px;
-  }
 }

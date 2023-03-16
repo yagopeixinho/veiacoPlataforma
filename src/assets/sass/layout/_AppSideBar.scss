@@ -5,4 +5,22 @@
   grid-row-start: 2;
   grid-row-end: 4;
   grid-column-end: 3;
+  justify-items: center;
+
+  .veiaco-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 130px;
+
+    .veiaco-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .veiaco-link {
+        color: white;
+      }
+    }
+  }
 }

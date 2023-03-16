@@ -75,6 +75,7 @@ pre {
 
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 
 /**
@@ -95,6 +96,11 @@ abbr[title] {
 b,
 strong {
   font-weight: bolder;
+}
+
+ul,
+li {
+  list-style-type: none;
 }
 
 /**
