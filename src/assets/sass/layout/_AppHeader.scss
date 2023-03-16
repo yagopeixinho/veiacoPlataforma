@@ -1,0 +1,8 @@
+.veiaco-header {
+  height: 90px;
+
+  // # Grid related to ./_VeiacoGrid.scss
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}

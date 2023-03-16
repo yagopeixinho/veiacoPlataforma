@@ -326,6 +326,49 @@ template {
 ** Components **/
 /********************
 ** Layout **/
+.veiaco-sidebar {
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-end: 3;
+}
+
+.veiaco-header {
+  height: 90px;
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+.veiaco {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  display: grid;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 2;
+}
+
+body {
+  background: linear-gradient(89.69deg, #ac4797 0.25%, #ca78b9 99.72%);
+}
+
+.outlet {
+  background-color: #fbfaf4;
+  border-radius: 35px;
+  box-shadow: 0px 0px 0px rgba(0, 19, 51, 0.1), 0px 2px 5px rgba(0, 19, 51, 0.1), 0px 9px 9px rgba(0, 19, 51, 0.09), 0px 21px 13px rgba(0, 19, 51, 0.05), 0px 38px 15px rgba(0, 19, 51, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 82vh;
+  display: grid;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 12;
+}
+.outlet div {
+  padding: 30px 60px;
+}
+
 /********************
 ** Pages **/
 /********************
