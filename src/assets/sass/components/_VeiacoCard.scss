@@ -1,0 +1,16 @@
+.veiaco-card {
+  display: flex;
+  flex-direction: column;
+
+  .veiaco-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .veiaco-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
