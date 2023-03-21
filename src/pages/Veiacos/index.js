@@ -3,9 +3,13 @@ import VeiacoCard from "../../components/common/VeiacoCard";
 import ListContentMainStructure from "../../components/layout/GenericOutletHeader";
 
 const dataVeiaco = [
-  { veiaco: "Yago" },
-  { veiaco: "Yuri" },
-  { veiaco: "Billie" },
+  { name: "Yago" },
+  { name: "Yuri" },
+  { name: "Billie" },
+  { name: "Gustavo" },
+  { name: "Alex" },
+  { name: "Alex" },
+  { name: "Alex" },
 ];
 
 export default function Veiacos() {
@@ -13,9 +17,11 @@ export default function Veiacos() {
     <>
       <ListContentMainStructure pageTitle="Veiacos" />
 
-      {dataVeiaco.map((veiaco) => (
-        <VeiacoCard />
-      ))}
+      <div className="veiacos-grid">
+        {dataVeiaco.map((veiaco) => (
+          <VeiacoCard name={veiaco.name} />
+        ))}
+      </div>
     </>
   );
 }

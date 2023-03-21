@@ -1,6 +1,6 @@
 import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card.svg";
 import phoneVeiaco from "../../assets/icons/phone-icon.svg";
-export default function VeiacoCard() {
+export default function VeiacoCard({ name }) {
   return (
     <div className="veiaco-card">
       <div>
@@ -9,7 +9,7 @@ export default function VeiacoCard() {
         </span>
       </div>
       <div className="veiaco-info">
-        <label>Yuri</label>
+        <label>{name}</label>
         <label className="veiaco-label">
           <span>
             <img src={phoneVeiaco} alt="Phone icon" />
