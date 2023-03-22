@@ -1,5 +1,5 @@
 .generic-outlet-header {
   h1 {
-    font-family: PoppinsRegular;
+    @include headline-1;
   }
 }

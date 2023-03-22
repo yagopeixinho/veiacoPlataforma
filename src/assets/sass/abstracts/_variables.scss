@@ -11,16 +11,19 @@
 ======================================================*/
 
 /**** Font Size ****/
+$font-poppins: "Poppins", sans-serif;
+$font-raleway: "Raleway", sans-serif;
+
 $font-size-base: 16px !default;
 $font-size-small: 14px !default;
 $font-size-medium: 18px !default;
 
-$font-size-h1: 3.6em !default;
-$font-size-h2: 2.8em !default;
-$font-size-h3: 1.825em !default;
-$font-size-h4: 1.6em !default;
-$font-size-h5: 1.35em !default;
-$font-size-h6: 0.9em !default;
+$font-size-h1: 38px !default;
+$font-size-h2: 28px !default;
+$font-size-h3: 24px !default;
+$font-size-h4: 22px !default;
+$font-size-h5: 20px !default;
+$font-size-h6: 16px !default;
 $font-paragraph: 16px !default;
 
 /*======================================================
@@ -34,6 +37,12 @@ $main-color-3: #2246ff;
 $main-color-4: #8de600;
 $main-color-5: #ff6e00;
 $main-color-6: #ff4100;
+
+$main-color-light-1: #fff;
+
+$main-color-dark-1: #000;
+
+$main-color-gray-1: #94918a;
 
 /**** Events Colors ****/
 

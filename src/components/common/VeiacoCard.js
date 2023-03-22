@@ -20,9 +20,7 @@ export default function VeiacoCard({ name, id }) {
       <div className="veiaco-info">
         <label>{name}</label>
         <label className="veiaco-label">
-          <span>
-            <img src={phoneVeiaco} alt="Phone icon" />
-          </span>
+          <img src={phoneVeiaco} alt="Phone icon" />
           (83) 98616-5982
         </label>
       </div>

@@ -19,7 +19,6 @@
     © Typography
 ======================================================*/
 /**** Display and Headlines ****/
-/**** Body *****/
 /**** Label ****/
 /*======================================================
 
@@ -357,24 +356,8 @@ template {
   display: none;
 }
 
-/* width */
 ::-webkit-scrollbar {
-  width: 4px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #911111;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  width: 0px;
 }
 
 /********************
@@ -389,15 +372,27 @@ template {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
 }
 .veiaco-card .veiaco-info .veiaco-label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #94918a;
 }
 
 .generic-outlet-header h1 {
-  font-family: PoppinsRegular;
+  font-size: 38px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
 }
 
 /********************
@@ -449,9 +444,9 @@ body {
   background-color: #fbfaf4;
   border-radius: 35px;
   box-shadow: 0px 0px 0px rgba(0, 19, 51, 0.1), 0px 2px 5px rgba(0, 19, 51, 0.1), 0px 9px 9px rgba(0, 19, 51, 0.09), 0px 21px 13px rgba(0, 19, 51, 0.05), 0px 38px 15px rgba(0, 19, 51, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 0 30px;
+  padding: 14px 30px;
   overflow: auto;
-  height: 82vh;
+  height: 80vh;
   grid-row-start: 2;
   grid-row-end: 4;
   grid-column-start: 3;
@@ -464,6 +459,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px;
 }
 
 /********************
