@@ -1,8 +1,17 @@
 import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card.svg";
 import phoneVeiaco from "../../assets/icons/phone-icon.svg";
-export default function VeiacoCard({ name }) {
+import { useNavigate } from "react-router-dom";
+
+export default function VeiacoCard({ name, id }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="veiaco-card">
+    <div
+      className="veiaco-card"
+      onClick={() => {
+        navigate(`/veiaco/${id}/dashboard`);
+      }}
+    >
       <div>
         <span>
           <img src={avatarVeiacoCard} alt="Temporary Veiaco user" />

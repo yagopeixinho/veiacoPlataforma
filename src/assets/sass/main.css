@@ -354,6 +354,7 @@ template {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 .veiaco-card .veiaco-info {
   display: flex;
