@@ -15,11 +15,13 @@
 ** Base **/
 @import "./base/reset";
 @import "./base/typography";
-@import './base/scrollbar';
+@import "./base/scrollbar";
+@import "./base/fonts";
 
 /********************
 ** Components **/
 @import "./components/VeiacoCard";
+@import "./components/GenericOutletHeader";
 
 /********************
 ** Layout **/
