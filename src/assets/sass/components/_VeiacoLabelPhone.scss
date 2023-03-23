@@ -1,0 +1,8 @@
+.veiaco-label-phone {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  @include label-2-poppins;
+  color: $main-color-gray-1;
+}

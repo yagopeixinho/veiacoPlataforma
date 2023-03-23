@@ -1,6 +1,6 @@
 import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card.svg";
-import phoneVeiaco from "../../assets/icons/phone-icon.svg";
 import { useNavigate } from "react-router-dom";
+import VeiacoLabelPhone from "./VeiacoLabelPhone";
 
 export default function VeiacoCard({ name, id }) {
   const navigate = useNavigate();
@@ -19,10 +19,7 @@ export default function VeiacoCard({ name, id }) {
       </div>
       <div className="veiaco-info">
         <label>{name}</label>
-        <label className="veiaco-label">
-          <img src={phoneVeiaco} alt="Phone icon" />
-          (83) 98616-5982
-        </label>
+       <VeiacoLabelPhone />
       </div>
     </div>
   );

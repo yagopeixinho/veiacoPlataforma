@@ -377,22 +377,34 @@ template {
   font-weight: 600;
   line-height: 30px;
 }
-.veiaco-card .veiaco-info .veiaco-label {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  line-height: 30px;
-  color: #94918a;
-}
 
 .generic-outlet-header h1 {
   font-size: 38px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   line-height: 40px;
+}
+
+.veiaco-label-phone {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #94918a;
+}
+
+.veiaco-label-email {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #94918a;
 }
 
 /********************
@@ -460,6 +472,56 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
   gap: 20px;
+}
+
+.veiaco-dashboard-container {
+  display: flex;
+  height: 100%;
+}
+.veiaco-dashboard-container .generic-outlet-header {
+  flex: 1;
+}
+.veiaco-dashboard-container .veiaco-right-side {
+  flex: 0.3;
+  position: relative;
+  bottom: 40px;
+  left: 30px;
+  height: 100vh;
+  background-color: #f6dde6;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info {
+  display: flex;
+  flex-direction: column;
+  padding: 62px 20px 0 20px;
+  align-items: center;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-header-info .veiaco-name {
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-header-info .veiaco-occupation {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  color: #979ca5;
+  font-weight: 400;
+  line-height: 26px;
+}
+.veiaco-dashboard-container .veiaco-right-side .hr-info-veiaco {
+  width: 100%;
+  margin: 24px 0;
+  border: 0;
+  height: 1px;
+  padding: 0;
+  border-top: 1px solid #979ca5;
 }
 
 /********************

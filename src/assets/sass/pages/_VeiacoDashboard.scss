@@ -1,0 +1,51 @@
+.veiaco-dashboard-container {
+  display: flex;
+  height: 100%;
+
+  .generic-outlet-header {
+    flex: 1;
+  }
+
+  .veiaco-right-side {
+    flex: 0.3;
+    position: relative;
+    bottom: 40px;
+    left: 30px;
+    height: 100vh;
+
+    background-color: $main-color-3;
+
+    .container-veiaco-info {
+      display: flex;
+      flex-direction: column;
+      padding: 62px 20px 0 20px;
+      align-items: center;
+
+      .veiaco-header-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .veiaco-name {
+          @include headline-2;
+        }
+
+        .veiaco-occupation {
+          @include headline-6;
+          color: $main-color-gray-2;
+          font-weight: 400;
+          line-height: 26px;
+        }
+      }
+    }
+
+    .hr-info-veiaco {
+      width: 100%;
+      margin: 24px 0;
+      border: 0;
+      height: 1px;
+      padding: 0;
+      border-top: 1px solid $main-color-gray-2;
+    }
+  }
+}
