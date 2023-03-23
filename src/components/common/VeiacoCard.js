@@ -1,4 +1,4 @@
-import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card.svg";
+import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card-1.png";
 import { useNavigate } from "react-router-dom";
 import VeiacoLabelPhone from "./VeiacoLabelPhone";
 
@@ -19,7 +19,7 @@ export default function VeiacoCard({ name, id }) {
       </div>
       <div className="veiaco-info">
         <label>{name}</label>
-       <VeiacoLabelPhone />
+        <VeiacoLabelPhone />
       </div>
     </div>
   );
