@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Veiacos from "../pages/Veiacos";
 import VeiacoDashboard from "../pages/VeiacoDashboard";
+import VeiacoForm from "../pages/VeiacoForm";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "/veiacos",
         element: <Veiacos />,
+      },
+      {
+        path: "/veiaco/create",
+        element: <VeiacoForm />,
       },
       {
         path: "/veiaco/:id/dashboard",

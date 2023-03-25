@@ -19,7 +19,18 @@ export default function Veiacos() {
 
   return (
     <>
-      <ListContentMainStructure pageTitle="Veiacos" />
+      <ListContentMainStructure
+        pageTitle="Veiacos"
+        buttonConfig={{
+          buttonExist: true,
+          buttonLabel: "Adicionar Veiaco",
+          linkRedirect: "/veiaco/create",
+        }}
+        inputSearchConfig={{
+          inputExist: true,
+          inputPlaceholder: "Buscar veiaco",
+        }}
+      />
 
       <div className="veiacos-grid">
         {veiacosList.map((veiaco, index) => (

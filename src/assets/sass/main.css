@@ -378,7 +378,12 @@ template {
   line-height: 30px;
 }
 
-.generic-outlet-header h1 {
+.generic-outlet-header .generic-outlet-content-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.generic-outlet-header .generic-outlet-content-info h1 {
   font-size: 38px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;

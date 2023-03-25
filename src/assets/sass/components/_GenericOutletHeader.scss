@@ -1,5 +1,11 @@
 .generic-outlet-header {
-  h1 {
-    @include headline-1;
+  .generic-outlet-content-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      @include headline-1;
+    }
   }
 }

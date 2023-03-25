@@ -25,7 +25,11 @@ export default function VeiacoDashboard() {
   console.log(veiaco);
   return (
     <div className="veiaco-dashboard-container">
-      <GenericOutletHeader pageTitle="Dashboard" />
+      <GenericOutletHeader
+        pageTitle="Dashboard"
+        buttonConfig={{ buttonExist: false }}
+        inputSearchConfig={{ inputExist: false }}
+      />
       <div className="veiaco-right-side">
         <div className="container-veiaco-info">
           <div className="veiaco-image-container">
