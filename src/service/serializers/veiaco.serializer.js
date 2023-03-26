@@ -14,5 +14,20 @@ export default class VeiacoSerializer {
     return veiacoFromJson;
   }
 
-  toJson(veiaco) {}
+  toJson(veiaco) {
+    debugger;
+
+    const veiacoToJson = {};
+    debugger;
+    Object.assign(
+      veiacoToJson,
+      veiaco.id && { id: veiaco.id },
+      veiaco.email && { email: veiaco.email },
+      veiaco.name && { name: veiaco.name },
+      veiaco.phone && { phone: veiaco.phone },
+      veiaco.occupation && { occupation: veiaco.occupation }
+    );
+
+    return veiacoToJson;
+  }
 }

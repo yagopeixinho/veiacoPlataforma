@@ -7,7 +7,16 @@ export default class CoreApiService {
     this.serializer = _serializer;
   }
 
-  async create() {}
+  async create(item) {
+    debugger;
+    const response = await api.post(
+      `${this.endpoint}`,
+      this.serializer.toJson(item)
+    );
+    const data = response.data;
+
+    return this.serializer.fromJson(data.items);
+  }
 
   async list() {
     const response = await api.get(`${this.endpoint}`);
@@ -27,7 +36,18 @@ export default class CoreApiService {
     return this.serializer.fromJson(data.items);
   }
 
-  async update(item) {}
+  async update(item, id) {
+    debugger;
+    const response = await api.put(
+      `${this.endpoint}/${id}`,
+      this.serializer.toJson(item)
+    );
+
+    const data = response.data;
+
+    debugger;
+    return this.serializer.fromJson(data.items);
+  }
 
   async delete(id) {}
 

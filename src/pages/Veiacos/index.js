@@ -24,7 +24,7 @@ export default function Veiacos() {
         buttonConfig={{
           buttonExist: true,
           buttonLabel: "Adicionar Veiaco",
-          linkRedirect: "/veiaco/create",
+          linkRedirect: "/veiaco/adicionar",
         }}
         inputSearchConfig={{
           inputExist: true,

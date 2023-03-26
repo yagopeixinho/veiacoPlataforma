@@ -26,7 +26,11 @@ export const router = createBrowserRouter([
         element: <Veiacos />,
       },
       {
-        path: "/veiaco/create",
+        path: "/veiaco/adicionar",
+        element: <VeiacoForm />,
+      },
+      {
+        path: "/veiaco/:id/editar",
         element: <VeiacoForm />,
       },
       {
