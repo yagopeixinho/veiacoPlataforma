@@ -1,0 +1,48 @@
+.confirmation-dialog {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .confirmation-modal-content {
+    background-color: $main-color-light-fff;
+    margin: 10% auto;
+    padding: 40px 20px;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+
+    .modal-info {
+      text-align: center;
+      
+      h1 {
+        @include headline-1;
+      }
+
+      h5 {
+        @include label-1-raleway;
+        color: $main-color-gray-3;
+      }
+    }
+
+    .confirmation-dialog-buttons {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+
+      .confirmation-dialog-button-confirm {
+        @include button-confirm;
+      }
+
+      .confirmation-dialog-button-cancel {
+        @include button-cancel;
+      }
+    }
+  }
+}

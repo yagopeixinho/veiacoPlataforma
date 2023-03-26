@@ -45,11 +45,13 @@ export default class CoreApiService {
 
     const data = response.data;
 
-    debugger;
     return this.serializer.fromJson(data.items);
   }
 
-  async delete(id) {}
+  async delete(id) {
+    const response = await api.delete(`${this.endpoint}/${id}`);
+    return response;
+  }
 
   convertData(data = null, meta = null) {
     if (meta) {

@@ -88,3 +88,55 @@
   font-weight: 400;
   line-height: 30px;
 }
+
+/*======================================================
+    © Buttons
+======================================================*/
+/**** Main buttons ****/
+@mixin main-button-1 {
+  background-color: $main-color-1;
+  color: $main-color-light-1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  @include label-1-poppins;
+}
+
+@mixin main-button-2 {
+  background-color: $main-color-2;
+  color: $main-color-light-1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  @include label-1-poppins;
+}
+
+@mixin main-button-3 {
+  background-color: $main-color-3;
+  color: $main-color-light-1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  @include label-1-poppins;
+}
+
+/**** Dialog buttons ****/
+@mixin button-confirm {
+  background-color: $danger-color-1;
+  color: $main-color-light-1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  @include label-1-poppins;
+  cursor: pointer;
+}
+
+@mixin button-cancel {
+  background-color: $success-color-1;
+  color: $main-color-light-1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  @include label-1-poppins;
+  cursor: pointer;
+}

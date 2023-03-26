@@ -7,15 +7,19 @@ import VeiacoLabelEmail from "../../components/common/VeiacoLabelEmail";
 import VeiacoService from "../../service/veiaco.service";
 import EditVeiacoIcon from "../../assets/icons/edit-veiaco-icon.svg";
 import DeleteVeiacoIcon from "../../assets/icons/delete-icon.svg";
+import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
 
 export default function VeiacoDashboard() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [veiaco, setVeiaco] = useState({});
+  const [displayConfirmationDialog, setDisplayConfirmationDialog] =
+    useState(false);
+
+  const _veiacoService = new VeiacoService();
 
   useEffect(() => {
     async function init() {
-      const _veiacoService = new VeiacoService();
       const responseService = await _veiacoService.read(id);
 
       setVeiaco(responseService);
@@ -23,50 +27,73 @@ export default function VeiacoDashboard() {
     }
 
     init();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  console.log(veiaco);
+  async function deleteVeiaco(id) {
+    await _veiacoService.delete(id);
+
+    navigate("/veiacos");
+  }
+
   return (
-    <div className="veiaco-dashboard-container">
-      <GenericOutletHeader
-        pageTitle="Dashboard"
-        buttonConfig={{ buttonExist: false }}
-        inputSearchConfig={{ inputExist: false }}
-      />
-      <div className="veiaco-right-side">
-        <div className="container-veiaco-info">
-          <div className="veiaco-image-container">
-            <img src={veiacoImage} alt="Veiaco user profile" />
-          </div>
-          <div className="veiaco-header-info">
-            <label className="veiaco-name">{veiaco.name}</label>
-            <label className="veiaco-occupation">{veiaco.occupation}</label>
-          </div>
-          <hr className="hr-info-veiaco" />
+    <>
+      {displayConfirmationDialog && (
+        <ConfirmationDialog
+          description="Deseja mesmo apagar esse veiaco?"
+          message="Cuidado!"
+          labelCancel="Cancelar"
+          labelConfirm="Confirmar"
+          onConfirm={() => {
+            deleteVeiaco(id);
+          }}
+          onCancel={() => {
+            setDisplayConfirmationDialog(false);
+          }}
+        />
+      )}
 
-          <div className="veiaco-actions">
-            <img
-              src={EditVeiacoIcon}
-              alt="Veiaco user profile"
-              className="image-edit-veiaco"
-              onClick={() => {
-                navigate(`/veiaco/${id}/editar`);
-              }}
-            />
-            <img
-              src={DeleteVeiacoIcon}
-              alt="Veiaco delete"
-              className="image-edit-veiaco"
-              onClick={() => {
-                
-              }}
-            />
-          </div>
+      <div className="veiaco-dashboard-container">
+        <GenericOutletHeader
+          pageTitle="Dashboard"
+          buttonConfig={{ buttonExist: false }}
+          inputSearchConfig={{ inputExist: false }}
+        />
+        <div className="veiaco-right-side">
+          <div className="container-veiaco-info">
+            <div className="veiaco-image-container">
+              <img src={veiacoImage} alt="Veiaco user profile" />
+            </div>
+            <div className="veiaco-header-info">
+              <label className="veiaco-name">{veiaco.name}</label>
+              <label className="veiaco-occupation">{veiaco.occupation}</label>
+            </div>
+            <hr className="hr-info-veiaco" />
 
-          <VeiacoLabelPhone phone={veiaco.phone} />
-          <VeiacoLabelEmail email={veiaco.email} />
+            <div className="veiaco-actions">
+              <img
+                src={EditVeiacoIcon}
+                alt="Veiaco user profile"
+                className="image-edit-veiaco"
+                onClick={() => {
+                  navigate(`/veiaco/${id}/editar`);
+                }}
+              />
+              <img
+                src={DeleteVeiacoIcon}
+                alt="Veiaco delete"
+                className="image-edit-veiaco"
+                onClick={() => {
+                  setDisplayConfirmationDialog(true);
+                }}
+              />
+            </div>
+
+            <VeiacoLabelPhone phone={veiaco.phone} />
+            <VeiacoLabelEmail email={veiaco.email} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

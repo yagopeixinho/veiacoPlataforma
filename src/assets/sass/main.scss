@@ -14,7 +14,6 @@
 /********************
 ** Base **/
 @import "./base/reset";
-@import "./base/typography";
 @import "./base/scrollbar";
 
 /********************
@@ -23,6 +22,7 @@
 @import "./components/GenericOutletHeader";
 @import "./components/VeiacoLabelPhone";
 @import "./components/VeiacoLabelEmail";
+@import "./components/ConfirmationDialog";
 
 /********************
 ** Layout **/

@@ -14,7 +14,7 @@ export default function ButtonSave({
 
   return (
     <button
-      className={"button-save " + styles}
+      className={styles}
       disabled={loading || disabled}
       type={typeStr}
       onClick={onClick}
