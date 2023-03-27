@@ -8,6 +8,7 @@ import VeiacoService from "../../service/veiaco.service";
 import EditVeiacoIcon from "../../assets/icons/edit-veiaco-icon.svg";
 import DeleteVeiacoIcon from "../../assets/icons/delete-icon.svg";
 import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
+import DebtPreviewTable from "../../components/common/DebtPreviewTable";
 
 export default function VeiacoDashboard() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ export default function VeiacoDashboard() {
     }
 
     init();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   async function deleteVeiaco(id) {
@@ -54,11 +55,15 @@ export default function VeiacoDashboard() {
       )}
 
       <div className="veiaco-dashboard-container">
-        <GenericOutletHeader
-          pageTitle="Dashboard"
-          buttonConfig={{ buttonExist: false }}
-          inputSearchConfig={{ inputExist: false }}
-        />
+        <div className="veiaco-left-side">
+          <GenericOutletHeader
+            pageTitle="Dashboard"
+            buttonConfig={{ buttonExist: false }}
+            inputSearchConfig={{ inputExist: false }}
+          />
+
+          <DebtPreviewTable />
+        </div>
         <div className="veiaco-right-side">
           <div className="container-veiaco-info">
             <div className="veiaco-image-container">

@@ -1,0 +1,63 @@
+.container-debt-preview-table {
+  .container-preview-table-headline {
+    h1 {
+      @include headline-5;
+    }
+  }
+
+  .preview-table {
+    width: 70%;
+
+    thead {
+      tr {
+        @include label-3-raleway;
+        color: $main-color-gray-4;
+
+        th:first-child {
+          text-align: left;
+        }
+      }
+    }
+    tbody {
+      tr {
+        @include label-2-poppins;
+        font-weight: 500;
+
+        td:first-child {
+          text-align: left;
+        }
+
+        td {
+          text-align: center;
+
+          .container-info-debt {
+            display: flex;
+            flex-direction: column;
+
+            .debt-name {
+              @include headline-5;
+              font-size: 18px;
+              line-height: 14px;
+            }
+
+            .debt-cat {
+              color: $main-color-gray-3;
+            }
+          }
+
+          .status-active {
+            background-color: $main-color-6;
+            border-radius: 10px;
+            padding: 5px 26px;
+          }
+
+          .status-inactive {
+            background-color: $main-color-2;
+            border-radius: 10px;
+            padding: 5px 26px;
+          }
+        }
+      }
+    }
+  }
+}

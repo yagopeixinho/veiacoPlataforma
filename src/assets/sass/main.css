@@ -483,6 +483,64 @@ template {
   cursor: pointer;
 }
 
+.container-debt-preview-table .container-preview-table-headline h1 {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+}
+.container-debt-preview-table .preview-table {
+  width: 70%;
+}
+.container-debt-preview-table .preview-table thead tr {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  color: #c8c8c8;
+}
+.container-debt-preview-table .preview-table thead tr th:first-child {
+  text-align: left;
+}
+.container-debt-preview-table .preview-table tbody tr {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  font-weight: 500;
+}
+.container-debt-preview-table .preview-table tbody tr td:first-child {
+  text-align: left;
+}
+.container-debt-preview-table .preview-table tbody tr td {
+  text-align: center;
+}
+.container-debt-preview-table .preview-table tbody tr td .container-info-debt {
+  display: flex;
+  flex-direction: column;
+}
+.container-debt-preview-table .preview-table tbody tr td .container-info-debt .debt-name {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  font-size: 18px;
+  line-height: 14px;
+}
+.container-debt-preview-table .preview-table tbody tr td .container-info-debt .debt-cat {
+  color: #7d8086;
+}
+.container-debt-preview-table .preview-table tbody tr td .status-active {
+  background-color: #c1e2c0;
+  border-radius: 10px;
+  padding: 5px 26px;
+}
+.container-debt-preview-table .preview-table tbody tr td .status-inactive {
+  background-color: #b1529e;
+  border-radius: 10px;
+  padding: 5px 26px;
+}
+
 /********************
 ** Layout **/
 .veiaco-sidebar {
@@ -554,7 +612,7 @@ body {
   display: flex;
   height: 100%;
 }
-.veiaco-dashboard-container .generic-outlet-header {
+.veiaco-dashboard-container .veiaco-left-side {
   flex: 1;
 }
 .veiaco-dashboard-container .veiaco-right-side {

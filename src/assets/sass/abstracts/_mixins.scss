@@ -75,6 +75,13 @@
   line-height: 30px;
 }
 
+@mixin label-4-raleway {
+  font-size: $font-size-base;
+  font-family: $font-raleway;
+  font-weight: 600;
+  line-height: 30px;
+}
+
 @mixin label-1-poppins {
   font-size: $font-size-base;
   font-family: $font-poppins;
