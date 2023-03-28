@@ -8,7 +8,6 @@ export default class CoreApiService {
   }
 
   async create(item) {
-    debugger;
     const response = await api.post(
       `${this.endpoint}`,
       this.serializer.toJson(item)
@@ -18,26 +17,41 @@ export default class CoreApiService {
     return this.serializer.fromJson(data.items);
   }
 
-  async list() {
-    const response = await api.get(`${this.endpoint}`);
+  async list(queryOptions = null, isListView = null) {
+    const response = await api.get(
+      `${this.endpoint}?${(queryOptions && queryOptions.toQueryString()) || ""}`
+    );
     const data = response.data;
 
-    if (data.items) {
+    if (data.items && isListView) {
       return this.convertData(data, data._meta);
     } else {
       return this.convertData(data);
     }
   }
 
+  async listSub(parentId, isListView = null) {
+    const response = await api.get(
+      `${this.parentEndpoint}/${parentId}/${this.endpoint}`
+    );
+
+    const data = response.data;
+    if (data.hasOwnProperty("items") && isListView) {
+      return this.convertData(data, data._meta);
+    } else if (data.hasOwnProperty("items")) {
+      return this.convertData(data.items);
+    } else {
+      return this.convertData(data);
+    }
+  }
+
   async read(id) {
-    debugger;
     const response = await api.get(`${this.endpoint}/${id}`);
     const data = response.data;
     return this.serializer.fromJson(data.items);
   }
 
   async update(item, id) {
-    debugger;
     const response = await api.put(
       `${this.endpoint}/${id}`,
       this.serializer.toJson(item)

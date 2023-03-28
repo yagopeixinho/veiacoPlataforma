@@ -1,7 +1,7 @@
 export default class CategorySerializer {
   fromJson(json) {
     const categoryFromJson = {};
-    debugger;
+
     Object.assign(
       categoryFromJson,
       json.id && { id: json.id },
@@ -12,10 +12,7 @@ export default class CategorySerializer {
   }
 
   toJson(category) {
-    debugger;
-
     const categoryToJson = {};
-    debugger;
     Object.assign(
       categoryToJson,
       category.id && { id: category.id },

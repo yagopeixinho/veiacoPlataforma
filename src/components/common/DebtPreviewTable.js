@@ -1,6 +1,8 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { format } from "date-fns";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import DebtService from "../../service/debt.service";
+import VeiacoService from "../../service/veiaco.service";
 
 export default function DebtPreviewTable({
   name,
@@ -9,16 +11,19 @@ export default function DebtPreviewTable({
   date,
   status,
 }) {
+  const navigate = useNavigate();
   const { id } = useParams();
+  const [listDebt, setListDebt] = useState([]);
 
   useEffect(() => {
     async function init() {
-      const _debtService = new DebtService();
-      const debts = await _debtService.list();
+      const _veiacoService = new VeiacoService();
+      const veiacoDebtsResponse = await _veiacoService.listVeiacoDebt(id);
+      setListDebt(veiacoDebtsResponse);
     }
 
     init();
-  }, []);
+  }, [id]);
 
   return (
     <div className="container-debt-preview-table">
@@ -37,23 +42,30 @@ export default function DebtPreviewTable({
         </thead>
 
         <tbody>
-          <tr>
-            <td>
-              <div className="container-info-debt">
-                <label className="debt-name">{name}</label>
-                <label className="debt-cat">{category}</label>
-              </div>
-            </td>
-            <td>R${value}</td>
-            <td>{date}</td>
-            <td>
-              {status ? (
-                <label className="status-active">Ativo</label>
-              ) : (
-                <label className="status-inactive">Quitado</label>
-              )}
-            </td>
-          </tr>
+          {listDebt.map((debt, index) => (
+            <tr
+              key={index}
+              onClick={() => {
+                navigate(`/veiaco/divida/${debt.id}`);
+              }}
+            >
+              <td>
+                <div className="container-info-debt">
+                  <label className="debt-name">{debt?.name}</label>
+                  <label className="debt-cat">{debt.category?.name}</label>
+                </div>
+              </td>
+              <td>R${debt.value}</td>
+              <td>{debt.createdOn}</td>
+              <td>
+                {debt.status ? (
+                  <label className="status-active">Ativo</label>
+                ) : (
+                  <label classNaem="status-inactive">Quitado</label>
+                )}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

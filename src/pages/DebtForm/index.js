@@ -1,6 +1,7 @@
 import { Formik, Form } from "formik";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ButtonDelete from "../../components/common/ButtonDelete";
 import ButtonSave from "../../components/common/ButtonSave";
 import CheckboxInput from "../../components/common/CheckboxInput";
 import NumberInput from "../../components/common/NumberInput";
@@ -8,11 +9,10 @@ import TextInput from "../../components/common/TextInput";
 import GenericOutletHeader from "../../components/layout/GenericOutletHeader";
 import CategoryService from "../../service/category.service";
 import DebtService from "../../service/debt.service";
-import VeiacoService from "../../service/veiaco.service";
 import { veiacoSchema } from "../../validations/veiaco.validation";
 
 export default function DebtForm() {
-  const { id } = useParams();
+  const { idVeiaco, idDivida } = useParams();
   const navigate = useNavigate();
   const [action, setAction] = useState("create");
   const [debtFormInitialValues, setDebtFormInitialValues] = useState({});
@@ -26,32 +26,54 @@ export default function DebtForm() {
       const categoriesResponse = await _categoryService.list();
       setCategories(categoriesResponse);
 
-      debugger;
-
-      setDebtFormInitialValues({
-        name: "",
-        value: "",
-        open: null,
-        category: "",
-        veiacoId: id,
-      });
+      if (idDivida) {
+        setAction("edit");
+        const debtResponse = await _debtService.read(idDivida);
+        setDebtFormInitialValues(debtResponse);
+      } else {
+        setAction("create");
+        setDebtFormInitialValues({
+          name: "",
+          value: "",
+          status: false,
+          categoryId: "",
+          veiacoId: idVeiaco,
+        });
+      }
     }
 
     init();
-  }, [id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idVeiaco]);
 
   async function createDebt(values) {
     if (action === "create") {
       await _debtService
         .create(values)
         .then((response) => {
-          debugger;
           navigate(`/veiaco/${response.id}/dashboard`);
         })
         .catch((err) => console.log(err))
         .finally(() => {});
-      debugger;
+    } else {
+      await _debtService
+        .update(values, idDivida)
+        .then((response) => {
+          navigate(`/veiacos`);
+        })
+        .catch((err) => console.log(err))
+        .finally(() => {});
     }
+  }
+
+  async function deleteDebt(id) {
+    await _debtService
+      .delete(id)
+      .then(() => {
+        navigate(`/veiacos`);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {});
   }
 
   return (
@@ -77,25 +99,27 @@ export default function DebtForm() {
                 {JSON.stringify(props.values)}
                 <TextInput label="Nome" name="name" />
                 <NumberInput label="Valor" name="value" />
-                <CheckboxInput label="Status" name="open" />
-
+                <CheckboxInput label="Status" name="status" />
                 <select
                   name="category"
                   onChange={(ev) => {
-                    props.setFieldValue("category", ev.target.value);
+                    props.setFieldValue("categoryId", ev.target.value);
                   }}
                 >
-                  <option selected value="">
-                    Selecionar uma categoria
-                  </option>
                   {categories.map((item, index) => (
                     <option value={item.id} key={index}>
                       {item.name}
                     </option>
                   ))}
                 </select>
-
                 <ButtonSave label="Salvar" type="submit" />
+                <ButtonDelete
+                  label="Deletar"
+                  type="buton"
+                  onClick={() => {
+                    deleteDebt(idDivida);
+                  }}
+                />
               </Form>
             );
           }}

@@ -42,14 +42,11 @@ export default function VeiacoForm() {
       await _veiacoService
         .create(values)
         .then((response) => {
-          debugger;
           navigate(`/veiaco/${response.id}/dashboard`);
         })
         .catch((err) => console.log(err))
         .finally(() => {});
-      debugger;
     } else {
-      debugger;
       await _veiacoService
         .update(values, values.id)
         .then((response) => {

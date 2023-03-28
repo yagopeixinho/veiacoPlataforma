@@ -4,6 +4,11 @@
 
   .veiaco-left-side {
     flex: 1;
+
+    .grid-dashboard-info {
+      display: grid;
+      grid-template-columns: 200px 200px 200px;
+    }
   }
 
   .veiaco-right-side {

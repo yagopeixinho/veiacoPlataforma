@@ -1,31 +1,43 @@
+import CategorySerializer from "./category.serializer";
+
 export default class DebtSerializer {
+  constructor() {
+    this.categorySerializer = new CategorySerializer();
+  }
+
   fromJson(json) {
     const debtFromJson = {};
-    debugger;
+
     Object.assign(
       debtFromJson,
       json.id && { id: json.id },
       json.name && { name: json.name },
       json.value && { value: json.value },
-      { open: json.open }
+      json.category && {
+        categoryId: json.category.id.toString(),
+        category: this.categorySerializer.fromJson(json.category),
+      },
+      json.created_on && {
+        createdOn: json.created_on,
+      },
+      { status: json.status }
     );
 
     return debtFromJson;
   }
 
   toJson(debt) {
-    debugger;
-
     const debtToJson = {};
-    debugger;
     Object.assign(
       debtToJson,
       debt.id && { id: debt.id },
       debt.name && { name: debt.name },
       debt.value && { value: debt.value },
       debt.veiacoId && { veiaco_id: debt.veiacoId },
-      debt.category && { category_id: debt.category },
-      { open: debt.open }
+      debt.categoryId && {
+        category_id: parseInt(debt.categoryId),
+      },
+      { status: debt.status }
     );
 
     return debtToJson;

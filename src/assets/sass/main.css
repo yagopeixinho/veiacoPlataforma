@@ -491,6 +491,7 @@ template {
 }
 .container-debt-preview-table .preview-table {
   width: 70%;
+  border-spacing: 0px 20px;
 }
 .container-debt-preview-table .preview-table thead tr {
   font-size: 16px;
@@ -614,6 +615,10 @@ body {
 }
 .veiaco-dashboard-container .veiaco-left-side {
   flex: 1;
+}
+.veiaco-dashboard-container .veiaco-left-side .grid-dashboard-info {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
 }
 .veiaco-dashboard-container .veiaco-right-side {
   flex: 0.3;

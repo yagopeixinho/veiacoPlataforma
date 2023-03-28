@@ -1,7 +1,6 @@
 export default class VeiacoSerializer {
   fromJson(json) {
     const veiacoFromJson = {};
-    debugger;
     Object.assign(
       veiacoFromJson,
       json.id && { id: json.id },
@@ -15,10 +14,7 @@ export default class VeiacoSerializer {
   }
 
   toJson(veiaco) {
-    debugger;
-
     const veiacoToJson = {};
-    debugger;
     Object.assign(
       veiacoToJson,
       veiaco.id && { id: veiaco.id },

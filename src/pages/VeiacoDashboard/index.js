@@ -9,6 +9,9 @@ import EditVeiacoIcon from "../../assets/icons/edit-veiaco-icon.svg";
 import DeleteVeiacoIcon from "../../assets/icons/delete-icon.svg";
 import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
 import DebtPreviewTable from "../../components/common/DebtPreviewTable";
+import VeiacoBarChart from "../../components/graphics/VeiacoBarChart";
+import DebtGraphicService from "../../service/debt-graphic.service";
+import VeiacoPieChart from "../../components/graphics/VeiacoPieChart";
 
 export default function VeiacoDashboard() {
   const navigate = useNavigate();
@@ -16,15 +19,23 @@ export default function VeiacoDashboard() {
   const [veiaco, setVeiaco] = useState({});
   const [displayConfirmationDialog, setDisplayConfirmationDialog] =
     useState(false);
+  const [debtBarChartData, setDebtBarChartData] = useState([]);
+  const [responseDebtGraphic, setResponseDebtGraphic] = useState([]);
 
   const _veiacoService = new VeiacoService();
 
   useEffect(() => {
     async function init() {
       const responseService = await _veiacoService.read(id);
-
       setVeiaco(responseService);
-      debugger;
+
+      const _debtBarChart = new DebtGraphicService();
+      const responseBarChart = await _debtBarChart.getBarChart(id);
+      setDebtBarChartData(responseBarChart);
+
+      const _debtPieChart = new DebtGraphicService();
+      const responsePieChart = await _debtPieChart.getPieChart(id);
+      setResponseDebtGraphic(responsePieChart);
     }
 
     init();
@@ -62,7 +73,11 @@ export default function VeiacoDashboard() {
             inputSearchConfig={{ inputExist: false }}
           />
 
-          <DebtPreviewTable />
+          <div className="grid-dashboard-info">
+            <VeiacoBarChart data={debtBarChartData} />
+            <VeiacoPieChart data={responseDebtGraphic} />
+            <DebtPreviewTable />
+          </div>
         </div>
         <div className="veiaco-right-side">
           <div className="container-veiaco-info">
