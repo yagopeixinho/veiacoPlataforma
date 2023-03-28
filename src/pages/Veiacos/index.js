@@ -21,14 +21,13 @@ export default function Veiacos() {
     <>
       <ListContentMainStructure
         pageTitle="Veiacos"
-        buttonConfig={{
-          buttonExist: true,
-          buttonLabel: "Adicionar Veiaco",
-          linkRedirect: "/veiaco/adicionar",
-        }}
         inputSearchConfig={{
-          inputExist: true,
-          inputPlaceholder: "Buscar veiaco",
+          inputExist: false,
+        }}
+        addItemConfig={{
+          addItemExist: true,
+          addItemLabel: "Adicionar Veiaco",
+          addItemLink: "/veiaco/adicionar",
         }}
       />
 

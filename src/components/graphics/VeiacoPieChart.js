@@ -47,7 +47,7 @@ class VeiacoPieChart extends React.Component {
 
   render() {
     return (
-      <PieChart width={730} height={300}>
+      <PieChart width={280} height={340}>
         <Pie
           data={this.pieData}
           color="#000000"

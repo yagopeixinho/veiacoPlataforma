@@ -1,4 +1,6 @@
 .container-debt-preview-table {
+  width: 100%;
+
   .container-preview-table-headline {
     h1 {
       @include headline-5;
@@ -6,7 +8,7 @@
   }
 
   .preview-table {
-    width: 70%;
+    width: 100%;
     border-spacing: 0px 20px;
 
     thead {

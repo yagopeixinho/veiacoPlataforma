@@ -1,10 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import addItemIcon from "../../assets/icons/add-item-icon.svg";
 
 export default function GenericOutletHeader({
   pageTitle,
-  buttonConfig,
   inputSearchConfig,
+  addItemConfig,
 }) {
   const navigate = useNavigate();
 
@@ -20,14 +21,18 @@ export default function GenericOutletHeader({
             <input placeholder={inputSearchConfig.inputPlaceholder} />
           )}
 
-          {buttonConfig.buttonExist && (
-            <button
+          {addItemConfig?.addItemExist && (
+            <label
               onClick={() => {
-                navigate(buttonConfig.linkRedirect);
+                navigate(addItemConfig.addItemLink);
               }}
+              className="add-item-generic-outlet"
             >
-              {buttonConfig.buttonLabel}
-            </button>
+              <span>
+                <img src={addItemIcon} alt="" />
+              </span>
+              {addItemConfig.addItemLabel}
+            </label>
           )}
         </div>
       </div>

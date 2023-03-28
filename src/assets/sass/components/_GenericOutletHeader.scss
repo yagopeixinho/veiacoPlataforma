@@ -7,5 +7,24 @@
     h1 {
       @include headline-1;
     }
+
+    .right-side {
+      .add-item-generic-outlet {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include label-2-raleway;
+
+        cursor: pointer;
+
+        span {
+          display: flex;
+
+          img {
+            width: 32px;
+          }
+        }
+      }
+    }
   }
 }
