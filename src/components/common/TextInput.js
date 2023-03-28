@@ -6,21 +6,25 @@ export default function TextInput({ label, classes = "", ...props }) {
 
   return (
     <div className={classes}>
-      <label htmlFor={props.id || props.name}>{label}</label>
-
       <div className="input-block">
         {props.iconleft && (
           <img className="input-icon" src={props.iconleft} alt="teste" />
         )}
 
         {!props.mask ? (
-          <input className="input-text" {...field} {...props} />
+          <input
+            className="input-text"
+            {...field}
+            {...props}
+            placeholder={label}
+          />
         ) : (
           <input
             className="input-text"
             {...field}
             {...props}
             alwaysShowMask={true}
+            placeholder={label}
           />
         )}
         {props.loading && (

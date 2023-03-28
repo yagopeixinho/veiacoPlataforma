@@ -365,6 +365,30 @@ template {
   width: 0px;
 }
 
+/*======================================================
+
+    Veiaco!;
+    Inputs
+    © Check repository license
+
+======================================================*/
+/*======================================================
+    © Input text
+======================================================*/
+.input-text {
+  padding: 10px 0 4px 0;
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  font-weight: 500;
+  width: 100%;
+}
+
 /********************
 ** Components **/
 .veiaco-card {
@@ -686,6 +710,43 @@ body {
 .veiaco-dashboard-container .veiaco-right-side .veiaco-actions {
   display: flex;
   gap: 10px;
+  cursor: pointer;
+}
+
+.container-form-veiaco {
+  display: flex;
+  gap: 40px;
+  padding: 60px;
+}
+.container-form-veiaco .veiaco-form-left {
+  width: 340px;
+  text-align: center;
+}
+.container-form-veiaco .veiaco-form-right {
+  width: 40%;
+  display: flex;
+  gap: 10px 40px;
+  flex-direction: column;
+}
+.container-form-veiaco .veiaco-form-right input {
+  font-size: 26px;
+  font-weight: 300;
+}
+.container-form-veiaco .veiaco-form-right .veiaco-button-row {
+  width: 100%;
+  margin-top: 30px;
+}
+.container-form-veiaco .veiaco-form-right .veiaco-button-row button {
+  background-color: #ac4797;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  width: 100%;
   cursor: pointer;
 }
 

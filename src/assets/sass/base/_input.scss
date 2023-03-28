@@ -1,0 +1,21 @@
+/*======================================================
+
+    Veiaco!;
+    Inputs
+    © Check repository license
+
+======================================================*/
+
+/*======================================================
+    © Input text
+======================================================*/
+.input-text {
+  padding: 10px 0 4px 0;
+  border: none;
+  border-bottom: 1px solid $main-color-gray-4;
+  outline: none;
+  background-color: transparent;
+  @include label-3-raleway;
+  font-weight: 500;
+  width: 100%;
+}

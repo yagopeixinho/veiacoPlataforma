@@ -1,0 +1,33 @@
+.container-form-veiaco {
+  display: flex;
+  gap: 40px;
+  padding: 60px;
+
+  .veiaco-form-left {
+    width: 340px;
+    text-align: center;
+  }
+
+  .veiaco-form-right {
+    width: 40%;
+    display: flex;
+    gap: 10px 40px;
+    flex-direction: column;
+
+    input {
+      font-size: 26px;
+      font-weight: 300;
+    }
+
+    .veiaco-button-row {
+      width: 100%;
+      margin-top: 30px;
+
+      button {
+        @include main-button-1;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}

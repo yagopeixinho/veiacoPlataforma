@@ -6,6 +6,8 @@ import TextInput from "../../components/common/TextInput";
 import GenericOutletHeader from "../../components/layout/GenericOutletHeader";
 import VeiacoService from "../../service/veiaco.service";
 import { veiacoSchema } from "../../validations/veiaco.validation";
+import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card-1.png";
+import Button from "../../components/common/Button";
 
 export default function VeiacoForm() {
   const { id } = useParams();
@@ -35,6 +37,7 @@ export default function VeiacoForm() {
     }
 
     init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   async function createVeiaco(values) {
@@ -60,7 +63,7 @@ export default function VeiacoForm() {
   return (
     <div>
       <GenericOutletHeader
-        pageTitle="Criando Veiaco!"
+        pageTitle="Adicionar veiaco"
         inputSearchConfig={{ inputExist: false }}
         buttonConfig={{ buttonExist: false }}
       />
@@ -77,13 +80,29 @@ export default function VeiacoForm() {
           {(props) => {
             return (
               <Form>
-                {JSON.stringify(props.values)}
-                <TextInput label="Nome" name="name" />
-                <TextInput label="E-mail" name="email" />
-                <TextInput label="Telefone" name="phone" />
-                <TextInput label="Cargo" name="occupation" />
+                <div className="container-form-veiaco">
+                  <div className="veiaco-form-left">
+                    <div>
+                      <span>
+                        <img
+                          src={avatarVeiacoCard}
+                          alt="Temporary Veiaco user"
+                          className="veiaco-picture"
+                        />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="veiaco-form-right">
+                    <TextInput label="Nome" name="name" />
+                    <TextInput label="E-mail" name="email" />
+                    <TextInput label="Telefone" name="phone" />
+                    <TextInput label="Cargo" name="occupation" />
 
-                <ButtonSave label="Salvar" type="submit" />
+                    <div className="veiaco-button-row">
+                      <ButtonSave label="Salvar" type="submit" />
+                    </div>
+                  </div>
+                </div>
               </Form>
             );
           }}
