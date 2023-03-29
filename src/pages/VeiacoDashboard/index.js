@@ -69,8 +69,12 @@ export default function VeiacoDashboard() {
         <div className="veiaco-left-side">
           <GenericOutletHeader
             pageTitle="Dashboard"
-            buttonConfig={{ buttonExist: false }}
             inputSearchConfig={{ inputExist: false }}
+            addItemConfig={{
+              addItemExist: true,
+              addItemLabel: "Adicionar dívida",
+              addItemLink: `/veiaco/${id}/divida/adicionar`,
+            }}
           />
 
           <div className="grid-dashboard-info">
@@ -90,27 +94,26 @@ export default function VeiacoDashboard() {
             </div>
             <hr className="hr-info-veiaco" />
 
-            <div className="veiaco-actions">
-              <img
-                src={EditVeiacoIcon}
-                alt="Veiaco user profile"
-                className="image-edit-veiaco"
-                onClick={() => {
-                  navigate(`/veiaco/${id}/editar`);
-                }}
-              />
-              <img
-                src={DeleteVeiacoIcon}
-                alt="Veiaco delete"
-                className="image-edit-veiaco"
-                onClick={() => {
-                  setDisplayConfirmationDialog(true);
-                }}
-              />
-            </div>
-
             <VeiacoLabelPhone phone={veiaco.phone} />
             <VeiacoLabelEmail email={veiaco.email} />
+          </div>
+          <div className="veiaco-actions">
+            <img
+              src={EditVeiacoIcon}
+              alt="Veiaco user profile"
+              className="image-edit-veiaco"
+              onClick={() => {
+                navigate(`/veiaco/${id}/editar`);
+              }}
+            />
+            <img
+              src={DeleteVeiacoIcon}
+              alt="Veiaco delete"
+              className="image-edit-veiaco"
+              onClick={() => {
+                setDisplayConfirmationDialog(true);
+              }}
+            />
           </div>
         </div>
       </div>

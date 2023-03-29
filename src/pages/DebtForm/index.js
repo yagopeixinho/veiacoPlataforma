@@ -38,6 +38,7 @@ export default function DebtForm() {
           status: false,
           categoryId: "",
           veiacoId: idVeiaco,
+          date: "",
         });
       }
     }
@@ -118,6 +119,13 @@ export default function DebtForm() {
                   type="buton"
                   onClick={() => {
                     deleteDebt(idDivida);
+                  }}
+                />
+                <input
+                  type="date"
+                  name="date"
+                  onChange={(ev) => {
+                    props.setFieldValue("date", ev.target.value);
                   }}
                 />
               </Form>

@@ -1,16 +1,8 @@
-import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import DebtService from "../../service/debt.service";
 import VeiacoService from "../../service/veiaco.service";
 
-export default function DebtPreviewTable({
-  name,
-  category,
-  value,
-  date,
-  status,
-}) {
+export default function DebtPreviewTable() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [listDebt, setListDebt] = useState([]);
@@ -56,7 +48,7 @@ export default function DebtPreviewTable({
                 </div>
               </td>
               <td>R${debt.value}</td>
-              <td>{debt.createdOn}</td>
+              <td>{debt.date}</td>
               <td>
                 {debt.status ? (
                   <label className="status-active">Ativo</label>

@@ -17,20 +17,11 @@
     position: relative;
     bottom: 40px;
     left: 30px;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     background-color: $main-color-3;
-
-    .veiaco-image-container {
-      .image-edit-veiaco {
-        // position: relative;
-        // left: 140px;
-        // width: 48px;
-        // opacity: 70%;
-        // bottom: 184px;
-        // cursor: pointer;
-      }
-    }
 
     .container-veiaco-info {
       display: flex;
@@ -67,7 +58,9 @@
 
     .veiaco-actions {
       display: flex;
+      justify-content: flex-end;
       gap: 10px;
+      padding: 0 20px 0 20px;
 
       cursor: pointer;
     }

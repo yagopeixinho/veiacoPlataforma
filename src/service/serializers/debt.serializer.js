@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import CategorySerializer from "./category.serializer";
 
 export default class DebtSerializer {
@@ -17,8 +18,8 @@ export default class DebtSerializer {
         categoryId: json.category.id.toString(),
         category: this.categorySerializer.fromJson(json.category),
       },
-      json.created_on && {
-        createdOn: json.created_on,
+      json.date && {
+        date: json.date,
       },
       { status: json.status }
     );
@@ -37,9 +38,12 @@ export default class DebtSerializer {
       debt.categoryId && {
         category_id: parseInt(debt.categoryId),
       },
+      debt.date && {
+        date: format(new Date(debt.date), "d/MM/yyyy"),
+      },
       { status: debt.status }
     );
-
+    debugger;
     return debtToJson;
   }
 }

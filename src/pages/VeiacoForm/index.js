@@ -65,7 +65,6 @@ export default function VeiacoForm() {
       <GenericOutletHeader
         pageTitle="Adicionar veiaco"
         inputSearchConfig={{ inputExist: false }}
-        buttonConfig={{ buttonExist: false }}
       />
 
       <div>
