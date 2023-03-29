@@ -407,6 +407,9 @@ template {
   line-height: 30px;
 }
 
+.generic-outlet-header {
+  padding: 14px 30px;
+}
 .generic-outlet-header .generic-outlet-content-info {
   display: flex;
   justify-content: space-between;
@@ -634,7 +637,6 @@ body {
   background-color: #fbfaf4;
   border-radius: 35px;
   box-shadow: 0px 0px 0px rgba(0, 19, 51, 0.1), 0px 2px 5px rgba(0, 19, 51, 0.1), 0px 9px 9px rgba(0, 19, 51, 0.09), 0px 21px 13px rgba(0, 19, 51, 0.05), 0px 38px 15px rgba(0, 19, 51, 0.01), 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 14px 30px;
   overflow: auto;
   height: 80vh;
   grid-row-start: 2;
@@ -717,30 +719,60 @@ body {
   cursor: pointer;
 }
 
-.container-form-veiaco {
-  display: flex;
-  gap: 40px;
-  padding: 60px;
+.outlet .veiaco-form {
+  height: 100%;
 }
-.container-form-veiaco .veiaco-form-left {
-  width: 340px;
+.outlet .veiaco-form .form-veiaco {
+  height: 100%;
+}
+.outlet .veiaco-form .form-veiaco .container-form-veiaco {
+  display: flex;
+  gap: 60px;
+  height: 100%;
+}
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-left {
+  flex: 1;
   text-align: center;
+  background-color: #f6dde6;
+  padding: 40px 0;
 }
-.container-form-veiaco .veiaco-form-right {
-  width: 40%;
-  display: flex;
-  gap: 10px 40px;
-  flex-direction: column;
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-left .headline-new-veiaco {
+  font-size: 38px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
 }
-.container-form-veiaco .veiaco-form-right input {
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right {
+  flex: 2;
+  padding: 52px 52px 52px 0px;
+}
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right .veiaco-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px 52px 52px 0px;
+  gap: 34px;
+}
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right h1 {
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  line-height: 40px;
+}
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right input {
   font-size: 26px;
   font-weight: 300;
 }
-.container-form-veiaco .veiaco-form-right .veiaco-button-row {
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right .veiaco-button-row {
   width: 100%;
   margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
 }
-.container-form-veiaco .veiaco-form-right .veiaco-button-row button {
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right .veiaco-button-row .btn-div {
+  width: 180px;
+}
+.outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right .veiaco-button-row .btn-div button {
   background-color: #ac4797;
   color: #fbfaf4;
   padding: 10px 15px;
