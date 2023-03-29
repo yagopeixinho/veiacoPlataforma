@@ -85,18 +85,16 @@ export default function VeiacoForm() {
                   </div>
                 </div>
                 <div className="veiaco-form-right">
-                  <h1>Informações básicas</h1>
-
                   <div className="veiaco-form-grid">
                     <TextInput label="Nome" name="name" />
                     <TextInput label="E-mail" name="email" />
                     <TextInput label="Telefone" name="phone" />
                     <TextInput label="Cargo" name="occupation" />
-                  </div>
 
-                  <div className="veiaco-button-row">
-                    <div className="btn-div">
-                      <ButtonSave label="Salvar" type="submit" />
+                    <div className="veiaco-button-row">
+                      <div className="btn-div">
+                        <ButtonSave label="Salvar" type="submit" />
+                      </div>
                     </div>
                   </div>
                 </div>

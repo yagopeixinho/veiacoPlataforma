@@ -1,6 +1,5 @@
 .veiaco-dashboard-container {
   display: flex;
-  height: 100%;
 
   .veiaco-left-side {
     flex: 1;
@@ -9,12 +8,12 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       justify-items: center;
+      padding: 14px 30px;
     }
   }
 
   .veiaco-right-side {
     flex: 0.3;
-    position: relative;
     bottom: 40px;
     left: 30px;
     display: flex;
@@ -60,7 +59,7 @@
       display: flex;
       justify-content: flex-end;
       gap: 10px;
-      padding: 0 20px 0 20px;
+      padding: 0 30px 30px 30px;
 
       cursor: pointer;
     }
