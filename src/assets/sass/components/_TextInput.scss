@@ -1,0 +1,9 @@
+.container-error {
+  height: 30px;
+
+  .error-label {
+    @include label-2-poppins;
+    color: $main-color-1;
+    animation: errorFormMsg 0.4s;
+  }
+}

@@ -29,7 +29,7 @@
             display: grid;
             grid-template-columns: 1fr;
             padding: 10px 52px 52px 0px;
-            gap: 34px;
+            gap: 6px;
           }
 
           h1 {
@@ -40,6 +40,7 @@
           input {
             font-size: 26px;
             font-weight: 300;
+            line-height: 20px;
           }
 
           .veiaco-button-row {
@@ -52,7 +53,7 @@
               width: 180px;
 
               button {
-                @include main-button-1;
+                @include main-button-4;
                 width: 100%;
                 cursor: pointer;
               }

@@ -15,7 +15,8 @@
   border-bottom: 1px solid $main-color-gray-4;
   outline: none;
   background-color: transparent;
-  @include label-3-raleway;
-  font-weight: 500;
+  @include label-2-poppins;
+  color: $main-color-dark-000;
+  font-weight: 400;
   width: 100%;
 }

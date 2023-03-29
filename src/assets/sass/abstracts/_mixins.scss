@@ -127,6 +127,15 @@
   @include label-1-poppins;
 }
 
+@mixin main-button-4 {
+  background-color: $main-color-4;
+  color: $main-color-light-1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  @include label-1-poppins;
+}
+
 /**** Dialog buttons ****/
 @mixin button-confirm {
   background-color: $danger-color-1;
