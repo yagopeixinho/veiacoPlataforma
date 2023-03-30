@@ -1,0 +1,80 @@
+.outlet {
+  .debt-form {
+    height: 100%;
+
+    .form-debt {
+      height: 100%;
+
+      .container-form-debt {
+        display: flex;
+        gap: 60px;
+        height: 100%;
+
+        .debt-form-left {
+          flex: 1;
+          text-align: center;
+          background-color: $main-color-3;
+          padding: 4% 0;
+
+          .headline-new-debt {
+            @include headline-1;
+          }
+
+          .veiaco-header-info {
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+
+            .veiaco-name {
+              @include headline-2;
+            }
+
+            .veiaco-occupation {
+              @include headline-6;
+              color: $main-color-gray-2;
+              font-weight: 400;
+              line-height: 26px;
+            }
+          }
+        }
+
+        .debt-form-right {
+          flex: 2;
+          padding-top: 4% 0;
+
+          .debt-form-grid {
+            display: grid;
+            grid-template-columns: 0.8fr;
+            gap: 6px;
+            padding-top: 8%;
+
+            .button-save-debt {
+              @include main-button-4;
+            }
+
+            .button-delete-debt {
+              @include main-button-1;
+            }
+          }
+
+          .button-row-debt {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+
+            .btn-div {
+              width: 140px;
+
+              button {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,8 +15,30 @@
   border-bottom: 1px solid $main-color-gray-4;
   outline: none;
   background-color: transparent;
-  @include label-2-poppins;
+  @include label-1-poppins;
   color: $main-color-dark-000;
   font-weight: 400;
   width: 100%;
+}
+
+/*======================================================
+    © Input checkbox
+======================================================*/
+.checkbox-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .label-checkbox-input {
+    @include label-1-poppins;
+    color: #757575;
+  }
+
+  .input-block-checkbox {
+    display: flex;
+
+    .input-checkbox {
+      cursor: pointer;
+    }
+  }
 }

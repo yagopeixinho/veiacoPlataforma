@@ -74,7 +74,9 @@ export default function VeiacoForm() {
               <div className="container-form-veiaco">
                 <div className="veiaco-form-left">
                   <div>
-                    <h1 className="headline-new-veiaco">Novo veiaco</h1>
+                    <h1 className="headline-new-veiaco">
+                      {action === "create" ? "Novo veiaco" : "Editando veiaco"}
+                    </h1>
                     <span>
                       <img
                         src={avatarVeiacoCard}

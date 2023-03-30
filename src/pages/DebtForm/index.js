@@ -6,25 +6,32 @@ import ButtonSave from "../../components/common/ButtonSave";
 import CheckboxInput from "../../components/common/CheckboxInput";
 import NumberInput from "../../components/common/NumberInput";
 import TextInput from "../../components/common/TextInput";
-import GenericOutletHeader from "../../components/layout/GenericOutletHeader";
 import CategoryService from "../../service/category.service";
 import DebtService from "../../service/debt.service";
-import { veiacoSchema } from "../../validations/veiaco.validation";
+import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card-1.png";
+import VeiacoService from "../../service/veiaco.service";
+import { debtSchema } from "../../validations/debt.validation";
 
 export default function DebtForm() {
   const { idVeiaco, idDivida } = useParams();
   const navigate = useNavigate();
+  const [veiaco, setVeiaco] = useState({});
   const [action, setAction] = useState("create");
   const [debtFormInitialValues, setDebtFormInitialValues] = useState({});
   const [categories, setCategories] = useState([]);
 
   const _categoryService = new CategoryService();
   const _debtService = new DebtService();
+  const _veiacoService = new VeiacoService();
 
   useEffect(() => {
     async function init() {
       const categoriesResponse = await _categoryService.list();
       setCategories(categoriesResponse);
+
+      const responseService = await _veiacoService.read(idVeiaco);
+      setVeiaco(responseService);
+      debugger;
 
       if (idDivida) {
         setAction("edit");
@@ -78,61 +85,94 @@ export default function DebtForm() {
   }
 
   return (
-    <div>
-      <GenericOutletHeader
-        pageTitle="Criando Dívida!"
-        inputSearchConfig={{ inputExist: false }}
-        buttonConfig={{ buttonExist: false }}
-      />
+    <div className="debt-form">
+      <Formik
+        enableReinitialize={true}
+        validationSchema={debtSchema}
+        initialValues={debtFormInitialValues}
+        onSubmit={(values) => {
+          createDebt(values);
+        }}
+      >
+        {(props) => {
+          return (
+            <Form className="form-debt">
+              <div className="container-form-debt">
+                <div className="debt-form-left">
+                  <div>
+                    <h1 className="headline-new-debt">
+                      {action === "create" ? "Nova dívida" : "Editando dívida"}
+                    </h1>
+                    <span>
+                      <img
+                        src={avatarVeiacoCard}
+                        alt="Temporary Veiaco user"
+                        className="debt-picture"
+                      />
+                    </span>
+                    <div className="veiaco-header-info">
+                      <label className="veiaco-name">{veiaco.name}</label>
+                      <label className="veiaco-occupation">
+                        {veiaco.occupation}
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div className="debt-form-right">
+                  <div className="debt-form-grid">
+                    <TextInput label="Nome" name="name" />
+                    <NumberInput label="Valor" name="value" />
+                    <CheckboxInput label="Status" name="status" />
+                    <select
+                      name="category"
+                      onChange={(ev) => {
+                        props.setFieldValue("categoryId", ev.target.value);
+                      }}
+                    >
+                      {categories.map((item, index) => (
+                        <option value={item.id} key={index}>
+                          {item.name}
+                        </option>
+                      ))}
+                    </select>
 
-      <div>
-        <Formik
-          enableReinitialize={true}
-          validationSchema={veiacoSchema}
-          initialValues={debtFormInitialValues}
-          onSubmit={(values) => {
-            createDebt(values);
-          }}
-        >
-          {(props) => {
-            return (
-              <Form>
-                {JSON.stringify(props.values)}
-                <TextInput label="Nome" name="name" />
-                <NumberInput label="Valor" name="value" />
-                <CheckboxInput label="Status" name="status" />
-                <select
-                  name="category"
-                  onChange={(ev) => {
-                    props.setFieldValue("categoryId", ev.target.value);
-                  }}
-                >
-                  {categories.map((item, index) => (
-                    <option value={item.id} key={index}>
-                      {item.name}
-                    </option>
-                  ))}
-                </select>
-                <ButtonSave label="Salvar" type="submit" />
-                <ButtonDelete
-                  label="Deletar"
-                  type="buton"
-                  onClick={() => {
-                    deleteDebt(idDivida);
-                  }}
-                />
-                <input
-                  type="date"
-                  name="date"
-                  onChange={(ev) => {
-                    props.setFieldValue("date", ev.target.value);
-                  }}
-                />
-              </Form>
-            );
-          }}
-        </Formik>
-      </div>
+                    <input
+                      type="date"
+                      name="date"
+                      onChange={(ev) => {
+                        props.setFieldValue("date", ev.target.value);
+                      }}
+                    />
+
+                    <div className="button-row-debt">
+                      {action === "edit" && (
+                        <div className="btn-div">
+                          <ButtonDelete
+                            label="Deletar"
+                            type="buton"
+                            onClick={() => {
+                              deleteDebt(idDivida);
+                            }}
+                            styles="button-delete-debt"
+                          />
+                        </div>
+                      )}
+
+                      <div className="btn-div">
+                        <ButtonSave
+                          label="Salvar"
+                          type="submit"
+                          styles="button-save-debt"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Form>
+          );
+        }}
+      </Formik>
     </div>
   );
 }

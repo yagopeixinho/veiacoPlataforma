@@ -100,6 +100,10 @@
     © Buttons
 ======================================================*/
 /**** Main buttons ****/
+button {
+  cursor: pointer;
+}
+
 @mixin main-button-1 {
   background-color: $main-color-1;
   color: $main-color-light-1;

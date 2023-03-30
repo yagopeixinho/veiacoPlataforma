@@ -24,6 +24,10 @@
     © Buttons
 ======================================================*/
 /**** Main buttons ****/
+button {
+  cursor: pointer;
+}
+
 /**** Dialog buttons ****/
 /*======================================================
 
@@ -391,13 +395,35 @@ template {
   border-bottom: 1px solid #c8c8c8;
   outline: none;
   background-color: transparent;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   line-height: 30px;
   color: #000;
   font-weight: 400;
   width: 100%;
+}
+
+/*======================================================
+    © Input checkbox
+======================================================*/
+.checkbox-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.checkbox-input-container .label-checkbox-input {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #757575;
+}
+.checkbox-input-container .input-block-checkbox {
+  display: flex;
+}
+.checkbox-input-container .input-block-checkbox .input-checkbox {
+  cursor: pointer;
 }
 
 /********************
@@ -821,6 +847,95 @@ body {
   line-height: 30px;
   width: 100%;
   cursor: pointer;
+}
+
+.outlet .debt-form {
+  height: 100%;
+}
+.outlet .debt-form .form-debt {
+  height: 100%;
+}
+.outlet .debt-form .form-debt .container-form-debt {
+  display: flex;
+  gap: 60px;
+  height: 100%;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-left {
+  flex: 1;
+  text-align: center;
+  background-color: #f6dde6;
+  padding: 4% 0;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-left .headline-new-debt {
+  font-size: 38px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-left .veiaco-header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-left .veiaco-header-info .veiaco-name {
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-left .veiaco-header-info .veiaco-occupation {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  color: #979ca5;
+  font-weight: 400;
+  line-height: 26px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right {
+  flex: 2;
+  padding-top: 4% 0;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .debt-form-grid {
+  display: grid;
+  grid-template-columns: 0.8fr;
+  gap: 6px;
+  padding-top: 8%;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .debt-form-grid .button-save-debt {
+  background-color: #769ae7;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .debt-form-grid .button-delete-debt {
+  background-color: #ac4797;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt .btn-div {
+  width: 140px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt .btn-div button {
+  width: 100%;
 }
 
 /********************

@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
         element: <VeiacoForm />,
       },
       {
-        path: "/veiaco/divida/:idDivida",
+        path: "/veiaco/:idVeiaco/divida/:idDivida",
         element: <DebtForm />,
       },
       {

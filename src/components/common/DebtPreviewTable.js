@@ -37,7 +37,7 @@ export default function DebtPreviewTable() {
             <tr
               key={index}
               onClick={() => {
-                navigate(`/veiaco/divida/${debt.id}`);
+                navigate(`/veiaco/${id}/divida/${debt.id}`);
               }}
             >
               <td>
