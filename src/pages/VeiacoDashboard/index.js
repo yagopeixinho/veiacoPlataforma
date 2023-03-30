@@ -93,27 +93,27 @@ export default function VeiacoDashboard() {
               <label className="veiaco-occupation">{veiaco.occupation}</label>
             </div>
             <hr className="hr-info-veiaco" />
+            <div className="veiaco-actions">
+              <img
+                src={EditVeiacoIcon}
+                alt="Veiaco user profile"
+                className="image-edit-veiaco"
+                onClick={() => {
+                  navigate(`/veiaco/${id}/editar`);
+                }}
+              />
+              <img
+                src={DeleteVeiacoIcon}
+                alt="Veiaco delete"
+                className="image-delete-veiaco"
+                onClick={() => {
+                  setDisplayConfirmationDialog(true);
+                }}
+              />
+            </div>
 
             <VeiacoLabelPhone phone={veiaco.phone} />
             <VeiacoLabelEmail email={veiaco.email} />
-          </div>
-          <div className="veiaco-actions">
-            <img
-              src={EditVeiacoIcon}
-              alt="Veiaco user profile"
-              className="image-edit-veiaco"
-              onClick={() => {
-                navigate(`/veiaco/${id}/editar`);
-              }}
-            />
-            <img
-              src={DeleteVeiacoIcon}
-              alt="Veiaco delete"
-              className="image-edit-veiaco"
-              onClick={() => {
-                setDisplayConfirmationDialog(true);
-              }}
-            />
           </div>
         </div>
       </div>

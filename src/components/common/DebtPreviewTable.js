@@ -22,7 +22,6 @@ export default function DebtPreviewTable() {
       <div className="container-preview-table-headline">
         <h1>Dívidas pendentes</h1>
       </div>
-
       <table className="preview-table">
         <thead>
           <tr>
@@ -53,7 +52,7 @@ export default function DebtPreviewTable() {
                 {debt.status ? (
                   <label className="status-active">Ativo</label>
                 ) : (
-                  <label classNaem="status-inactive">Quitado</label>
+                  <label className="status-inactive">Quitado</label>
                 )}
               </td>
             </tr>

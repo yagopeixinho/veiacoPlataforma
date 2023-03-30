@@ -4,6 +4,7 @@
   .container-preview-table-headline {
     h1 {
       @include headline-5;
+      margin-bottom: 0px;
     }
   }
 
@@ -25,6 +26,7 @@
       tr {
         @include label-2-poppins;
         font-weight: 500;
+        cursor: pointer;
 
         td:first-child {
           text-align: left;
@@ -55,9 +57,9 @@
           }
 
           .status-inactive {
-            background-color: $main-color-2;
+            background-color: $main-color-3;
             border-radius: 10px;
-            padding: 5px 26px;
+            padding: 5px 14px;
           }
         }
       }

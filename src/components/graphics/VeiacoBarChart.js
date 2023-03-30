@@ -6,7 +6,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -26,9 +25,8 @@ export default function VeiacoBarChart({ data }) {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="totalValue" fill="#61C87E" />
+        <Tooltip labelStyle={{ fontFamily: "Poppins", outline: "none" }} />
+        <Bar dataKey="totalValue" name="Valor" fill="#61C87E" />
       </BarChart>
     </ResponsiveContainer>
   );
