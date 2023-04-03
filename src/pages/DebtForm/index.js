@@ -12,6 +12,8 @@ import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card-1.png";
 import VeiacoService from "../../service/veiaco.service";
 import { debtSchema } from "../../validations/debt.validation";
 import DropdownInput from "../../components/common/DropdownInput";
+import DateInput from "../../components/common/InputDate";
+import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
 
 export default function DebtForm() {
   const { idVeiaco, idDivida } = useParams();
@@ -20,6 +22,7 @@ export default function DebtForm() {
   const [action, setAction] = useState("create");
   const [debtFormInitialValues, setDebtFormInitialValues] = useState({});
   const [categories, setCategories] = useState([]);
+  const [confirmationDialog, setConfirmationDialog] = useState(false);
 
   const _categoryService = new CategoryService();
   const _debtService = new DebtService();
@@ -59,8 +62,8 @@ export default function DebtForm() {
     if (action === "create") {
       await _debtService
         .create(values)
-        .then((response) => {
-          navigate(`/veiaco/${response.id}/dashboard`);
+        .then(() => {
+          navigate(`/veiaco/${values.veiacoId}/dashboard`);
         })
         .catch((err) => console.log(err))
         .finally(() => {});
@@ -87,6 +90,21 @@ export default function DebtForm() {
 
   return (
     <div className="debt-form">
+      {confirmationDialog && (
+        <ConfirmationDialog
+          description="Deseja mesmo apagar essa dívida?"
+          message="Cuidado!"
+          labelCancel="Cancelar"
+          labelConfirm="Confirmar"
+          onConfirm={() => {
+            deleteDebt(idDivida);
+          }}
+          onCancel={() => {
+            setConfirmationDialog(false);
+          }}
+        />
+      )}
+
       <Formik
         enableReinitialize={true}
         validationSchema={debtSchema}
@@ -121,20 +139,25 @@ export default function DebtForm() {
                 </div>
                 <div className="debt-form-right">
                   <div className="debt-form-grid">
-                    <TextInput label="Nome" name="name" fieldName="name" />
+                    <TextInput
+                      label="Nome"
+                      name="name"
+                      fieldName="name"
+                      classes="input-debt-form"
+                    />
 
                     <NumberInput
                       label="R$ Valor"
                       name="value"
                       fieldName="value"
+                      classes="input-debt-form"
                     />
 
-                    <CheckboxInput
-                      label="Status"
-                      name="status"
-                      fieldName="status"
+                    <DateInput
+                      name="date"
+                      fieldName="date"
+                      classes="input-debt-form"
                     />
-                    {JSON.stringify(props.values)}
 
                     <DropdownInput
                       form={props}
@@ -144,15 +167,14 @@ export default function DebtForm() {
                       onChange={(ev) => {
                         props.setFieldValue("categoryId", ev.target.value);
                       }}
+                      classes="input-debt-form"
                     />
-                    {JSON.stringify(props.errors)}
 
-                    <input
-                      type="date"
-                      name="date"
-                      onChange={(ev) => {
-                        props.setFieldValue("date", ev.target.value);
-                      }}
+                    <CheckboxInput
+                      label="Devendo?"
+                      name="status"
+                      fieldName="status"
+                      classes="input-debt-form"
                     />
 
                     <div className="button-row-debt">
@@ -160,11 +182,11 @@ export default function DebtForm() {
                         <div className="btn-div">
                           <ButtonDelete
                             label="Deletar"
-                            type="buton"
+                            type="button"
                             onClick={() => {
-                              deleteDebt(idDivida);
+                              setConfirmationDialog(true);
                             }}
-                            styles="button-delete-debt"
+                            styles="button-debt-form-delete"
                           />
                         </div>
                       )}
@@ -173,7 +195,7 @@ export default function DebtForm() {
                         <ButtonSave
                           label="Salvar"
                           type="submit"
-                          styles="button-save-debt"
+                          styles="button-debt-form-confirm "
                         />
                       </div>
                     </div>

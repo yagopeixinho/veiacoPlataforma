@@ -7,7 +7,7 @@
 
       .container-form-debt {
         display: flex;
-        gap: 60px;
+        gap: 24px;
         height: 100%;
 
         .debt-form-left {
@@ -45,7 +45,7 @@
 
           .debt-form-grid {
             display: grid;
-            grid-template-columns: 0.8fr;
+            grid-template-columns: 0.6fr;
             gap: 6px;
             padding-top: 8%;
 
@@ -56,14 +56,27 @@
             .button-delete-debt {
               @include main-button-1;
             }
+
+            .input-debt-form {
+              @include headline-5;
+              font-weight: 400;
+            }
           }
 
           .button-row-debt {
             width: 100%;
-            margin-top: 30px;
             display: flex;
             justify-content: flex-end;
-            gap: 20px;
+            gap: 14px;
+            margin-top: 14px;
+
+            .button-debt-form-delete {
+              @include button-confirm;
+            }
+
+            .button-debt-form-confirm {
+              @include button-cancel;
+            }
 
             .btn-div {
               width: 140px;

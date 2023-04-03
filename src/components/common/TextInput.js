@@ -10,17 +10,15 @@ export default function TextInput({
   const [field, meta] = useField(props);
 
   return (
-    <div className={classes}>
-      <div>
-        {!props.mask && (
-          <input
-            className="input-text"
-            {...field}
-            {...props}
-            placeholder={label}
-          />
-        )}
-      </div>
+    <div>
+      {!props.mask && (
+        <input
+          className={classes + " input-text"}
+          {...field}
+          {...props}
+          placeholder={label}
+        />
+      )}
 
       <div>
         {meta.touched && meta.error ? (

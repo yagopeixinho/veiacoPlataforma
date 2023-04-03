@@ -22,6 +22,21 @@
 }
 
 /*======================================================
+    © Input number
+======================================================*/
+.input-number {
+  padding: 10px 0 4px 0;
+  border: none;
+  border-bottom: 1px solid $main-color-gray-4;
+  outline: none;
+  background-color: transparent;
+  @include label-1-poppins;
+  color: $main-color-dark-000;
+  font-weight: 400;
+  width: 100%;
+}
+
+/*======================================================
     © Input checkbox
 ======================================================*/
 .checkbox-input-container {
@@ -46,15 +61,30 @@
 /*======================================================
     © Input select
 ======================================================*/
-.input-select-container {
-  .input-select {
-    @include label-1-poppins;
-    color: #757575;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    border: 1px solid $main-color-gray-4;
-  }
+
+.input-select {
+  @include label-1-poppins;
+  color: #757575;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border: 1px solid $main-color-gray-4;
+  outline: none;
+}
+
+/*======================================================
+    © Input date
+======================================================*/
+.input-date {
+  padding: 10px 0 4px 0;
+  border: none;
+  border-bottom: 1px solid $main-color-gray-4;
+  outline: none;
+  background-color: transparent;
+  @include label-1-poppins;
+  color: $main-color-dark-000;
+  font-weight: 400;
+  width: 100%;
 }

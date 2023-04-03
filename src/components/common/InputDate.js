@@ -1,6 +1,6 @@
 import { ErrorMessage, useField } from "formik";
 
-export default function DropdownInput({
+export default function InputDate({
   name,
   form,
   options,
@@ -12,19 +12,16 @@ export default function DropdownInput({
   const [field, meta] = useField(props);
 
   return (
-    <div className="input-select-container">
-      <select
+    <div>
+      <input
         {...field}
         {...props}
-        value={form.values.categoryId}
-        className={classes + " input-select"}
-      >
-        {options.map((item, index) => (
-          <option value={item.id} key={index}>
-            {item.name}
-          </option>
-        ))}
-      </select>
+        type="date"
+        name={name}
+        value={form?.values.date}
+        className={classes + " input-date"}
+      />
+
       <div>
         {meta.touched && meta.error ? (
           <div className="container-error">

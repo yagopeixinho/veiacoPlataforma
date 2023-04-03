@@ -6,4 +6,5 @@ export const debtSchema = Yup.object({
   value: Yup.number().required(messages.REQUIRED),
   status: Yup.boolean().required(messages.REQUIRED),
   categoryId: Yup.string().required(messages.REQUIRED),
+  date: Yup.string().required(messages.REQUIRED),
 });

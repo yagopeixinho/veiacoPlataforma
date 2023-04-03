@@ -416,6 +416,24 @@ template {
 }
 
 /*======================================================
+    © Input number
+======================================================*/
+.input-number {
+  padding: 10px 0 4px 0;
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000;
+  font-weight: 400;
+  width: 100%;
+}
+
+/*======================================================
     © Input checkbox
 ======================================================*/
 .checkbox-input-container {
@@ -440,7 +458,7 @@ template {
 /*======================================================
     © Input select
 ======================================================*/
-.input-select-container .input-select {
+.input-select {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -452,6 +470,25 @@ template {
   background-color: transparent;
   border: none;
   border: 1px solid #c8c8c8;
+  outline: none;
+}
+
+/*======================================================
+    © Input date
+======================================================*/
+.input-date {
+  padding: 10px 0 4px 0;
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000;
+  font-weight: 400;
+  width: 100%;
 }
 
 /********************
@@ -883,7 +920,7 @@ body {
 }
 .outlet .debt-form .form-debt .container-form-debt {
   display: flex;
-  gap: 60px;
+  gap: 24px;
   height: 100%;
 }
 .outlet .debt-form .form-debt .container-form-debt .debt-form-left {
@@ -924,7 +961,7 @@ body {
 }
 .outlet .debt-form .form-debt .container-form-debt .debt-form-right .debt-form-grid {
   display: grid;
-  grid-template-columns: 0.8fr;
+  grid-template-columns: 0.6fr;
   gap: 6px;
   padding-top: 8%;
 }
@@ -950,12 +987,43 @@ body {
   font-weight: 400;
   line-height: 30px;
 }
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .debt-form-grid .input-debt-form {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  font-weight: 400;
+}
 .outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt {
   width: 100%;
-  margin-top: 30px;
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 14px;
+  margin-top: 14px;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt .button-debt-form-delete {
+  background-color: #ce4949;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  cursor: pointer;
+}
+.outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt .button-debt-form-confirm {
+  background-color: #62bb5f;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  cursor: pointer;
 }
 .outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt .btn-div {
   width: 140px;

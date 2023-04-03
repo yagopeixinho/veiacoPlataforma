@@ -10,7 +10,7 @@ export default function CheckboxInput({
   const [field, meta] = useField(props);
 
   return (
-    <div className={classes + "checkbox-input-container"}>
+    <div className={classes + " checkbox-input-container"}>
       <label htmlFor={props.id || props.name} className="label-checkbox-input">
         {label}
       </label>
