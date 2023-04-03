@@ -1,26 +1,30 @@
 import React from "react";
-import { useField } from "formik";
+import { ErrorMessage, useField } from "formik";
 
-export default function NumberInput({ label, classes = "", ...props }) {
+export default function NumberInput({
+  fieldName,
+  label,
+  classes = "",
+  ...props
+}) {
   const [field, meta] = useField(props);
 
   return (
     <div className={classes}>
       <div className="input-block">
-        {!props.mask && (
-          <input
-            className="input-text"
-            {...field}
-            {...props}
-            type="number"
-            placeholder={label}
-          />
-        )}
+        <input
+          className="input-text"
+          {...field}
+          {...props}
+          type="number"
+          placeholder={label}
+          min="0"
+        />
       </div>
       <div>
         {meta.touched && meta.error ? (
           <div className="container-error">
-            <label className="error-label">{meta.error}</label>
+            <ErrorMessage name={fieldName} />
           </div>
         ) : (
           <div className="container-error" />

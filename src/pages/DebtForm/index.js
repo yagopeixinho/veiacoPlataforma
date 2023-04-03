@@ -11,6 +11,7 @@ import DebtService from "../../service/debt.service";
 import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card-1.png";
 import VeiacoService from "../../service/veiaco.service";
 import { debtSchema } from "../../validations/debt.validation";
+import DropdownInput from "../../components/common/DropdownInput";
 
 export default function DebtForm() {
   const { idVeiaco, idDivida } = useParams();
@@ -120,21 +121,31 @@ export default function DebtForm() {
                 </div>
                 <div className="debt-form-right">
                   <div className="debt-form-grid">
-                    <TextInput label="Nome" name="name" />
-                    <NumberInput label="Valor" name="value" />
-                    <CheckboxInput label="Status" name="status" />
-                    <select
-                      name="category"
+                    <TextInput label="Nome" name="name" fieldName="name" />
+
+                    <NumberInput
+                      label="R$ Valor"
+                      name="value"
+                      fieldName="value"
+                    />
+
+                    <CheckboxInput
+                      label="Status"
+                      name="status"
+                      fieldName="status"
+                    />
+                    {JSON.stringify(props.values)}
+
+                    <DropdownInput
+                      form={props}
+                      options={categories}
+                      name="categoryId"
+                      fieldName="categoryId"
                       onChange={(ev) => {
                         props.setFieldValue("categoryId", ev.target.value);
                       }}
-                    >
-                      {categories.map((item, index) => (
-                        <option value={item.id} key={index}>
-                          {item.name}
-                        </option>
-                      ))}
-                    </select>
+                    />
+                    {JSON.stringify(props.errors)}
 
                     <input
                       type="date"

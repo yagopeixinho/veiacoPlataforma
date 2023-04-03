@@ -1,7 +1,12 @@
 import React from "react";
-import { useField } from "formik";
+import { ErrorMessage, useField } from "formik";
 
-export default function CheckboxInput({ label, classes = "", ...props }) {
+export default function CheckboxInput({
+  fieldName,
+  label,
+  classes = "",
+  ...props
+}) {
   const [field, meta] = useField(props);
 
   return (
@@ -22,7 +27,7 @@ export default function CheckboxInput({ label, classes = "", ...props }) {
       <div>
         {meta.touched && meta.error ? (
           <div className="container-error">
-            <label className="error-label">{meta.error}</label>
+            <ErrorMessage name={fieldName} />
           </div>
         ) : (
           <div className="container-error" />

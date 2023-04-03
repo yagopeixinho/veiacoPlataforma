@@ -42,3 +42,19 @@
     }
   }
 }
+
+/*======================================================
+    © Input select
+======================================================*/
+.input-select-container {
+  .input-select {
+    @include label-1-poppins;
+    color: #757575;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border: 1px solid $main-color-gray-4;
+  }
+}

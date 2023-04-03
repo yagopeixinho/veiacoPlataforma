@@ -318,6 +318,17 @@ textarea {
   height: auto;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
@@ -424,6 +435,23 @@ template {
 }
 .checkbox-input-container .input-block-checkbox .input-checkbox {
   cursor: pointer;
+}
+
+/*======================================================
+    © Input select
+======================================================*/
+.input-select-container .input-select {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #757575;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border: 1px solid #c8c8c8;
 }
 
 /********************
@@ -629,8 +657,6 @@ template {
 
 .container-error {
   height: 30px;
-}
-.container-error .error-label {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
