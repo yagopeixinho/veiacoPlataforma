@@ -6,22 +6,27 @@ import TextInput from "../../components/common/TextInput";
 import VeiacoService from "../../service/veiaco.service";
 import { veiacoSchema } from "../../validations/veiaco.validation";
 import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card-1.png";
+import ButtonDelete from "../../components/common/ButtonDelete";
+import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
 
 export default function VeiacoForm() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [action, setAction] = useState("create");
   const [veiacoFormInitialValues, setVeiacoFormInitialValues] = useState({});
+  const [veiaco, setVeiaco] = useState();
+  const [confirmationDialog, setConfirmationDialog] = useState(false);
 
   const _veiacoService = new VeiacoService();
 
   useEffect(() => {
     async function init() {
+      const veiacoServiceResponse = await _veiacoService.read(id);
+      setVeiacoFormInitialValues(veiacoServiceResponse);
+      setVeiaco(veiacoServiceResponse);
+
       if (id) {
         setAction("edit");
-        const veiacoServiceResponse = await _veiacoService.read(id);
-
-        setVeiacoFormInitialValues(veiacoServiceResponse);
       } else {
         setAction("create");
 
@@ -58,8 +63,33 @@ export default function VeiacoForm() {
     }
   }
 
+  async function deleteVeiaco(id) {
+    await _veiacoService
+      .delete(id)
+      .then(() => {
+        navigate(`/veiacos`);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {});
+  }
+
   return (
     <div className="veiaco-form">
+      {confirmationDialog && (
+        <ConfirmationDialog
+          description="Deseja mesmo apagar esse veiaco?"
+          message="Cuidado!"
+          labelCancel="Cancelar"
+          labelConfirm="Confirmar"
+          onConfirm={() => {
+            deleteVeiaco(id);
+          }}
+          onCancel={() => {
+            setConfirmationDialog(false);
+          }}
+        />
+      )}
+
       <Formik
         enableReinitialize={true}
         validationSchema={veiacoSchema}
@@ -84,18 +114,64 @@ export default function VeiacoForm() {
                         className="veiaco-picture"
                       />
                     </span>
+                    <div className="veiaco-header-info">
+                      <label className="veiaco-name">{veiaco?.name}</label>
+                      <label className="veiaco-occupation">
+                        {veiaco?.occupation}
+                      </label>
+                    </div>
                   </div>
                 </div>
                 <div className="veiaco-form-right">
                   <div className="veiaco-form-grid">
-                    <TextInput label="Nome" name="name" />
-                    <TextInput label="E-mail" name="email" />
-                    <TextInput label="Telefone" name="phone" />
-                    <TextInput label="Cargo" name="occupation" />
+                    <TextInput
+                      label="Nome"
+                      name="name"
+                      fieldName="name"
+                      classes="input-veiaco-form"
+                    />
 
-                    <div className="veiaco-button-row">
+                    <TextInput
+                      label="E-mail"
+                      name="email"
+                      fieldName="name"
+                      classes="input-veiaco-form"
+                    />
+
+                    <TextInput
+                      label="Telefone"
+                      name="phone"
+                      fieldName="name"
+                      classes="input-veiaco-form"
+                    />
+
+                    <TextInput
+                      label="Cargo"
+                      name="occupation"
+                      fieldName="name"
+                      classes="input-veiaco-form"
+                    />
+
+                    <div className="button-row-veiaco">
+                      {action === "edit" && (
+                        <div className="btn-div">
+                          <ButtonDelete
+                            label="Deletar"
+                            type="button"
+                            onClick={() => {
+                              setConfirmationDialog(true);
+                            }}
+                            styles="button-veiaco-form-delete"
+                          />
+                        </div>
+                      )}
+
                       <div className="btn-div">
-                        <ButtonSave label="Salvar" type="submit" />
+                        <ButtonSave
+                          label="Salvar"
+                          type="submit"
+                          styles="button-veiaco-form-confirm "
+                        />
                       </div>
                     </div>
                   </div>

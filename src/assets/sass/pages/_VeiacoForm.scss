@@ -19,6 +19,24 @@
           .headline-new-veiaco {
             @include headline-1;
           }
+
+          .veiaco-header-info {
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+
+            .veiaco-name {
+              @include headline-2;
+            }
+
+            .veiaco-occupation {
+              @include headline-6;
+              color: $main-color-gray-2;
+              font-weight: 400;
+              line-height: 26px;
+            }
+          }
         }
 
         .veiaco-form-right {
@@ -27,30 +45,44 @@
 
           .veiaco-form-grid {
             display: grid;
-            grid-template-columns: 0.8fr;
+            grid-template-columns: 0.6fr;
             gap: 6px;
             padding-top: 8%;
+
+            .button-save-veiaco {
+              @include main-button-4;
+            }
+
+            .button-delete-veiaco {
+              @include main-button-1;
+            }
+
+            .input-veiaco-form {
+              @include headline-5;
+              font-weight: 400;
+            }
           }
 
-          input {
-            font-size: 26px;
-            font-weight: 300;
-            line-height: 20px;
-          }
-
-          .veiaco-button-row {
+          .button-row-veiaco {
             width: 100%;
-            margin-top: 30px;
             display: flex;
             justify-content: flex-end;
+            gap: 14px;
+            margin-top: 14px;
+
+            .button-veiaco-form-delete {
+              @include button-confirm;
+            }
+
+            .button-veiaco-form-confirm {
+              @include button-cancel;
+            }
 
             .btn-div {
-              width: 180px;
+              width: 140px;
 
               button {
-                @include main-button-4;
                 width: 100%;
-                cursor: pointer;
               }
             }
           }

@@ -35,7 +35,6 @@ export default function DebtForm() {
 
       const responseService = await _veiacoService.read(idVeiaco);
       setVeiaco(responseService);
-      debugger;
 
       if (idDivida) {
         setAction("edit");
@@ -63,7 +62,7 @@ export default function DebtForm() {
       await _debtService
         .create(values)
         .then(() => {
-          navigate(`/veiaco/${values.veiacoId}/dashboard`);
+          navigate(`/veiaco/${idVeiaco}/dashboard`);
         })
         .catch((err) => console.log(err))
         .finally(() => {});
@@ -82,7 +81,7 @@ export default function DebtForm() {
     await _debtService
       .delete(id)
       .then(() => {
-        navigate(`/veiacos`);
+        navigate(`/veiaco/${idVeiaco}/dashboard`);
       })
       .catch((err) => console.log(err))
       .finally(() => {});
