@@ -11,15 +11,22 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-top: 130px;
+    justify-content: space-around;
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
     .veiaco-container {
       display: flex;
       align-items: center;
       gap: 20px;
+      @include label-2-raleway;
 
       .veiaco-link {
-        color: white;
+        color: $main-color-light-1;
       }
     }
   }

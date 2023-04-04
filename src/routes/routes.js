@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-
+import { Navigate } from "react-router-dom";
 import App from "../App";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
@@ -8,6 +8,17 @@ import VeiacoDashboard from "../pages/VeiacoDashboard";
 import VeiacoForm from "../pages/VeiacoForm";
 import DebtForm from "../pages/DebtForm";
 
+export function Private({ children }) {
+  // """" Temporary mock logic to get the authenticated user
+  const authenticated = localStorage.getItem("TOKEN");
+
+  if (!authenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+}
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -15,36 +26,70 @@ export const router = createBrowserRouter([
     errorElement: "",
     children: [
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
         path: "/home",
-        element: <Home />,
+        element: (
+          <Private>
+            <Home />
+          </Private>
+        ),
       },
       {
         path: "/veiacos",
-        element: <Veiacos />,
+        element: (
+          <Private>
+            <Veiacos />
+          </Private>
+        ),
       },
       {
         path: "/veiaco/adicionar",
-        element: <VeiacoForm />,
+        element: (
+          <Private>
+            <VeiacoForm />
+          </Private>
+        ),
       },
       {
         path: "/veiaco/:id/editar",
-        element: <VeiacoForm />,
+        element: (
+          <Private>
+            <VeiacoForm />
+          </Private>
+        ),
       },
       {
         path: "/veiaco/:idVeiaco/divida/:idDivida",
-        element: <DebtForm />,
+        element: (
+          <Private>
+            <DebtForm />
+          </Private>
+        ),
       },
       {
         path: "/veiaco/:idVeiaco/divida/adicionar",
-        element: <DebtForm />,
+        element: (
+          <Private>
+            <DebtForm />
+          </Private>
+        ),
       },
       {
         path: "/veiaco/:id/dashboard",
-        element: <VeiacoDashboard />,
+        element: (
+          <Private>
+            <VeiacoDashboard />
+          </Private>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

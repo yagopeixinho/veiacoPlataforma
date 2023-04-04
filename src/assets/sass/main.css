@@ -728,15 +728,24 @@ template {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: 130px;
+  justify-content: space-around;
+}
+.veiaco-sidebar .veiaco-nav .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .veiaco-sidebar .veiaco-nav .veiaco-container {
   display: flex;
   align-items: center;
   gap: 20px;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
 }
 .veiaco-sidebar .veiaco-nav .veiaco-container .veiaco-link {
-  color: white;
+  color: #fbfaf4;
 }
 
 .veiaco-header {
@@ -1090,6 +1099,85 @@ body {
 }
 .outlet .debt-form .form-debt .container-form-debt .debt-form-right .button-row-debt .btn-div button {
   width: 100%;
+}
+
+.login-page {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(89.11deg, #a6328e 0.76%, #ffffff 81.38%);
+}
+.login-page .login-page-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-page .login-page-left .login-container {
+  background: #fbfaf4;
+  border-radius: 8px;
+  padding: 70px 60px;
+}
+.login-page .login-page-left .login-container .login-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.login-page .login-page-left .login-container .login-content .headline-login-box {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+}
+.login-page .login-page-left .login-container .login-content .form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-page .login-page-left .login-container .login-content .form-login .form-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.login-page .login-page-left .login-container .login-content .form-login .form-settings .checkbox-manter-conectado label {
+  font-size: 14px;
+}
+.login-page .login-page-left .login-container .login-content .form-login .form-settings .recuperar-senha {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  color: #769ae7;
+  font-size: 14px;
+}
+.login-page .login-page-left .login-container .login-content .form-login .button-login {
+  background-color: #769ae7;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  width: 100%;
+}
+.login-page .login-page-left .login-container .login-content .footer-container {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  color: #757575;
+  font-size: 14px;
+  text-align: center;
+}
+.login-page .login-page-left .login-container .login-content .footer-container .register-here {
+  color: #b1529e;
+  cursor: pointer;
+}
+.login-page .login-page-right {
+  flex: 1.4;
+  display: flex;
 }
 
 /********************

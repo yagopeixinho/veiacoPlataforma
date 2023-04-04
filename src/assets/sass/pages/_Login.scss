@@ -1,0 +1,75 @@
+.login-page {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(89.11deg, #a6328e 0.76%, #ffffff 81.38%);
+
+  .login-page-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-container {
+      background: $main-color-light-1;
+      border-radius: 8px;
+      padding: 70px 60px;
+
+      .login-content {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .headline-login-box {
+          text-align: center;
+          @include label-2-raleway;
+        }
+
+        .form-login {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .form-settings {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .checkbox-manter-conectado {
+              label {
+                font-size: 14px;
+              }
+            }
+
+            .recuperar-senha {
+              @include label-3-raleway;
+              color: $main-color-4;
+              font-size: 14px;
+            }
+          }
+
+          .button-login {
+            @include main-button-4;
+            width: 100%;
+          }
+        }
+
+        .footer-container {
+          @include label-2-raleway;
+          color: #757575;
+          font-size: 14px;
+          text-align: center;
+
+          .register-here {
+            color: $main-color-2;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .login-page-right {
+    flex: 1.4;
+    display: flex;
+  }
+}

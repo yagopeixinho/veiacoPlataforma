@@ -4,19 +4,17 @@ export default function ButtonSave({
   loading,
   label,
   disabled,
-  type,
   styles,
   onClick,
   id = "",
 }) {
   const labelStr = label ? label : "Salvar";
-  const typeStr = type ? type : "button";
 
   return (
     <button
       className={styles}
       disabled={loading || disabled}
-      type={typeStr}
+      type="submit"
       onClick={onClick}
     >
       {loading ? (
