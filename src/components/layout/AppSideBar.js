@@ -10,10 +10,10 @@ export default function AppSideBar() {
         <div className="nav-links">
           <label className="veiaco-container">
             <span>
-              <img src={houseIcon} alt="Home icon" />
+              <img src={houseIcon} alt="Dashboard icon" />
             </span>
-            <Link to="/home" className="veiaco-link">
-              Home
+            <Link to="/dashboard" className="veiaco-link">
+              Dashboard
             </Link>
           </label>
           <label className="veiaco-container">
@@ -31,7 +31,13 @@ export default function AppSideBar() {
             <span>
               <img src={logoutIcon} alt="Veiaco icon" />
             </span>
-            <Link to="/sair" className="veiaco-link">
+            <Link
+              to="/login"
+              className="veiaco-link"
+              onClick={() => {
+                localStorage.removeItem("TOKEN");
+              }}
+            >
               Sair
             </Link>
           </label>

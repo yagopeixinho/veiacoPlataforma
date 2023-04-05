@@ -55,6 +55,18 @@ button {
     margin-left: 0;
   }
 }
+@keyframes createUserAnimation {
+  0% {
+    width: 0%;
+    height: 100vh;
+    position: absolute;
+    background-color: transparent;
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+}
 /********************
 ** Base **/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -737,7 +749,6 @@ template {
 }
 .veiaco-sidebar .veiaco-nav .veiaco-container {
   display: flex;
-  align-items: center;
   gap: 20px;
   font-size: 16px;
   font-family: "Raleway", sans-serif;
@@ -1105,6 +1116,97 @@ body {
   display: flex;
   height: 100vh;
   background: linear-gradient(89.11deg, #a6328e 0.76%, #ffffff 81.38%);
+  overflow: hidden;
+}
+.login-page .modal-create-user {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: linear-gradient(89.11deg, #769ae7 0.76%, #ffffff 81.38%);
+  opacity: 100%;
+  animation: createUserAnimation 0.6s;
+  overflow: hidden;
+}
+.login-page .modal-create-user .left-modal-create-user {
+  flex: 1.4;
+}
+.login-page .modal-create-user .right-modal-create-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 8px;
+  padding: 70px 60px;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .header-form .first-call {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #979ca5;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .header-form .header-form-headline {
+  font-size: 38px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  color: #121212;
+  margin: 20px 0;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .header-form .already-member {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  color: #979ca5;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .header-form .already-member span {
+  color: #b1529e;
+  cursor: pointer;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .create-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .button-register-user {
+  width: 100%;
+  background-color: #ac4797;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .footer-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 70px;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .footer-form .important-politics h6 {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 11px;
+  margin: 0;
+  line-height: 20px;
+  color: #979ca5;
+}
+.login-page .modal-create-user .right-modal-create-user .form-create-user-content .footer-form .important-politics h6 span {
+  color: #ac4797;
 }
 .login-page .login-page-left {
   flex: 1;

@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import App from "../App";
 import Login from "../pages/Login";
-import Home from "../pages/Home";
 import Veiacos from "../pages/Veiacos";
 import VeiacoDashboard from "../pages/VeiacoDashboard";
 import VeiacoForm from "../pages/VeiacoForm";
 import DebtForm from "../pages/DebtForm";
+import Dashboard from "../pages/Dashboard";
 
 export function Private({ children }) {
   // """" Temporary mock logic to get the authenticated user
@@ -26,10 +26,10 @@ export const router = createBrowserRouter([
     errorElement: "",
     children: [
       {
-        path: "/home",
+        path: "/dashboard",
         element: (
           <Private>
-            <Home />
+            <Dashboard />
           </Private>
         ),
       },

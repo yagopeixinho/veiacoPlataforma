@@ -21,12 +21,10 @@ export default function TextInput({
       )}
 
       <div>
-        {meta.touched && meta.error ? (
+        {meta.touched && meta.error && (
           <div className="container-error">
             <ErrorMessage name={fieldName} />
           </div>
-        ) : (
-          <div className="container-error" />
         )}
       </div>
     </div>

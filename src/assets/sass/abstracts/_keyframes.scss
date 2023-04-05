@@ -9,3 +9,17 @@
     margin-left: 0;
   }
 }
+
+@keyframes createUserAnimation {
+  0% {
+    width: 0%;
+    height: 100vh;
+    position: absolute;
+    background-color: transparent;
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+}

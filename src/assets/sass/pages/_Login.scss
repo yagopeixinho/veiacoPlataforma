@@ -2,6 +2,94 @@
   display: flex;
   height: 100vh;
   background: linear-gradient(89.11deg, #a6328e 0.76%, #ffffff 81.38%);
+  overflow: hidden;
+
+  .modal-create-user {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: linear-gradient(89.11deg, #769ae7 0.76%, #ffffff 81.38%);
+    opacity: 100%;
+    animation: createUserAnimation 0.6s;
+    overflow: hidden;
+
+    .left-modal-create-user {
+      flex: 1.4;
+    }
+
+    .right-modal-create-user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+
+      .form-create-user-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        border-radius: 8px;
+        padding: 70px 60px;
+
+        .header-form {
+          .first-call {
+            @include label-2-poppins;
+            color: $main-color-gray-2;
+            text-transform: uppercase;
+            font-weight: 600;
+          }
+
+          .header-form-headline {
+            @include headline-1;
+            color: $main-color-dark-1;
+            margin: 20px 0;
+          }
+
+          .already-member {
+            @include label-2-raleway;
+            color: $main-color-gray-2;
+
+            span {
+              color: $main-color-2;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .create-user-form {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .button-register-user {
+          width: 100%;
+          @include main-button-1;
+        }
+
+        .footer-form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 70px;
+
+          .important-politics {
+            h6 {
+              @include label-1-raleway;
+              font-size: 11px;
+              margin: 0;
+              line-height: 20px;
+              color: $main-color-gray-2;
+
+              span {
+                color: $main-color-1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   .login-page-left {
     flex: 1;
