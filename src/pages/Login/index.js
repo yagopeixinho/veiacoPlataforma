@@ -6,6 +6,9 @@ import TextInput from "../../components/common/TextInput";
 import CheckboxInput from "../../components/common/CheckboxInput";
 import ButtonSave from "../../components/common/ButtonSave";
 import { useNavigate } from "react-router-dom";
+import { userSchema } from "../../validations/user.validation";
+import UserService from "../../service/user.service";
+import { loginSchema } from "../../validations/login.validation";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -14,6 +17,11 @@ export default function Login() {
     email: "",
     password: "",
     manterConectado: false,
+  });
+  const [createUserInitialValues] = useState({
+    name: "",
+    email: "",
+    password: "",
   });
 
   const defaultLoginAnimationSettings = {
@@ -34,6 +42,26 @@ export default function Login() {
     }
   }
 
+  async function handleCreateUser(values) {
+    debugger;
+
+    const _userService = new UserService();
+    await _userService
+      .create(values)
+      .then((res) => {
+        debugger;
+        localStorage.setItem(
+          "TOKEN",
+          "existATokenHereThisIsAMockTemporaryToken"
+        );
+
+        debugger;
+        navigate(`/dashboard`);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {});
+  }
+
   return (
     <div className="login-page">
       {createUser && (
@@ -48,17 +76,19 @@ export default function Login() {
           <div className="right-modal-create-user">
             <Formik
               enableReinitialize={true}
-              // validationSchema={veiacoSchema}
-              initialValues={loginInitialValues}
+              validationSchema={userSchema}
+              initialValues={createUserInitialValues}
               onSubmit={(values) => {
-                handleLogIn(values);
+                handleCreateUser(values);
               }}
             >
               {(props) => {
                 return (
                   <Form className="form-create-user-content">
                     <div className="header-form">
-                      <label className="first-call">Comece gratuitamente</label>
+                      <label className="first-call">
+                        Registre-se gratuitamente
+                      </label>
                       <h1 className="header-form-headline">
                         Registre-se no Veicaco.
                       </h1>
@@ -77,22 +107,22 @@ export default function Login() {
                     <div className="create-user-form">
                       <TextInput
                         label="Nome"
-                        name="nome"
-                        // fieldName="name"
+                        name="name"
+                        fieldName="name"
                         classes="input-veiaco-form"
                       />
 
                       <TextInput
                         label="E-mail"
                         name="email"
-                        // fieldName="name"
+                        fieldName="email"
                         classes="input-veiaco-form"
                       />
 
                       <TextInput
                         label="Senha"
                         name="password"
-                        // fieldName="name"
+                        fieldName="password"
                         classes="input-veiaco-form"
                         type="password"
                       />
@@ -137,7 +167,7 @@ export default function Login() {
 
                 <Formik
                   enableReinitialize={true}
-                  // validationSchema={veiacoSchema}
+                  validationSchema={loginSchema}
                   initialValues={loginInitialValues}
                   onSubmit={(values) => {
                     handleLogIn(values);
@@ -149,14 +179,14 @@ export default function Login() {
                         <TextInput
                           label="E-mail"
                           name="email"
-                          // fieldName="name"
+                          fieldName="email"
                           classes="input-veiaco-form"
                         />
 
                         <TextInput
                           label="Senha"
                           name="password"
-                          // fieldName="name"
+                          fieldName="password"
                           classes="input-veiaco-form"
                           type="password"
                         />
