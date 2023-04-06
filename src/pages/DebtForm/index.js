@@ -152,12 +152,6 @@ export default function DebtForm() {
                       classes="input-debt-form"
                     />
 
-                    <DateInput
-                      name="date"
-                      fieldName="date"
-                      classes="input-debt-form"
-                    />
-
                     <DropdownInput
                       form={props}
                       options={categories}
@@ -166,6 +160,12 @@ export default function DebtForm() {
                       onChange={(ev) => {
                         props.setFieldValue("categoryId", ev.target.value);
                       }}
+                      classes="input-debt-form"
+                    />
+
+                    <DateInput
+                      name="date"
+                      fieldName="date"
                       classes="input-debt-form"
                     />
 

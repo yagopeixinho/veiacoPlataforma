@@ -7,7 +7,7 @@ export default function TextInput({
   classes = "",
   ...props
 }) {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
 
   return (
     <div>
@@ -20,13 +20,9 @@ export default function TextInput({
         />
       )}
 
-      <div>
-        {meta.touched && meta.error && (
-          <div className="container-error">
-            <ErrorMessage name={fieldName} />
-          </div>
-        )}
-      </div>
+      <ErrorMessage name={fieldName}>
+        {(msg) => <div className="container-error">{msg}</div>}
+      </ErrorMessage>
     </div>
   );
 }

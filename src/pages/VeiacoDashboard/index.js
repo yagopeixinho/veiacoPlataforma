@@ -12,6 +12,7 @@ import DebtPreviewTable from "../../components/common/DebtPreviewTable";
 import VeiacoBarChart from "../../components/graphics/VeiacoBarChart";
 import DebtGraphicService from "../../service/debt-graphic.service";
 import VeiacoPieChart from "../../components/graphics/VeiacoPieChart";
+import NothingFoundAlert from "../../components/common/NothingFoundAlert";
 
 export default function VeiacoDashboard() {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ export default function VeiacoDashboard() {
     useState(false);
   const [debtBarChartData, setDebtBarChartData] = useState([]);
   const [responseDebtGraphic, setResponseDebtGraphic] = useState([]);
+  const [debtList, setListDebt] = useState([]);
 
   const _veiacoService = new VeiacoService();
 
@@ -36,6 +38,10 @@ export default function VeiacoDashboard() {
       const _debtPieChart = new DebtGraphicService();
       const responsePieChart = await _debtPieChart.getPieChart(id);
       setResponseDebtGraphic(responsePieChart);
+
+      const veiacoDebtsResponse = await _veiacoService.listVeiacoDebt(id);
+      debugger;
+      setListDebt(veiacoDebtsResponse);
     }
 
     init();
@@ -77,11 +83,15 @@ export default function VeiacoDashboard() {
             }}
           />
 
-          <div className="grid-dashboard-info">
-            <VeiacoBarChart data={debtBarChartData} />
-            <VeiacoPieChart data={responseDebtGraphic} />
-            <DebtPreviewTable />
-          </div>
+          {debtList.length ? (
+            <div className="grid-dashboard-info">
+              <VeiacoBarChart data={debtBarChartData} />
+              <VeiacoPieChart data={responseDebtGraphic} />
+              <DebtPreviewTable />
+            </div>
+          ) : (
+            <NothingFoundAlert message="Esse veiaco não tem nenhuma dívida" />
+          )}
         </div>
         <div className="veiaco-right-side">
           <div className="container-veiaco-info">

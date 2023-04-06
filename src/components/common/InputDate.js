@@ -9,7 +9,7 @@ export default function InputDate({
   classes = "",
   ...props
 }) {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
 
   return (
     <div>
@@ -20,17 +20,12 @@ export default function InputDate({
         name={name}
         value={form?.values.date}
         className={classes + " input-date"}
+        lang="pt-BR"
       />
 
-      <div>
-        {meta.touched && meta.error ? (
-          <div className="container-error">
-            <ErrorMessage name={fieldName} />
-          </div>
-        ) : (
-          <div className="container-error" />
-        )}
-      </div>
+      <ErrorMessage name={fieldName}>
+        {(msg) => <div className="container-error">{msg}</div>}
+      </ErrorMessage>
     </div>
   );
 }

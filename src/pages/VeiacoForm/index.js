@@ -21,11 +21,12 @@ export default function VeiacoForm() {
 
   useEffect(() => {
     async function init() {
-      const veiacoServiceResponse = await _veiacoService.read(id);
-      setVeiacoFormInitialValues(veiacoServiceResponse);
-      setVeiaco(veiacoServiceResponse);
-
+      debugger;
       if (id) {
+        const veiacoServiceResponse = await _veiacoService.read(id);
+        setVeiacoFormInitialValues(veiacoServiceResponse);
+        setVeiaco(veiacoServiceResponse);
+
         setAction("edit");
       } else {
         setAction("create");
@@ -38,6 +39,7 @@ export default function VeiacoForm() {
         });
       }
     }
+    debugger;
 
     init();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -57,6 +59,7 @@ export default function VeiacoForm() {
         .update(values, values.id)
         .then((response) => {
           setVeiacoFormInitialValues(response);
+          setVeiaco(response);
         })
         .catch((err) => console.log(err))
         .finally(() => {});
@@ -129,6 +132,7 @@ export default function VeiacoForm() {
                       name="name"
                       fieldName="name"
                       classes="input-veiaco-form"
+                      maxLength={18}
                     />
 
                     <TextInput
@@ -144,14 +148,13 @@ export default function VeiacoForm() {
                       fieldName="name"
                       classes="input-veiaco-form"
                     />
-
+                    
                     <TextInput
                       label="Cargo"
                       name="occupation"
                       fieldName="name"
                       classes="input-veiaco-form"
                     />
-
                     <div className="button-row-veiaco">
                       {action === "edit" && (
                         <div className="btn-div">

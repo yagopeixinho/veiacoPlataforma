@@ -1,38 +1,18 @@
 import React from "react";
-import { ErrorMessage, useField } from "formik";
+import { ErrorMessage } from "formik";
 
-export default function CheckboxInput({
-  fieldName,
-  label,
-  classes = "",
-  ...props
-}) {
-  const [field, meta] = useField(props);
-
+export default function CheckboxInput({ fieldName, label, classes = "" }) {
   return (
     <div className={classes + " checkbox-input-container"}>
-      <label htmlFor={props.id || props.name} className="label-checkbox-input">
-        {label}
-      </label>
+      <label className="label-checkbox-input">{label}</label>
 
       <div className="input-block-checkbox">
-        <input
-          className="input-checkbox"
-          {...field}
-          {...props}
-          type="checkbox"
-        />
+        <input className="input-checkbox" type="checkbox" />
       </div>
 
-      <div>
-        {meta.touched && meta.error ? (
-          <div className="container-error">
-            <ErrorMessage name={fieldName} />
-          </div>
-        ) : (
-          <div className="container-error" />
-        )}
-      </div>
+      <ErrorMessage name={fieldName}>
+        {(msg) => <div className="container-error">{msg}</div>}
+      </ErrorMessage>
     </div>
   );
 }

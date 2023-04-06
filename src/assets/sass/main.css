@@ -726,6 +726,18 @@ template {
   line-height: 30px;
 }
 
+.nothing-found-container {
+  margin: 10% 0;
+  text-align: center;
+}
+.nothing-found-container h1 {
+  font-size: 38px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 40px;
+  padding: 0 40px;
+}
+
 /********************
 ** Layout **/
 .veiaco-sidebar {
@@ -803,6 +815,7 @@ body {
 
 .veiaco-dashboard-container {
   display: flex;
+  height: 100%;
 }
 .veiaco-dashboard-container .veiaco-left-side {
   flex: 1;
@@ -839,6 +852,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   line-height: 40px;
+  text-align: center;
 }
 .veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-header-info .veiaco-occupation {
   font-size: 16px;
@@ -922,7 +936,7 @@ body {
 .outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right .veiaco-form-grid {
   display: grid;
   grid-template-columns: 0.6fr;
-  gap: 6px;
+  gap: 20px;
   padding-top: 8%;
 }
 .outlet .veiaco-form .form-veiaco .container-form-veiaco .veiaco-form-right .veiaco-form-grid .button-save-veiaco {
@@ -1042,7 +1056,7 @@ body {
 .outlet .debt-form .form-debt .container-form-debt .debt-form-right .debt-form-grid {
   display: grid;
   grid-template-columns: 0.6fr;
-  gap: 6px;
+  gap: 20px;
   padding-top: 8%;
 }
 .outlet .debt-form .form-debt .container-form-debt .debt-form-right .debt-form-grid .button-save-debt {

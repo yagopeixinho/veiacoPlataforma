@@ -11,11 +11,13 @@ export default class VeiacoService extends CoreApiService {
   async listVeiacoDebt(parentId, isListView = null) {
     this.parentEndpoint = "debt";
     this.serializer = new DebtSerializer();
+    debugger;
 
     const response = await api.get(
       `${this.endpoint}/${parentId}/${this.parentEndpoint}`
     );
 
+    debugger;
     const data = response.data;
 
     if (data.items && isListView) {

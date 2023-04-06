@@ -1,5 +1,6 @@
 .veiaco-dashboard-container {
   display: flex;
+  height: 100%;
 
   .veiaco-left-side {
     flex: 1;
@@ -37,6 +38,7 @@
 
         .veiaco-name {
           @include headline-2;
+          text-align: center
         }
 
         .veiaco-occupation {

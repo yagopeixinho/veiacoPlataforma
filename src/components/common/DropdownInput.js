@@ -9,7 +9,7 @@ export default function DropdownInput({
   classes = "",
   ...props
 }) {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
 
   return (
     <div className="input-select-container">
@@ -19,21 +19,23 @@ export default function DropdownInput({
         value={form.values.categoryId}
         className={classes + " input-select"}
       >
+        <option selected>Selecione uma categoria</option>
         {options.map((item, index) => (
-          <option value={item.id} key={index}>
-            {item.name}
-          </option>
+          <>
+            <option
+              value={item.id}
+              key={index}
+              selected={form.values.categoryId === item.id ? true : false}
+            >
+              {item.name}
+            </option>
+          </>
         ))}
       </select>
-      <div>
-        {meta.touched && meta.error ? (
-          <div className="container-error">
-            <ErrorMessage name={fieldName} />
-          </div>
-        ) : (
-          <div className="container-error" />
-        )}
-      </div>
+
+      <ErrorMessage name={fieldName}>
+        {(msg) => <div className="container-error">{msg}</div>}
+      </ErrorMessage>
     </div>
   );
 }

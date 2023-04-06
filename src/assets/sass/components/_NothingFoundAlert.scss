@@ -1,0 +1,9 @@
+.nothing-found-container {
+  margin: 10% 0;
+  text-align: center;
+
+  h1 {
+    @include headline-1;
+    padding: 0 40px;
+  }
+}

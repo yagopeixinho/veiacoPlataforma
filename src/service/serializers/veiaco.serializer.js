@@ -15,6 +15,7 @@ export default class VeiacoSerializer {
 
   toJson(veiaco) {
     const veiacoToJson = {};
+    debugger;
     Object.assign(
       veiacoToJson,
       veiaco.id && { id: veiaco.id },
