@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 import GenericOutletHeader from "../../components/layout/GenericOutletHeader";
 import veiacoImage from "../../assets/images/avatar-veiaco-card-1.png";
 import VeiacoLabelPhone from "../../components/common/VeiacoLabelPhone";
@@ -122,8 +122,8 @@ export default function VeiacoDashboard() {
               />
             </div>
 
-            <VeiacoLabelPhone phone={veiaco.phone} />
-            <VeiacoLabelEmail email={veiaco.email} />
+            {veiaco.phone && <VeiacoLabelPhone phone={veiaco.phone} />}
+            {veiaco.email && <VeiacoLabelEmail email={veiaco.email} />}
           </div>
         </div>
       </div>

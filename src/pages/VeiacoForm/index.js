@@ -138,21 +138,21 @@ export default function VeiacoForm() {
                     <TextInput
                       label="E-mail"
                       name="email"
-                      fieldName="name"
+                      fieldName="email"
                       classes="input-veiaco-form"
                     />
 
                     <TextInput
                       label="Telefone"
                       name="phone"
-                      fieldName="name"
+                      fieldName="email"
                       classes="input-veiaco-form"
                     />
                     
                     <TextInput
                       label="Cargo"
                       name="occupation"
-                      fieldName="name"
+                      fieldName="email"
                       classes="input-veiaco-form"
                     />
                     <div className="button-row-veiaco">

@@ -13,7 +13,7 @@ export default function Dashboard() {
         }}
       />
 
-      <NothingFoundAlert message="Nenhuma informação do dashboard foi encontrada" />
+      <NothingFoundAlert message="Eita preula! nenhuma dado foi encontrado" />
     </div>
   );
 }

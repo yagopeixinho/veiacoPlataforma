@@ -10,7 +10,7 @@ import Dashboard from "../pages/Dashboard";
 
 export function Private({ children }) {
   // """" Temporary mock logic to get the authenticated user
-  const authenticated = localStorage.getItem("TOKEN");
+  const authenticated = localStorage.getItem("TOKEN_KEY");
 
   if (!authenticated) {
     return <Navigate to="/login" replace />;

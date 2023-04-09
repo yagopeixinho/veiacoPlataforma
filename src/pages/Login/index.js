@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Lottie from "react-lottie";
 import loginAnimation from "../../assets/lotties/login-gif.json";
 import { Form, Formik } from "formik";
@@ -9,10 +9,14 @@ import { useNavigate } from "react-router-dom";
 import { userSchema } from "../../validations/user.validation";
 import UserService from "../../service/user.service";
 import { loginSchema } from "../../validations/login.validation";
+import { context } from "../../context/context";
+import Authentication from "../../service/authentication.service";
+import AuthenticationService from "../../service/authentication.service";
 
 export default function Login() {
   const navigate = useNavigate();
   const [createUser, setCreateUser] = useState();
+  const { setUser } = useContext(context);
   const [loginInitialValues] = useState({
     email: "",
     password: "",
@@ -35,7 +39,13 @@ export default function Login() {
 
   async function handleLogIn(values) {
     try {
-      localStorage.setItem("TOKEN", "existATokenHereThisIsAMockTemporaryToken");
+      debugger;
+      const _authenticationService = new AuthenticationService();
+      const authenticationResponse = await _authenticationService.singIn(
+        values.email,
+        values.password
+      );
+      setUser(authenticationResponse);
       navigate(`/dashboard`);
     } catch (err) {
       console.log(err);

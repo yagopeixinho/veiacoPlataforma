@@ -19,7 +19,8 @@ export default function VeiacoCard({ id, name, phone }) {
       </div>
       <div className="veiaco-info">
         <label>{name}</label>
-        <VeiacoLabelPhone phone={phone} />
+
+        {phone && <VeiacoLabelPhone phone={phone} />}
       </div>
     </div>
   );
