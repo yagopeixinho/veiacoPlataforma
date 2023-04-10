@@ -10,7 +10,6 @@ import { userSchema } from "../../validations/user.validation";
 import UserService from "../../service/user.service";
 import { loginSchema } from "../../validations/login.validation";
 import { context } from "../../context/context";
-import Authentication from "../../service/authentication.service";
 import AuthenticationService from "../../service/authentication.service";
 
 export default function Login() {
@@ -45,6 +44,8 @@ export default function Login() {
         values.email,
         values.password
       );
+
+      debugger;
       setUser(authenticationResponse);
       navigate(`/dashboard`);
     } catch (err) {
@@ -59,14 +60,7 @@ export default function Login() {
     await _userService
       .create(values)
       .then((res) => {
-        debugger;
-        localStorage.setItem(
-          "TOKEN",
-          "existATokenHereThisIsAMockTemporaryToken"
-        );
-
-        debugger;
-        navigate(`/dashboard`);
+        setCreateUser(false);
       })
       .catch((err) => console.log(err))
       .finally(() => {});

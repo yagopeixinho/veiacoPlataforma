@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { createElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import GenericOutletHeader from "../../components/layout/GenericOutletHeader";
 import veiacoImage from "../../assets/images/avatar-veiaco-card-1.png";
 import VeiacoLabelPhone from "../../components/common/VeiacoLabelPhone";

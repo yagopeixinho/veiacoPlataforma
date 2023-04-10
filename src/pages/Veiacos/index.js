@@ -1,13 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import VeiacoCard from "../../components/common/VeiacoCard";
 import ListContentMainStructure from "../../components/layout/GenericOutletHeader";
 import VeiacoService from "../../service/veiaco.service";
 import NothingFoundAlert from "../../components/common/NothingFoundAlert";
-import { context } from "../../context/context";
 
 export default function Veiacos() {
   const [veiacosList, setVeiacoList] = useState([]);
-  const { user } = useContext(context);
 
   useEffect(() => {
     async function init() {

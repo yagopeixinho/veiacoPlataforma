@@ -665,6 +665,9 @@ template {
 .container-debt-preview-table .preview-table thead tr th:first-child {
   text-align: left;
 }
+.container-debt-preview-table .preview-table tbody {
+  cursor: pointer;
+}
 .container-debt-preview-table .preview-table tbody tr {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
@@ -678,6 +681,7 @@ template {
 }
 .container-debt-preview-table .preview-table tbody tr td {
   text-align: center;
+  cursor: pointer;
 }
 .container-debt-preview-table .preview-table tbody tr td .container-info-debt {
   display: flex;
@@ -815,7 +819,6 @@ body {
 
 .veiaco-dashboard-container {
   display: flex;
-  height: 100%;
 }
 .veiaco-dashboard-container .veiaco-left-side {
   flex: 1;
@@ -841,6 +844,7 @@ body {
   flex-direction: column;
   padding: 62px 20px 0 20px;
   align-items: center;
+  height: 80vh;
 }
 .veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-header-info {
   display: flex;

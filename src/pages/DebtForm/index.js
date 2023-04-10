@@ -40,12 +40,13 @@ export default function DebtForm() {
         setAction("edit");
         const debtResponse = await _debtService.read(idDivida);
         setDebtFormInitialValues(debtResponse);
+        debugger;
       } else {
         setAction("create");
         setDebtFormInitialValues({
           name: "",
           value: "",
-          status: false,
+          status: "",
           categoryId: "",
           veiacoId: idVeiaco,
           date: "",
@@ -58,6 +59,8 @@ export default function DebtForm() {
   }, [idVeiaco]);
 
   async function createDebt(values) {
+
+    debugger;
     if (action === "create") {
       await _debtService
         .create(values)
@@ -167,6 +170,7 @@ export default function DebtForm() {
                       name="date"
                       fieldName="date"
                       classes="input-debt-form"
+                      value={props.values.date}
                     />
 
                     <CheckboxInput
@@ -174,6 +178,10 @@ export default function DebtForm() {
                       name="status"
                       fieldName="status"
                       classes="input-debt-form"
+                      onChange={(ev) => {
+                        props.setFieldValue("status", ev.target.checked);
+                      }}
+                      checked={props.values.status}
                     />
 
                     <div className="button-row-debt">

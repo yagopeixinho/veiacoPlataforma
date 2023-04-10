@@ -18,7 +18,6 @@ export default function InputDate({
         {...props}
         type="date"
         name={name}
-        value={form?.values.date}
         className={classes + " input-date"}
         lang="pt-BR"
       />

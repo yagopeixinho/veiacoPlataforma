@@ -22,6 +22,8 @@ export default class AuthenticationService {
     );
 
     localStorage.setItem("TOKEN_KEY", res.data.token);
-    AuthenticationService._user = this.userSerializer.fromJson(res.data.user);
+    return (AuthenticationService._user = this.userSerializer.fromJson(
+      res.data.user
+    ));
   }
 }

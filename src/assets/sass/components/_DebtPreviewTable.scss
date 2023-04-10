@@ -24,6 +24,8 @@
       }
     }
     tbody {
+      cursor: pointer;
+
       tr {
         @include label-2-poppins;
         font-weight: 500;
@@ -35,6 +37,7 @@
 
         td {
           text-align: center;
+          cursor: pointer;
 
           .container-info-debt {
             display: flex;
