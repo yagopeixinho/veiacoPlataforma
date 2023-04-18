@@ -38,14 +38,12 @@ export default function Login() {
 
   async function handleLogIn(values) {
     try {
-      debugger;
       const _authenticationService = new AuthenticationService();
       const authenticationResponse = await _authenticationService.singIn(
         values.email,
         values.password
       );
 
-      debugger;
       setUser(authenticationResponse);
       navigate(`/dashboard`);
     } catch (err) {
@@ -54,8 +52,6 @@ export default function Login() {
   }
 
   async function handleCreateUser(values) {
-    debugger;
-
     const _userService = new UserService();
     await _userService
       .create(values)

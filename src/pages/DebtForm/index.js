@@ -40,7 +40,6 @@ export default function DebtForm() {
         setAction("edit");
         const debtResponse = await _debtService.read(idDivida);
         setDebtFormInitialValues(debtResponse);
-        debugger;
       } else {
         setAction("create");
         setDebtFormInitialValues({
@@ -59,8 +58,6 @@ export default function DebtForm() {
   }, [idVeiaco]);
 
   async function createDebt(values) {
-
-    debugger;
     if (action === "create") {
       await _debtService
         .create(values)

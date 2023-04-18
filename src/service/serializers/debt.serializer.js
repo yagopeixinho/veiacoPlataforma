@@ -8,7 +8,7 @@ export default class DebtSerializer {
 
   fromJson(json) {
     const debtFromJson = {};
-    debugger;
+
     Object.assign(
       debtFromJson,
       json.id && { id: json.id },
@@ -28,7 +28,6 @@ export default class DebtSerializer {
   }
 
   toJson(debt) {
-    debugger;
     const debtToJson = {};
 
     Object.assign(
@@ -45,7 +44,7 @@ export default class DebtSerializer {
       },
       { status: debt.status }
     );
-    debugger;
+
     return debtToJson;
   }
 }

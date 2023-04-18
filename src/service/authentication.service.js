@@ -10,7 +10,6 @@ export default class AuthenticationService {
   }
 
   async singIn(email, password) {
-    debugger;
     const res = await api.post(
       "token",
       { email, password },
@@ -22,6 +21,7 @@ export default class AuthenticationService {
     );
 
     localStorage.setItem("TOKEN_KEY", res.data.token);
+
     return (AuthenticationService._user = this.userSerializer.fromJson(
       res.data.user
     ));

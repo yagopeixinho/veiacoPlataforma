@@ -30,7 +30,6 @@ export default class DebtGraphicService extends CoreApiService {
     const response = await api.get(
       `${this.parentEndpoint}/${parentId}/${this.endpoint}`
     );
-    debugger;
 
     const data = response.data;
     if (data.hasOwnProperty("items") && isListView) {

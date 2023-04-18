@@ -21,7 +21,6 @@ export default function VeiacoForm() {
 
   useEffect(() => {
     async function init() {
-      debugger;
       if (id) {
         const veiacoServiceResponse = await _veiacoService.read(id);
         setVeiacoFormInitialValues(veiacoServiceResponse);
@@ -39,7 +38,6 @@ export default function VeiacoForm() {
         });
       }
     }
-    debugger;
 
     init();
     // eslint-disable-next-line react-hooks/exhaustive-deps

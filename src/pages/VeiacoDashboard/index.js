@@ -40,7 +40,6 @@ export default function VeiacoDashboard() {
       setResponseDebtGraphic(responsePieChart);
 
       const veiacoDebtsResponse = await _veiacoService.listVeiacoDebt(id);
-      debugger;
       setListDebt(veiacoDebtsResponse);
     }
 
