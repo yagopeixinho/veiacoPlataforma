@@ -6,9 +6,18 @@ export default class DebtSerializer {
     this.categorySerializer = new CategorySerializer();
   }
 
+  formatDate(dateString) {
+    debugger;
+    // Use o método split para separar o ano, mês e dia do string de data
+    const dateParts = dateString.split("-");
+    // Crie um novo string de data com as partes na ordem desejada
+    const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+    return formattedDate;
+  }
+
   fromJson(json) {
     const debtFromJson = {};
-
+    debugger;
     Object.assign(
       debtFromJson,
       json.id && { id: json.id },
@@ -19,7 +28,7 @@ export default class DebtSerializer {
         category: this.categorySerializer.fromJson(json.category),
       },
       json.date && {
-        date: json.date
+        date: json.date,
       },
       { status: json.status }
     );
@@ -29,7 +38,7 @@ export default class DebtSerializer {
 
   toJson(debt) {
     const debtToJson = {};
-
+    debugger;
     Object.assign(
       debtToJson,
       debt.id && { id: debt.id },
@@ -40,11 +49,12 @@ export default class DebtSerializer {
         category_id: parseInt(debt.categoryId),
       },
       debt.date && {
-        date: format(new Date(debt.date), "dd/MM/yyyy"),
+        date: this.formatDate(debt.date),
       },
       { status: debt.status }
     );
 
+    debugger;
     return debtToJson;
   }
 }

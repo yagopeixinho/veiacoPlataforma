@@ -90,7 +90,7 @@ export default function Login() {
                         Registre-se gratuitamente
                       </label>
                       <h1 className="header-form-headline">
-                        Registre-se no Veicaco.
+                        Registre-se no Veiaco.
                       </h1>
                       <label className="already-member">
                         Já possui uma conta?{" "}

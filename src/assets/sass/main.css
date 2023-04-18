@@ -842,7 +842,7 @@ body {
 .veiaco-dashboard-container .veiaco-right-side .container-veiaco-info {
   display: flex;
   flex-direction: column;
-  padding: 62px 20px 0 20px;
+  padding: 62px 30px 0 30px;
   align-items: center;
   height: 80vh;
 }
@@ -1025,7 +1025,7 @@ body {
   flex: 1;
   text-align: center;
   background-color: #f6dde6;
-  padding: 4% 0;
+  padding: 4% 20px;
 }
 .outlet .debt-form .form-debt .container-form-debt .debt-form-left .headline-new-debt {
   font-size: 38px;

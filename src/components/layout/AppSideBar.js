@@ -35,7 +35,7 @@ export default function AppSideBar() {
               to="/login"
               className="veiaco-link"
               onClick={() => {
-                localStorage.removeItem("TOKEN");
+                localStorage.removeItem("TOKEN_KEY");
               }}
             >
               Sair
