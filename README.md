@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+<div align="center">
+     <img src="https://github.com/yagopeixinho/readmeTemplate/blob/main/assets/images/readmeTemplateIcon.png?raw=true" width="300px">
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">Faça questão de um tostão!</h4>
 
-## Available Scripts
+<p align="center">
+    <img src="https://img.shields.io/github/last-commit/yagopeixinho/readmeTemplate?color=008ebd">
+    <img src="https://img.shields.io/github/languages/count/yagopeixinho/readmeTemplate?color=b3ecff">
+    <img src="https://img.shields.io/netlify/a56c2296-3139-4d5a-8fcd-b32b52f0b6a5?color=69bbc9">
+    <img src="https://img.shields.io/github/license/yagopeixinho/vouAoMercado?color=00b6d6">
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="#about-the-project">About</a> • 
+  <a href="#project-notes">Project notes</a> •
+  <a href="#gallery">Gallery</a> •
+  <a href="#getting-started">Getting started</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#contacting">Contacting</a> •
+  <a href="#license">License</a>
+</p>
 
-### `npm start`
+<img src="https://github.com/yagopeixinho/readmeTemplate/blob/main/assets/images/sampleImage2.png?raw=true" width="100%">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About the Project
 
-### `npm test`
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit dapibus ligula, non maximus augue tempor a. Etiam sed dolor magna. Praesent rhoncus urna eu ipsum accumsan dignissim.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Notes
 
-### `npm run build`
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam.
+- Lorem ipsum dolor sit amet, _consectetur adipiscing elit_. Aenean at lacinia mauris. Donec consequat _ligula sapien_. Fusce vitae vestibulum diam.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Gallery
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="center">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-### `npm run eject`
+<img src="https://github.com/yagopeixinho/readmeTemplate/blob/main/assets/images/sampleImage2.png?raw=true">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img src="https://github.com/yagopeixinho/readmeTemplate/blob/main/assets/images/sampleImage2.png?raw=true">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+</div>
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam.
 
-### Code Splitting
+```bash
+# Lorem ipsum dolor sit amet
+$ git clone git@github.com:yagopeixinho/readmeTemplate.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contacting
 
-### Making a Progressive Web App
+- 📬 Lorem ipsum dolor sit amet: loremipsumdolor@sitamet.com
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam. [Lacinia mauris](https://github.com/yagopeixinho/yagopeixinho/blob/master/README.md)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Lorem ipsumm dolor siti](https://github.com/yagopeixinho/vouAoMercado/blob/master/LICENSE)
