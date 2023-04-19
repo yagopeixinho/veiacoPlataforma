@@ -5,8 +5,8 @@
 <h4 align="center">Faça questão de um tostão!</h4>
 
 <p align="center">
-    <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=008ebd">
-    <img src="https://img.shields.io/github/languages/count/yagopeixinho/veiacoPlataforma?color=ff69b4">
+    <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=58ADE2">
+    <img src="https://img.shields.io/github/languages/count/yagopeixinho/veiacoPlataforma?color=E390D2">
     <img src="https://img.shields.io/github/license/yagopeixinho/veiacoPlataforma?color=fecf10">
 </p>
 
@@ -14,7 +14,7 @@
   <a href="#sobre">Sobre</a> • 
   <a href="#notas-importantes">Notas importantes</a> •
   <a href="#gallery">Gallery</a> •
-  <a href="#getting-started">Getting started</a> •
+  <a href="#instalação">Instalação</a> •
   <a href="#contribuindo">Contribuindo</a> •
   <a href="#contato">Contato</a> •
   <a href="#licensa">Licensa</a>
@@ -63,13 +63,13 @@ O Veiaco nasceu a partir de uma necessidade pessoal (e uma memória ruim) para g
 
 ## Instalação
 
-
 ### Pré-requisitos
 > **Note**
 > Esse projeto possui um *back-end* API. [Clique aqui]() para mais informações sobre o *back-end*. 
  
 Antes de rodar o front-end projeto, é necessário ter instalado em sua máquina:
 - Git
+- 
 
 
 ### 📦 Clonando o repositório
@@ -78,18 +78,25 @@ Antes de rodar o front-end projeto, é necessário ter instalado em sua máquina
 $ git clone git@github.com:yagopeixinho/veiacoPlataforma.git
 ```
 
-### 🔨 Configurações iniciais
+### 🔨 Rodando o projeto
 
 ```bash
-# Acesse o reposiório pelo terminal.
-$ cd veiacoBackend
+# Acesse o repositório pelo terminal.
+$ cd veiacoPlataforma
+
 # Instale as dependências.
 $ npm install
+
+# Rode o projeto
+$ npm start
 ```
 
-### 🏷 Variáveis de ambiente
+### :gear: Configurações iniciais
+Precisamos declarar alguns configurações para que o projeto rode sem nenhum problema.
 
-Para iniciarmos o projeto precisamos declarar algumas variáveis de ambiente responsáveis pela definição de algumas informações importante, como a URL do banco de dados e porta em que a aplicação rodará.
+#### Variáveis de ambiente
+
+Para iniciarmos o projeto precisamos declarar algumas variáveis de ambiente responsáveis pela definição informações importantes, como a URL da API. [Clique aqui]() para mais informações sobre o *back-end*.
 
 ```bash
 # No diretório do projeto crie o arquivo responsável pela definição das variáveis de ambiente.
@@ -99,10 +106,16 @@ $ touch .env
 Dentro do arquivo `.env` cole as variáveis de ambiente mínimas para rodar o projeto
 
 ```bash
-# Essa é a porta em que o projeto rodará.
-PORT="3333"
-# Esse é o URL do banco de dados que será conectado. Lembre-se de alterar os parâmetros USER, PASSWORD, HOST:PORT e DATABASE futuramente quando configurarmos a conexão com o banco de dados.
-DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
+# URL da API.
+REACT_APP_API_URL="http://localhost:5000/api/"
+```
+
+#### Sass
+Nesse projeto foi utilizado o [7-1 Sass Architecture](https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture) do Sass.
+
+```bash
+# Dentro do diretório do projeto rode o comando para que seja possível modificações no CSS
+$ watch sass ./src/assets/sass/main.scss ./src/assets/sass/main.css
 ```
 
 ## Contato
