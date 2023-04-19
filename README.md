@@ -61,30 +61,49 @@ O Veiaco nasceu a partir de uma necessidade pessoal (e uma memória ruim) para g
 
 <br>
 
-## Getting Started?
-Esse projeto React.JS possuí uma API. (working in progress)
+## Instalação
 
-### Prerequisites
-Para rodar o Veiaco, precisamos ter instalado em nossa máquina:
-- [Git](https://git-scm.com/)
-- Any code editor (I strongly recommend [Visual Studio Code](https://code.visualstudio.com/)
 
-### Installing
-#### Cloning the repository
-~~~bash 
-$ git clone https://github.com/yagopeixinho/vouAoMercado.git
+### Pré-requisitos
+> **Note**
+> Esse projeto possui um *back-end* API. [Clique aqui]() para mais informações sobre o *back-end*. 
+ 
+Antes de rodar o front-end projeto, é necessário ter instalado em sua máquina:
+- Git
 
-$ cd vouAoMercado
-~~~
 
-#### Running the server
-~~~bash
-# Run the server or run a plugin that creates a server
-~~~
+### 📦 Clonando o repositório
 
-## Contribuindo
+```bash
+$ git clone git@github.com:yagopeixinho/veiacoPlataforma.git
+```
 
-Sinta-se convidado para enviar quantos *pull-request* você quiser.
+### 🔨 Configurações iniciais
+
+```bash
+# Acesse o reposiório pelo terminal.
+$ cd veiacoBackend
+# Instale as dependências.
+$ npm install
+```
+
+### 🏷 Variáveis de ambiente
+
+Para iniciarmos o projeto precisamos declarar algumas variáveis de ambiente responsáveis pela definição de algumas informações importante, como a URL do banco de dados e porta em que a aplicação rodará.
+
+```bash
+# No diretório do projeto crie o arquivo responsável pela definição das variáveis de ambiente.
+$ touch .env
+```
+
+Dentro do arquivo `.env` cole as variáveis de ambiente mínimas para rodar o projeto
+
+```bash
+# Essa é a porta em que o projeto rodará.
+PORT="3333"
+# Esse é o URL do banco de dados que será conectado. Lembre-se de alterar os parâmetros USER, PASSWORD, HOST:PORT e DATABASE futuramente quando configurarmos a conexão com o banco de dados.
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
+```
 
 ## Contato
 
