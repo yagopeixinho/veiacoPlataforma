@@ -5,35 +5,43 @@
 <h4 align="center">Faça questão de um tostão!</h4>
 
 <p align="center">
-    <img src="https://img.shields.io/github/last-commit/yagopeixinho/readmeTemplate?color=008ebd">
+    <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=008ebd">
     <img src="https://img.shields.io/github/languages/count/yagopeixinho/veiacoPlataforma?color=ff69b4">
-    <img src="https://img.shields.io/netlify/a56c2296-3139-4d5a-8fcd-b32b52f0b6a5?color=69bbc9">
-    <img src="https://img.shields.io/github/license/yagopeixinho/veiacoPlataforma?color=yellow">
+    <img src="https://img.shields.io/github/license/yagopeixinho/veiacoPlataforma?color=fecf10">
 </p>
 
 <p align="center">
-  <a href="#about-the-project">About</a> • 
-  <a href="#project-notes">Project notes</a> •
+  <a href="#sobre">Sobre</a> • 
+  <a href="#notas-importantes">Notas importantes</a> •
   <a href="#gallery">Gallery</a> •
   <a href="#getting-started">Getting started</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#contacting">Contacting</a> •
-  <a href="#license">License</a>
+  <a href="#contribuindo">Contribuindo</a> •
+  <a href="#contato">Contato</a> •
+  <a href="#licensa">Licensa</a>
 </p>
 
 <img src="https://github.com/yagopeixinho/readmeTemplate/blob/main/assets/images/sampleImage2.png?raw=true" width="100%">
 
 <br>
 
-## About the Project
+## Sobre
+O Veiaco nasceu a partir de uma necessidade pessoal (e uma memória ruim) para gerenciamento de dívidas de pessoas (especialmente amigos). Com o Veiaco você pode acrescentar dívidas a um veiaco, gerenciar essas dívidas e ainda ter uma inteligência através de *dashboards* e gráficos para te ajudar no gerenciamento das informações.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec suscipit dapibus ligula, non maximus augue tempor a. Etiam sed dolor magna. Praesent rhoncus urna eu ipsum accumsan dignissim.
+## Notas importantes
 
-## Project Notes
+- Os dados não estão criptografados durante a transferência de informação. Tenha cuidado ao inserir dados sensíveis.
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam.
-- Lorem ipsum dolor sit amet, _consectetur adipiscing elit_. Aenean at lacinia mauris. Donec consequat _ligula sapien_. Fusce vitae vestibulum diam.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+- Alguns *feedbacks* da tela não estão funcionando nesse *release*. Alguns exemplos:
+     - Dados de autenticação inseridos de forma incorreta
+     - Transferências de telas que deveriam ocorrer de forma natural ainda não foram inseridos
+     
+- Aguns elementos estão estáticos e não possuem nenhuma funcionalidade, como elementos em HTML (o botão de esqueceu a senha)
+
+- O visual não está concluído. Além das cores, transições de telas e redirecionamentos precisam ser melhorados
+
+- A **logo** não foi definida, portanto, não foi incluída nessa *release*
+
+- As funcionalidades que dependem do *back-end* ou estão estáticos ou estão incoerentes (valores aleatórios ou não estão funcionando corretamente)
 
 ## Gallery
 
@@ -54,23 +62,34 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauri
 <br>
 
 ## Getting Started?
+Esse projeto React.JS possuí uma API. (working in progress)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam.
+### Prerequisites
+Para rodar o Veiaco, precisamos ter instalado em nossa máquina:
+- [Git](https://git-scm.com/)
+- Any code editor (I strongly recommend [Visual Studio Code](https://code.visualstudio.com/)
 
-```bash
-# Lorem ipsum dolor sit amet
-$ git clone git@github.com:yagopeixinho/readmeTemplate.git
-```
+### Installing
+#### Cloning the repository
+~~~bash 
+$ git clone https://github.com/yagopeixinho/vouAoMercado.git
 
-## Contributing
+$ cd vouAoMercado
+~~~
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris.
+#### Running the server
+~~~bash
+# Run the server or run a plugin that creates a server
+~~~
 
-## Contacting
+## Contribuindo
 
-- 📬 Lorem ipsum dolor sit amet: loremipsumdolor@sitamet.com
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at lacinia mauris. Donec consequat ligula sapien. Fusce vitae vestibulum diam. [Lacinia mauris](https://github.com/yagopeixinho/yagopeixinho/blob/master/README.md)
+Sinta-se convidado para enviar quantos *pull-request* você quiser.
 
-## License
+## Contato
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. [Lorem ipsumm dolor siti](https://github.com/yagopeixinho/vouAoMercado/blob/master/LICENSE)
+- 📬 Me envie um e-mail: peixinhoyago@gmail.com
+- Se você tem alguma dúvida ou quer entrar em contato comigo por qualquer outro motivo, você pode encontrar minhas redes sociais e mais informação sobre mim [clicando aqui](https://github.com/yagopeixinho/yagopeixinho/blob/master/README.md)
+
+## Licensa
+Esse projeto está com a licença: MIT License. [Clique aqui para mais detalhes](https://github.com/yagopeixinho/veiacoPlataforma/blob/master/LICENSE)
