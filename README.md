@@ -6,9 +6,9 @@
 
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/yagopeixinho/readmeTemplate?color=008ebd">
-    <img src="https://img.shields.io/github/languages/count/yagopeixinho/readmeTemplate?color=b3ecff">
+    <img src="https://img.shields.io/github/languages/count/yagopeixinho/veiacoPlataforma?color=ff69b4">
     <img src="https://img.shields.io/netlify/a56c2296-3139-4d5a-8fcd-b32b52f0b6a5?color=69bbc9">
-    <img src="https://img.shields.io/github/license/yagopeixinho/vouAoMercado?color=00b6d6">
+    <img src="https://img.shields.io/github/license/yagopeixinho/veiacoPlataforma?color=yellow">
 </p>
 
 <p align="center">
