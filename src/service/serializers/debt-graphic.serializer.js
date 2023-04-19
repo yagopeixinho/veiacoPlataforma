@@ -1,3 +1,4 @@
+import { formatDate } from "../../utils/formatDate";
 import DebtSerializer from "./debt.serializer";
 
 export default class DebtGraphicSerializer {
@@ -10,7 +11,7 @@ export default class DebtGraphicSerializer {
 
     Object.assign(
       debtGraphicFromJson,
-      json.date && { date: json.date },
+      json.date && { dateLabel: formatDate(json.date) },
       json.total_value && { totalValue: json.total_value },
       json.debts && {
         debts: json.debts.map((item) => this.debtSerializer.fromJson(item)),

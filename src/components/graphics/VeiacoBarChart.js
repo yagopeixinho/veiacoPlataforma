@@ -10,6 +10,7 @@ import {
 } from "recharts";
 
 export default function VeiacoBarChart({ data }) {
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
@@ -23,7 +24,7 @@ export default function VeiacoBarChart({ data }) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
+        <XAxis dataKey="dateLabel" />
         <YAxis />
         <Tooltip labelStyle={{ fontFamily: "Poppins", outline: "none" }} />
         <Bar dataKey="totalValue" name="Valor" fill="#61C87E" />

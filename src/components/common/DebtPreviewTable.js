@@ -47,7 +47,7 @@ export default function DebtPreviewTable() {
                 </div>
               </td>
               <td>R${debt.value}</td>
-              <td>{debt.date}</td>
+              <td>{debt.dateLabel}</td>
               <td>
                 {debt.status ? (
                   <label className="status-active">Ativo</label>

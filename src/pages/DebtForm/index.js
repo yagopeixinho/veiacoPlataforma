@@ -14,7 +14,6 @@ import { debtSchema } from "../../validations/debt.validation";
 import DropdownInput from "../../components/common/DropdownInput";
 import DateInput from "../../components/common/InputDate";
 import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
-import { format } from "date-fns";
 
 export default function DebtForm() {
   const { idVeiaco, idDivida } = useParams();
@@ -153,7 +152,6 @@ export default function DebtForm() {
                       classes="input-debt-form"
                     />
 
-                    {JSON.stringify(props.values)}
                     <DateInput
                       name="date"
                       fieldName="date"
