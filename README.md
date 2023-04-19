@@ -15,7 +15,7 @@
 <p align="center">
   <a href="#sobre">Sobre</a> • 
   <a href="#notas-importantes">Notas importantes</a> •
-  <a href="#gallery">Gallery</a> •
+  <a href="#galeria">Galeria</a> •
   <a href="#instalação">Instalação</a> •
   <a href="#contribuindo">Contribuindo</a> •
   <a href="#contato">Contato</a> •
@@ -33,7 +33,7 @@ O Veiaco foi criado a partir de uma necessidade pessoal (e uma memória ruim) pa
 ## Funcionalidades
 
 > **Note**
-> Funcionalidades pre-release - v1.0
+> Funcionalidades da pre-release - v1.0
 
 - Gerenciamento de Dívidas
   - O Veiaco ajuda os usuários a gerenciar suas dívidas, fornecendo informações sobre o saldo devedor.
@@ -59,7 +59,7 @@ O Veiaco foi criado a partir de uma necessidade pessoal (e uma memória ruim) pa
 
 - As funcionalidades que dependem do _back-end_ ou estão estáticos ou estão incoerentes (valores aleatórios ou não estão funcionando corretamente ou elemento inexistente)
 
-## Gallery
+## Galeria
 
 <div align="center">
 
