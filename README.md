@@ -2,7 +2,7 @@
      <img src="https://github.com/yagopeixinho/readmeTemplate/blob/main/assets/images/readmeTemplateIcon.png?raw=true" width="300px">
 </div>
 
-<h4 align="center">Faça questão de um tostão!</h4>
+<h4 align="center">Veiaco: porque gerenciar dívidas de amigos nunca foi tão fácil (ou menos constrangedor)</h4>
 
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=58ADE2">
@@ -25,21 +25,28 @@
 <br>
 
 ## Sobre
-O Veiaco nasceu a partir de uma necessidade pessoal (e uma memória ruim) para gerenciamento de dívidas de pessoas (especialmente amigos). Com o Veiaco você pode acrescentar dívidas a um veiaco, gerenciar essas dívidas e ainda ter uma inteligência através de *dashboards* e gráficos para te ajudar no gerenciamento das informações.
+O Veiaco foi criado a partir de uma necessidade pessoal (e uma memória ruim) para gerenciar dívidas de amigos e pessoas próximas. Com essa ferramenta incrível, você pode adicionar suas dívidas em um único lugar, gerenciá-las com facilidade e ter acesso a gráficos e dashboards inteligentes que te ajudam a manter suas finanças sob controle. O Veiaco é a solução perfeita para quem busca uma maneira amigável e eficaz de lidar com suas dívidas e cuidar melhor do seu dinheiro.
 
 ## Funcionalidades
->**Note**
-> Funcionalidades da realease v0.1
 
-- Gerencie as pessoas que te devem aquela grana! 🤑
-- Dashboard inteligente com informações de dívidas
-- 
+>**Note**
+> Funcionalidades pre-release - v1.0
+
+- Gerenciamento de Dívidas
+     - O Veiaco ajuda os usuários a gerenciar suas dívidas, fornecendo informações sobre o saldo devedor.
+- Visualização de Dados
+     - Os usuários podem adicionar facilmente dívidas ao aplicativo, inserindo informações como nome do credor, valor da dívida, data da dívida...
+- Acesso Fácil 
+- Dashboards e gráficos 
+     - Os usuários podem obter insights sobre suas finanças pessoais através de dashboards e gráficos que mostram tendências de gastos e ganhos. Eles podem ver facilmente onde estão gastando mais dinheiro e como podem reduzir seus gastos.
+- Funcionalidade de login para acessar a conta de usuário
+
 
 ## Notas importantes
 
 - Os dados não estão criptografados durante a transferência de informação. Tenha cuidado ao inserir dados sensíveis.
 
-- Alguns *feedbacks* da tela não estão funcionando nesse *release*. Alguns exemplos:
+- Alguns *feedbacks* da tela não estão funcionando nessa *release*. Alguns exemplos:
      - Dados de autenticação inseridos de forma incorreta
      - Transferências de telas que deveriam ocorrer de forma natural ainda não foram inseridos
      
@@ -49,7 +56,7 @@ O Veiaco nasceu a partir de uma necessidade pessoal (e uma memória ruim) para g
 
 - A **logo** não foi definida, portanto, não foi incluída nessa *release*
 
-- As funcionalidades que dependem do *back-end* ou estão estáticos ou estão incoerentes (valores aleatórios ou não estão funcionando corretamente)
+- As funcionalidades que dependem do *back-end* ou estão estáticos ou estão incoerentes (valores aleatórios ou não estão funcionando corretamente ou elemento inexistente)
 
 ## Gallery
 
@@ -125,6 +132,10 @@ Nesse projeto foi utilizado o [7-1 Sass Architecture](https://www.learnhowtoprog
 # Dentro do diretório do projeto rode o comando para que seja possível modificações no CSS
 $ watch sass ./src/assets/sass/main.scss ./src/assets/sass/main.css
 ```
+
+## Contribuindo
+
+Sinta-se a vontade para enviar quantos _pull request's_ forem necessários, as revisarei gradamente.
 
 ## Contato
 
