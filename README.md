@@ -27,6 +27,14 @@
 ## Sobre
 O Veiaco nasceu a partir de uma necessidade pessoal (e uma memória ruim) para gerenciamento de dívidas de pessoas (especialmente amigos). Com o Veiaco você pode acrescentar dívidas a um veiaco, gerenciar essas dívidas e ainda ter uma inteligência através de *dashboards* e gráficos para te ajudar no gerenciamento das informações.
 
+## Funcionalidades
+>**Note**
+> Funcionalidades da realease v0.1
+
+- Gerencie as pessoas que te devem aquela grana! 🤑
+- Dashboard inteligente com informações de dívidas
+- 
+
 ## Notas importantes
 
 - Os dados não estão criptografados durante a transferência de informação. Tenha cuidado ao inserir dados sensíveis.
@@ -68,8 +76,8 @@ O Veiaco nasceu a partir de uma necessidade pessoal (e uma memória ruim) para g
 > Esse projeto possui um *back-end* API. [Clique aqui]() para mais informações sobre o *back-end*. 
  
 Antes de rodar o front-end projeto, é necessário ter instalado em sua máquina:
-- Git
-- 
+- [Git](https://git-scm.com/)
+- [npm](https://www.npmjs.com/)
 
 
 ### 📦 Clonando o repositório
