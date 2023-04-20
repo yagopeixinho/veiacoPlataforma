@@ -22,7 +22,11 @@ export function Private({ children }) {
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <Private>
+        <App />
+      </Private>
+    ),
     errorElement: "",
     children: [
       {

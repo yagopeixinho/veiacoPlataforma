@@ -13,7 +13,8 @@
 </p>
 
 <p align="center">
-  <a href="#sobre">Sobre</a> • 
+  <a href="#sobre">Sobre</a> •
+  <a href="#funcionalidades">Funcionalidades</a> •
   <a href="#notas-importantes">Notas importantes</a> •
   <a href="#galeria">Galeria</a> •
   <a href="#instalação">Instalação</a> •
@@ -42,7 +43,7 @@ O Veiaco foi criado a partir de uma necessidade pessoal (e uma memória ruim) pa
 - Acesso Fácil
 - Dashboards e gráficos
   - Os usuários podem obter insights sobre suas finanças pessoais através de dashboards e gráficos que mostram tendências de gastos e ganhos. Eles podem ver facilmente onde estão gastando mais dinheiro e como podem reduzir seus gastos.
-- Funcionalidade de login para acessar a conta de usuário
+- Funcionalidade de login para acessar a conta do usuário
 
 ## Notas importantes
 
@@ -108,7 +109,7 @@ Precisamos declarar alguns configurações para que o projeto rode sem nenhum pr
 
 #### Variáveis de ambiente
 
-Para iniciarmos o projeto precisamos declarar algumas variáveis de ambiente responsáveis pela definição informações importantes, como a URL da API. [Clique aqui]() para mais informações sobre o _back-end_.
+Para iniciarmos o projeto precisamos declarar algumas variáveis de ambiente responsáveis pela definição de informações importantes, como a URL da API. [Clique aqui]() para mais informações sobre o _back-end_.
 
 ```bash
 # No diretório do projeto crie o arquivo responsável pela definição das variáveis de ambiente.
@@ -124,7 +125,7 @@ REACT_APP_API_URL="http://localhost:5000/api/"
 
 #### Sass
 
-Nesse projeto foi utilizado o [7-1 Sass Architecture](https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture) do Sass.
+Nesse projeto foi utilizado a arquitetura [7-1 Sass Architecture](https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture) do Sass.
 
 ```bash
 # Dentro do diretório do projeto rode o comando para que seja possível modificações no CSS

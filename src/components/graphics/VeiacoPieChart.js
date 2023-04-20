@@ -10,7 +10,7 @@ class VeiacoPieChart extends React.Component {
       value: 1,
     },
     {
-      name: "Genérico",
+      name: "Lazer",
       value: 2,
     },
     {
@@ -18,7 +18,7 @@ class VeiacoPieChart extends React.Component {
       value: 2,
     },
     {
-      name: "Entreternimento",
+      name: "Saúde",
       value: 4,
     },
   ];

@@ -45,7 +45,7 @@ export default function DebtForm() {
         setDebtFormInitialValues({
           name: "",
           value: "",
-          status: "",
+          status: false,
           categoryId: "",
           veiacoId: idVeiaco,
           date: "",
@@ -70,7 +70,7 @@ export default function DebtForm() {
       await _debtService
         .update(values, idDivida)
         .then((response) => {
-          navigate(`/veiacos`);
+          navigate(`/veiaco/${idVeiaco}/dashboard`);
         })
         .catch((err) => console.log(err))
         .finally(() => {});
