@@ -1,10 +1,11 @@
 <div align="center">
-     <img src="./src/assets/logos/VeiacoDarkLogo.png" width="440px">
+     <img src="./src/assets/logos/VeiacoDarkLogo.png" width="450px">
 </div>
 
 <h4 align="center">Veiaco: porque gerenciar dívidas de amigos nunca foi tão fácil (ou menos constrangedor)</h4>
 
-</br>
+> **Note**
+> Lamentamos informar que a inclusão da logomarca do aplicativo encontra-se indisponível no momento.
 
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=58ADE2">

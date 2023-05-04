@@ -5,10 +5,10 @@ export default class DebtSerializer {
   constructor() {
     this.categorySerializer = new CategorySerializer();
   }
- 
+
   fromJson(json) {
     const debtFromJson = {};
-    
+
     Object.assign(
       debtFromJson,
       json.id && { id: json.id },
@@ -30,6 +30,7 @@ export default class DebtSerializer {
 
   toJson(debt) {
     const debtToJson = {};
+    debugger;
 
     Object.assign(
       debtToJson,
@@ -41,7 +42,7 @@ export default class DebtSerializer {
         category_id: parseInt(debt.categoryId),
       },
       debt.date && {
-        date: debt.date,
+        date: formatDate(debt.date),
       },
       { status: debt.status }
     );
