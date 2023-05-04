@@ -107,6 +107,13 @@
         flex-direction: column;
         gap: 18px;
 
+        .login-headline-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
         .headline-login-box {
           text-align: center;
           @include label-2-raleway;

@@ -11,6 +11,7 @@ import UserService from "../../service/user.service";
 import { loginSchema } from "../../validations/login.validation";
 import { context } from "../../context/context";
 import AuthenticationService from "../../service/authentication.service";
+import logoApp from "../../assets/logos/VeiacoDarkLogo.png";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -159,7 +160,8 @@ export default function Login() {
           <div className="login-page-left">
             <div className="login-container">
               <div className="login-content">
-                <div>
+                <div className="login-headline-content">
+                  <img src={logoApp} width="200px" alt="Logo do APP Veiaco" />
                   <h4 className="headline-login-box">
                     Faça questão de um tostão!
                   </h4>

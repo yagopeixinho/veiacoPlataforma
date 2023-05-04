@@ -4,9 +4,6 @@
 
 <h4 align="center">Veiaco: porque gerenciar dívidas de amigos nunca foi tão fácil (ou menos constrangedor)</h4>
 
-> **Note**
-> Lamentamos informar que a inclusão da logomarca do aplicativo encontra-se indisponível no momento.
-
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=58ADE2">
     <img src="https://img.shields.io/github/languages/count/yagopeixinho/veiacoPlataforma?color=E390D2">
@@ -24,7 +21,7 @@
   <a href="#licensa">Licensa</a>
 </p>
 
-<img src="src/assets/gifs/veiacoPreview.gif" width="100%">
+<img src="src/assets/gifs/veiacoPreviewGifReadme.gif" width="100%">
 
 <br>
 
@@ -48,16 +45,12 @@ O Veiaco foi criado a partir de uma necessidade pessoal (e uma memória ruim) pa
 
 ## Notas importantes
 
-- Os dados não estão criptografados durante a transferência de informação. Tenha cuidado ao inserir dados sensíveis.
-
 - Alguns _feedbacks_ da tela não estão funcionando nessa _release_. Alguns exemplos:
   - Dados de autenticação inseridos de forma incorreta
   - Transferências de telas que deveriam ocorrer de forma natural ainda não foram inseridos
 - Aguns elementos estão estáticos e não possuem nenhuma funcionalidade, como elementos em HTML (o botão de esqueceu a senha)
 
 - O visual não está concluído. Além das cores, transições de telas e redirecionamentos precisam ser melhorados
-
-- A **logo** não foi definida, portanto, não foi incluída nessa _release_
 
 - As funcionalidades que dependem do _back-end_ ou estão estáticos ou estão incoerentes (valores aleatórios ou não estão funcionando corretamente ou elemento inexistente)
 

@@ -1245,6 +1245,12 @@ body {
   flex-direction: column;
   gap: 18px;
 }
+.login-page .login-page-left .login-container .login-content .login-headline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .login-page .login-page-left .login-container .login-content .headline-login-box {
   text-align: center;
   font-size: 16px;
