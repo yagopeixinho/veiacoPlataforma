@@ -1,13 +1,8 @@
-<!-- <div align="center">
-     <img src="https://github.com/yagopeixinho/readmeTemplate/blob/main/assets/images/readmeTemplateIcon.png?raw=true" width="300px">
-</div> -->
-
-<h1 align="center">Veiaco</h1>
+<div align="center">
+     <img src="./src/assets/logos/VeiacoDarkLogo.png">
+</div>
 
 <h4 align="center">Veiaco: porque gerenciar dívidas de amigos nunca foi tão fácil (ou menos constrangedor)</h4>
-
-> **Note**
-> Lamentamos informar que a inclusão da logomarca do aplicativo encontra-se indisponível no momento.
 
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=58ADE2">
