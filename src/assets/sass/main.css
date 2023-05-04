@@ -751,6 +751,10 @@ template {
   grid-column-end: 3;
   justify-items: center;
 }
+.veiaco-sidebar #logo-side-bar {
+  width: 280px;
+  cursor: pointer;
+}
 .veiaco-sidebar .veiaco-nav {
   display: flex;
   flex-direction: column;

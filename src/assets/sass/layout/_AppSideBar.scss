@@ -7,6 +7,11 @@
   grid-column-end: 3;
   justify-items: center;
 
+  #logo-side-bar {
+    width: 280px;
+    cursor: pointer;
+  }
+
   .veiaco-nav {
     display: flex;
     flex-direction: column;
