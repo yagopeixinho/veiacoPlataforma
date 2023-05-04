@@ -51,3 +51,10 @@
 
 /********************
 ** Vendors **/
+
+// BREAKPOINTS TEMPORARIOS (REMOVER ISSO NA PRÓXIMA RELEASE)
+@media (max-width: 1500px) {
+  .outlet {
+    grid-column-start: 4;
+  }
+}

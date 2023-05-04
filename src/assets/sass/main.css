@@ -1313,5 +1313,10 @@ body {
 ** Themes **/
 /********************
 ** Vendors **/
+@media (max-width: 1500px) {
+  .outlet {
+    grid-column-start: 4;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
