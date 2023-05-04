@@ -1,8 +1,10 @@
 <div align="center">
-     <img src="./src/assets/logos/VeiacoDarkLogo.png">
+     <img src="./src/assets/logos/VeiacoDarkLogo.png" width="440px">
 </div>
 
 <h4 align="center">Veiaco: porque gerenciar dívidas de amigos nunca foi tão fácil (ou menos constrangedor)</h4>
+
+</br>
 
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/yagopeixinho/veiacoPlataforma?color=58ADE2">
