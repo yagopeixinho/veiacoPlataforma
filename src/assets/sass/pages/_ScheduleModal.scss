@@ -1,17 +1,7 @@
-.veiaco-wrapper {
-  width: 100%;
-  display: flex;
+.modal-option-wrapper {
+  background-color: lightblue;
 
-  .veiaco-modal-card {
-    width: 100%;
-    text-align: center;
-
-    img {
-      width: 80%;
-    }
-
-    .card-info {
-        background-color: gray;
-    }
+  .card-option-container {
+    background-color: lightcoral;
   }
 }

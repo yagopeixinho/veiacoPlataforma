@@ -33,16 +33,14 @@ export default function Schedule() {
       const _scheduleService = new ScheduleService();
       const scheduleResponse = await _scheduleService.list();
       setSchedules(scheduleResponse);
-
     }
     init();
   }, []);
 
-  console.log(schedules)
-
+  console.log(schedules);
 
   return (
-    <div>
+    <>
       <GenericOutletHeader
         pageTitle="Agenda"
         inputSearchConfig={{ inputExist: false }}
@@ -51,34 +49,7 @@ export default function Schedule() {
         }}
       />
 
-      <div>
-
-      <ScheduleModal
-        open={modalIsOPen}
-        setOpen={setModalIsOpen}
-        // values={formValues}
-        // dataSchedule={dataSchedule}
-        // setDataSchedule={setDataSchedule}
-      />
-
-        {/* <ScheduleComponent
-          eventClick={(ev) => {
-            console.log(ev);
-          }}
-          startHour="9:00"
-          endHour="18:00"
-          cellClick={(ev) => {
-            setModalIsOpen(true);
-            setFormValues(ev);
-          }}
-          selectedDate={new Date(Date.now())}
-          eventSettings={{
-            dataSource: dataSchedule,
-          }}
-        >
-          <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-        </ScheduleComponent> */}
-
+      <div className="schedule-wrapper">
         <ScheduleComponent
           width="100%"
           eventClick={(ev) => {
@@ -96,6 +67,32 @@ export default function Schedule() {
           <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
         </ScheduleComponent>
       </div>
-    </div>
+
+      <ScheduleModal
+        open={modalIsOPen}
+        setOpen={setModalIsOpen}
+        // values={formValues}
+        // dataSchedule={dataSchedule}
+        // setDataSchedule={setDataSchedule}
+      />
+
+      {/* <ScheduleComponent
+          eventClick={(ev) => {
+            console.log(ev);
+          }}
+          startHour="9:00"
+          endHour="18:00"
+          cellClick={(ev) => {
+            setModalIsOpen(true);
+            setFormValues(ev);
+          }}
+          selectedDate={new Date(Date.now())}
+          eventSettings={{
+            dataSource: dataSchedule,
+          }}
+        >
+          <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+        </ScheduleComponent> */}
+    </>
   );
 }

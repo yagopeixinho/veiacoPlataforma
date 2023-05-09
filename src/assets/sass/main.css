@@ -1309,19 +1309,16 @@ body {
   display: flex;
 }
 
-.veiaco-wrapper {
-  width: 100%;
-  display: flex;
+.schedule-wrapper {
+  width: 95%;
+  margin: 0 auto;
 }
-.veiaco-wrapper .veiaco-modal-card {
-  width: 100%;
-  text-align: center;
+
+.modal-option-wrapper {
+  background-color: lightblue;
 }
-.veiaco-wrapper .veiaco-modal-card img {
-  width: 80%;
-}
-.veiaco-wrapper .veiaco-modal-card .card-info {
-  background-color: gray;
+.modal-option-wrapper .card-option-container {
+  background-color: lightcoral;
 }
 
 /********************

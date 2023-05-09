@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import VeiacoService from "../../../service/veiaco.service";
-import avatarVeiacoCard from "../../../assets/images/avatar-veiaco-card-1.png";
 import { Col, Row } from "reactstrap";
 
 const style = {
@@ -12,9 +11,8 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 1,
 };
 
 export default function ScheduleModal({ open, setOpen }) {
@@ -41,10 +39,16 @@ export default function ScheduleModal({ open, setOpen }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div className="veiaco-wrapper">
+          <div className="modal-option-wrapper">
             <Row>
+              <Col md="6" lg="6" xl="6">
+                <div className="card-option-container">Lembretes Gerais</div>
+              </Col>
+              <Col md="6" lg="6" xl="6">
+                <div className="card-option-container">Ações drásticas :/</div>
+              </Col>
+            </Row>
 
-              </Row>
             {/* {veiacoList.map((veiaco) => (
               <Col md="6" lg="6" xl="6">
                 <div className="veiaco-modal-card">
