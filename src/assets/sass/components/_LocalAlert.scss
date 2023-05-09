@@ -1,0 +1,6 @@
+.local-alert {
+  p {
+    @include label-1-raleway;
+    color: $danger-color-1;
+  }
+}

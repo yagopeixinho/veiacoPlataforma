@@ -741,6 +741,14 @@ template {
   padding: 0 40px;
 }
 
+.local-alert p {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  color: #ce4949;
+}
+
 /********************
 ** Layout **/
 .veiaco-sidebar {

@@ -12,11 +12,13 @@ import { loginSchema } from "../../validations/login.validation";
 import { context } from "../../context/context";
 import AuthenticationService from "../../service/authentication.service";
 import logoApp from "../../assets/logos/VeiacoDarkLogo.png";
+import LocalAlert from "../../components/common/LocalAlert";
 
 export default function Login() {
   const navigate = useNavigate();
   const [createUser, setCreateUser] = useState();
   const { setUser } = useContext(context);
+  const [error, setError] = useState({});
   const [loginInitialValues] = useState({
     email: "",
     password: "",
@@ -48,7 +50,11 @@ export default function Login() {
       setUser(authenticationResponse);
       navigate(`/dashboard`);
     } catch (err) {
-      console.log(err);
+      setError({
+        exist: true,
+        msg: err.response.data.error,
+        status: err.response.data.status,
+      });
     }
   }
 
@@ -212,6 +218,10 @@ export default function Login() {
                     );
                   }}
                 </Formik>
+
+                {error.exist && (
+                  <LocalAlert msg={error.msg} status={error.status} />
+                )}
 
                 <div className="footer-container">
                   <label>
