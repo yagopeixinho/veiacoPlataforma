@@ -1,7 +1,7 @@
 export default class UserSerializer {
   fromJson(json) {
     const userFromJson = {};
-
+    debugger;
     Object.assign(
       userFromJson,
       json.name && { name: json.name },
