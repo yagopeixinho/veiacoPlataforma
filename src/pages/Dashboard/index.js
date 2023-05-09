@@ -15,7 +15,7 @@ export default function Dashboard() {
           addItemExist: false,
         }}
       />
-      {console.log(user)}
+
       <NothingFoundAlert
         message={`Olá, ${user?.name}! Você não possui nenhuma dívida`}
       />

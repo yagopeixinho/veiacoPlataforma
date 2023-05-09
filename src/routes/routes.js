@@ -7,6 +7,7 @@ import VeiacoDashboard from "../pages/VeiacoDashboard";
 import VeiacoForm from "../pages/VeiacoForm";
 import DebtForm from "../pages/DebtForm";
 import Dashboard from "../pages/Dashboard";
+import Schedule from "../pages/Schedule";
 
 export function Private({ children }) {
   // """" Temporary mock logic to get the authenticated user
@@ -74,6 +75,14 @@ export const router = createBrowserRouter([
         element: (
           <Private>
             <DebtForm />
+          </Private>
+        ),
+      },
+      {
+        path: "/agenda",
+        element: (
+          <Private>
+            <Schedule />
           </Private>
         ),
       },

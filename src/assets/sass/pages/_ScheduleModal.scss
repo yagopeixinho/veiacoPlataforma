@@ -1,0 +1,17 @@
+.veiaco-wrapper {
+  width: 100%;
+  display: flex;
+
+  .veiaco-modal-card {
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 80%;
+    }
+
+    .card-info {
+        background-color: gray;
+    }
+  }
+}

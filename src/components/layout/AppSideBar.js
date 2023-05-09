@@ -28,12 +28,22 @@ export default function AppSideBar() {
               Dashboard
             </Link>
           </label>
+
           <label className="veiaco-container">
             <span>
               <img src={veiacoIcon} alt="Veiaco icon" />
             </span>
             <Link to="/veiacos" className="veiaco-link">
               Veiacos
+            </Link>
+          </label>
+
+          <label className="veiaco-container">
+            <span>
+              <img src={veiacoIcon} alt="Veiaco icon" />
+            </span>
+            <Link to="/agenda" className="veiaco-link">
+              Agenda
             </Link>
           </label>
         </div>

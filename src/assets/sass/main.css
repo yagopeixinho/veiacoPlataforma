@@ -1309,6 +1309,21 @@ body {
   display: flex;
 }
 
+.veiaco-wrapper {
+  width: 100%;
+  display: flex;
+}
+.veiaco-wrapper .veiaco-modal-card {
+  width: 100%;
+  text-align: center;
+}
+.veiaco-wrapper .veiaco-modal-card img {
+  width: 80%;
+}
+.veiaco-wrapper .veiaco-modal-card .card-info {
+  background-color: gray;
+}
+
 /********************
 ** Themes **/
 /********************
