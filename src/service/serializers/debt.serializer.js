@@ -30,7 +30,6 @@ export default class DebtSerializer {
 
   toJson(debt) {
     const debtToJson = {};
-    debugger;
 
     Object.assign(
       debtToJson,

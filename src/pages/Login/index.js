@@ -116,7 +116,7 @@ export default function Login() {
                             setCreateUser(false);
                             if (error.exist) {
                               setError({});
-                            } 
+                            }
                           }}
                         >
                           Clique aqui
@@ -237,7 +237,9 @@ export default function Login() {
                 </Formik>
 
                 {error.exist && (
-                  <LocalAlert msg={error.msg} status={error.status} />
+                  <div className="alert-message">
+                    <LocalAlert msg={error.msg} status={error.status} />
+                  </div>
                 )}
 
                 <div className="footer-container">

@@ -12,7 +12,7 @@ export default function LocalAlert({ msg, status }) {
 
   return (
     <div className="local-alert">
-      <p className={alertClassName}>{msg}</p>
+      <label className={alertClassName}>{msg}</label>
     </div>
   );
 }

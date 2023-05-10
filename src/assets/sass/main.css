@@ -1269,6 +1269,9 @@ body {
   flex-direction: column;
   gap: 18px;
 }
+.login-page .login-page-left .login-container .login-content .alert-message {
+  text-align: center;
+}
 .login-page .login-page-left .login-container .login-content .login-headline-content {
   display: flex;
   flex-direction: column;
