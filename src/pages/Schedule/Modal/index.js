@@ -2,65 +2,74 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import VeiacoService from "../../../service/veiaco.service";
-import { Col, Row } from "reactstrap";
+import { Row } from "reactstrap";
+import ModalForm from "./Form";
+import VeiacoCard from "./Card";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  p: 1,
-};
-
-export default function ScheduleModal({ open, setOpen }) {
+export default function ScheduleModal({
+  open,
+  setOpen,
+  formValues,
+  setFormValues,
+  schedules,
+  setSchedules,
+}) {
   const [veiacoList, setVeiacoList] = useState([]);
-  const handleClose = () => setOpen(false);
+  const [veiaco, setVeiaco] = useState({});
+  const [showVeiacoList, setShowVeiacoList] = useState(true);
 
   useEffect(() => {
-    async function init() {
-      const _veiacoService = new VeiacoService();
-      const veiacoResponse = await _veiacoService.list();
+    const fetchVeiacoData = async () => {
+      const veiacoService = new VeiacoService();
+      const response = await veiacoService.list();
+      setVeiacoList(response);
+    };
 
-      setVeiacoList(veiacoResponse);
-    }
-
-    init();
+    fetchVeiacoData();
   }, []);
+
+  const handleVeiacoCardClick = (veiaco) => {
+    setFormValues({ ...formValues, veiacoId: veiaco.id });
+    setVeiaco(veiaco);
+    setShowVeiacoList(false);
+  };
+
+  const handleCloseModal = () => {
+    setOpen(false);
+    setShowVeiacoList(true);
+  };
 
   return (
     <div>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <div className="modal-option-wrapper">
-            <Row>
-              <Col md="6" lg="6" xl="6">
-                <div className="card-option-container">Lembretes Gerais</div>
-              </Col>
-              <Col md="6" lg="6" xl="6">
-                <div className="card-option-container">Ações drásticas :/</div>
-              </Col>
-            </Row>
-
-            {/* {veiacoList.map((veiaco) => (
-              <Col md="6" lg="6" xl="6">
-                <div className="veiaco-modal-card">
-                  <img src={avatarVeiacoCard} alt="Temporary Veiaco user" />
-
-                  <div className="card-info">
-                    <span>{veiaco.name}</span>
-                    <span>{veiaco.phone}</span>
-                  </div>
-                </div>
-              </Col>
-            ))} */}
+        <Box className="modal-box">
+          <div className="modal-wrapper">
+            {showVeiacoList ? (
+              <Row>
+                {veiacoList.map((veiaco) => (
+                  <VeiacoCard
+                    key={veiaco.id}
+                    veiaco={veiaco}
+                    onClick={handleVeiacoCardClick}
+                  />
+                ))}
+              </Row>
+            ) : (
+              <ModalForm
+                veiaco={veiaco}
+                formValues={formValues}
+                setFormValues={setFormValues}
+                setShowVeiacoList={setShowVeiacoList}
+                setOpen={setOpen}
+                schedules={schedules}
+                setSchedules={setSchedules}
+              />
+            )}
           </div>
         </Box>
       </Modal>

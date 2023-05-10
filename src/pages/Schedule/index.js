@@ -21,6 +21,7 @@ registerLicense(
 export default function Schedule() {
   const [schedules, setSchedules] = useState();
   const [modalIsOPen, setModalIsOpen] = useState(false);
+  const [formValues, setFormValues] = useState([]);
 
   const dataManager = new DataManager({
     url: "https://services.syncfusion.com/react/production/api/schedule",
@@ -37,8 +38,6 @@ export default function Schedule() {
     init();
   }, []);
 
-  console.log(schedules);
-
   return (
     <>
       <GenericOutletHeader
@@ -49,32 +48,32 @@ export default function Schedule() {
         }}
       />
 
+      <ScheduleModal
+        open={modalIsOPen}
+        setOpen={setModalIsOpen}
+        formValues={formValues}
+        setFormValues={setFormValues}
+        schedules={schedules}
+        setSchedules={setSchedules}
+      />
+
       <div className="schedule-wrapper">
         <ScheduleComponent
           width="100%"
           eventClick={(ev) => {
-            setModalIsOpen(true);
-            console.log(ev.event);
+            // console.log(ev);
           }}
-          height="650px"
+          height="530px"
           currentView="Week"
           cellClick={(ev) => {
             setModalIsOpen(true);
-            // setFormValues(ev);
+            setFormValues({ startTime: ev.startTime, endTime: ev.endTime });
           }}
           eventSettings={{ dataSource: schedules }}
         >
           <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
         </ScheduleComponent>
       </div>
-
-      <ScheduleModal
-        open={modalIsOPen}
-        setOpen={setModalIsOpen}
-        // values={formValues}
-        // dataSchedule={dataSchedule}
-        // setDataSchedule={setDataSchedule}
-      />
 
       {/* <ScheduleComponent
           eventClick={(ev) => {

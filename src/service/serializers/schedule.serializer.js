@@ -1,3 +1,5 @@
+import { toDateISO } from "../../utils/formatDate";
+
 export default class ScheduleSerializer {
   fromJson(json) {
     const scheduleFromJson = {};
@@ -21,16 +23,19 @@ export default class ScheduleSerializer {
     return scheduleFromJson;
   }
 
-  toJson(user) {
-    const userToJson = {};
+  toJson(schedule) {
+    debugger;
+    const scheduleToJson = {};
 
     Object.assign(
-      userToJson,
-      user.name && { name: user.name },
-      user.email && { email: user.email },
-      user.password && { password: user.password }
+      scheduleToJson,
+      schedule.subject && { subject: schedule.subject },
+      schedule.startTime && { start_time: toDateISO(schedule.startTime) },
+      schedule.endTime && { end_time: toDateISO(schedule.endTime) },
+      schedule.veiacoId && { veiaco_id: schedule.veiacoId },
+      { user_id: 2 }
     );
 
-    return userToJson;
+    return scheduleToJson;
   }
 }
