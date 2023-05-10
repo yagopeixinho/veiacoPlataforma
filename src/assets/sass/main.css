@@ -741,10 +741,26 @@ template {
   padding: 0 40px;
 }
 
-.local-alert p {
+.success {
   font-size: 16px;
   font-family: "Raleway", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 30px;
+  color: #62bb5f;
+}
+
+.alert {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  color: #ce4949;
+}
+
+.warning {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
   line-height: 30px;
   color: #ce4949;
 }
@@ -1252,6 +1268,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+.login-page .login-page-left .login-container .login-content .alert-message {
+  text-align: center;
 }
 .login-page .login-page-left .login-container .login-content .login-headline-content {
   display: flex;

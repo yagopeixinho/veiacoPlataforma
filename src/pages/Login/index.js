@@ -13,6 +13,7 @@ import { context } from "../../context/context";
 import AuthenticationService from "../../service/authentication.service";
 import logoApp from "../../assets/logos/VeiacoDarkLogo.png";
 import LocalAlert from "../../components/common/LocalAlert";
+import { localErrorStatus } from "../../utils/localErrorStatus";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ export default function Login() {
       setError({
         exist: true,
         msg: err.response.data.error,
-        status: err.response.data.status,
+        status: localErrorStatus.alert,
       });
     }
   }
@@ -64,9 +65,18 @@ export default function Login() {
       .create(values)
       .then((res) => {
         setCreateUser(false);
+
+        if (error.exist) {
+          setError({});
+        }
       })
-      .catch((err) => console.log(err))
-      .finally(() => {});
+      .catch((err) => {
+        setError({
+          exist: true,
+          msg: err.response.data.error,
+          status: localErrorStatus.alert,
+        });
+      });
   }
 
   return (
@@ -104,6 +114,9 @@ export default function Login() {
                         <span
                           onClick={() => {
                             setCreateUser(false);
+                            if (error.exist) {
+                              setError({});
+                            }
                           }}
                         >
                           Clique aqui
@@ -140,6 +153,10 @@ export default function Login() {
                         label="Criar conta"
                         styles="button-register-user"
                       />
+
+                      {error.exist && (
+                        <LocalAlert msg={error.msg} status={error.status} />
+                      )}
 
                       <div className="important-politics">
                         <h6>
@@ -220,7 +237,9 @@ export default function Login() {
                 </Formik>
 
                 {error.exist && (
-                  <LocalAlert msg={error.msg} status={error.status} />
+                  <div className="alert-message">
+                    <LocalAlert msg={error.msg} status={error.status} />
+                  </div>
                 )}
 
                 <div className="footer-container">
@@ -230,6 +249,10 @@ export default function Login() {
                       className="register-here"
                       onClick={() => {
                         setCreateUser(true);
+
+                        if (error.exist) {
+                          setError({});
+                        }
                       }}
                     >
                       Cadastre-se aqui

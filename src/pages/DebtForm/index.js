@@ -14,6 +14,8 @@ import { debtSchema } from "../../validations/debt.validation";
 import DropdownInput from "../../components/common/DropdownInput";
 import DateInput from "../../components/common/InputDate";
 import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
+import { localErrorStatus } from "../../utils/localErrorStatus";
+import LocalAlert from "../../components/common/LocalAlert";
 
 export default function DebtForm() {
   const { idVeiaco, idDivida } = useParams();
@@ -23,6 +25,7 @@ export default function DebtForm() {
   const [debtFormInitialValues, setDebtFormInitialValues] = useState({});
   const [categories, setCategories] = useState([]);
   const [confirmationDialog, setConfirmationDialog] = useState(false);
+  const [alertMessage, setAlertMessage] = useState({});
 
   const _categoryService = new CategoryService();
   const _debtService = new DebtService();
@@ -71,6 +74,11 @@ export default function DebtForm() {
         .update(values, idDivida)
         .then((response) => {
           navigate(`/veiaco/${idVeiaco}/dashboard`);
+          setAlertMessage({
+            exist: true,
+            msg: "Dívida atualizada com sucesso!",
+            status: localErrorStatus.success,
+          });
         })
         .catch((err) => console.log(err))
         .finally(() => {});
@@ -203,6 +211,15 @@ export default function DebtForm() {
                         />
                       </div>
                     </div>
+
+                    {alertMessage.exist && (
+                      <div className="alert-message">
+                        <LocalAlert
+                          msg={alertMessage.msg}
+                          status={alertMessage.status}
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
