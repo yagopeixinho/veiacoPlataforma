@@ -30,6 +30,41 @@
       align-items: center;
       height: 80vh;
 
+      .veiaco-contact {
+        text-align: left;
+      }
+
+      .veiaco-actions-footer {
+        margin-top: 50px;
+        width: 100%;
+
+        .button-whatsapp-action {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          background-color: #f7f7f7;
+          border-radius: 16px;
+          padding: 10px 20px;
+          cursor: pointer;
+
+          p {
+            @include label-2-raleway;
+            font-size: 15px;
+            font-weight: bold;
+            color: #303030;
+            line-height: 0;
+          }
+
+          label {
+            @include label-4-raleway;
+            font-size: 14px;
+            font-weight: 400;
+            color: #bdbdbd;
+            line-height: 0;
+          }
+        }
+      }
+
       .veiaco-header-info {
         display: flex;
 

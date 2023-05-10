@@ -22,7 +22,7 @@ export default class DebtSerializer {
         date: json.date,
         dateLabel: formatDate(json.date),
       },
-      { status: json.status }
+      json.hasOwnProperty("status") && { status: json.status }
     );
 
     return debtFromJson;
