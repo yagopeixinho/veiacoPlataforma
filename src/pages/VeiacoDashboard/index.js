@@ -57,20 +57,25 @@ export default function VeiacoDashboard() {
 
   async function generateFiscalNote(id) {
     const fiscalNote = await _veiacoService.getFicaslNote(id);
-
+    debugger;
     let text = `🤑 Veiaco!%0A${
       fiscalNoteMessages[Math.floor(Math.random() * fiscalNoteMessages.length)]
     } %0A%0A🧾 Nota fiscal%0A*Dívida* | *Valor* | *Data*`;
 
     fiscalNote.forEach((item) => {
-      if (item.value && item.date) {
+      if (item.value && item.name) {
         text =
-          text + "%0A" + item.name + ` - R$${item.value}, ` + item.dateLabel;
+          text +
+          "%0A" +
+          item.name +
+          ` - R$${item.value}, ` +
+          (item.dateLabel ? item.dateLabel : "");
       }
     });
 
     text =
       text + "%0A%0A%0A_Essa é uma mensagem enviada utilizando o APP Veiaco_";
+    debugger;
 
     window.open(
       `https://web.whatsapp.com/send?phone=${veiaco.phone}&text=${text}`
