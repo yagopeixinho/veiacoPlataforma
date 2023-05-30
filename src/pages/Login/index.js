@@ -49,7 +49,7 @@ export default function Login() {
       );
 
       setUser(authenticationResponse);
-      navigate(`/dashboard`);
+      navigate(`/veiacos`);
     } catch (err) {
       setError({
         exist: true,

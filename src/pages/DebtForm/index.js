@@ -48,7 +48,7 @@ export default function DebtForm() {
         setDebtFormInitialValues({
           name: "",
           value: "",
-          status: false,
+          status: true,
           categoryId: "",
           veiacoId: idVeiaco,
           date: "",

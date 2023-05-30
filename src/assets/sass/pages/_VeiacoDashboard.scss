@@ -35,8 +35,34 @@
       }
 
       .veiaco-actions-footer {
-        margin-top: 50px;
+        margin-top: 30px;
         width: 100%;
+
+        .total-debt-container {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 10px;
+          background-color: #f7f7f7;
+          border-radius: 16px;
+          padding: 14px 20px;
+
+          h1 {
+            @include label-2-poppins;
+            font-size: 40px;
+            font-weight: bold;
+            color: rgb(105, 201, 105);
+            line-height: 0;
+          }
+
+          label {
+            @include label-4-raleway;
+            font-size: 20px;
+            font-weight: 400;
+            color: #bdbdbd;
+          }
+        }
 
         .button-whatsapp-action {
           display: flex;
@@ -44,7 +70,7 @@
           gap: 18px;
           background-color: #f7f7f7;
           border-radius: 16px;
-          padding: 10px 20px;
+          padding: 6px 20px;
           cursor: pointer;
 
           p {
