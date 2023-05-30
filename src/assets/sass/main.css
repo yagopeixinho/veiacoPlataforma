@@ -1402,6 +1402,86 @@ body {
   display: flex;
 }
 
+.schedule-wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  border-color: #fff;
+  box-shadow: 24;
+  background-color: #fff;
+}
+.modal-box .modal-wrapper .cards {
+  height: 55vh;
+  overflow: scroll;
+  padding: 1.8rem;
+  border-radius: 1.5rem;
+}
+.modal-box .modal-wrapper .veiaco-modal-card {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.modal-box .modal-wrapper .veiaco-modal-card img {
+  width: 100%;
+}
+.modal-box .modal-wrapper .veiaco-modal-card:hover {
+  background-color: #ebebeb;
+}
+.modal-box .modal-wrapper .modal-form-wrapper form {
+  padding: 20px 20px 0px 20px;
+}
+.modal-box .modal-wrapper .modal-form-wrapper form .buttons-container {
+  padding-top: 3rem;
+}
+.modal-box .modal-wrapper .modal-form-wrapper form .buttons-container .button-veiaco-form-confirm {
+  background-color: #62bb5f;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  cursor: pointer;
+  padding: 4px 14px;
+}
+.modal-box .modal-wrapper .modal-form-wrapper form .buttons-container .button-veiaco-form-cancel {
+  background-color: #ce4949;
+  color: #fbfaf4;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  cursor: pointer;
+  padding: 4px 14px;
+}
+.modal-box .modal-wrapper .modal-form-wrapper .user-form-info {
+  padding: 1rem;
+  background-color: #ffcdd9;
+  text-align: center;
+}
+.modal-box .modal-wrapper .modal-form-wrapper .user-form-info img {
+  width: 100%;
+}
+.modal-box .modal-wrapper .modal-form-wrapper .user-form-info #name {
+  font-size: 20px;
+}
+.modal-box .modal-wrapper .modal-form-wrapper .user-form-info #occupation {
+  font-size: 13px;
+  color: #575757;
+}
+
 /********************
 ** Themes **/
 /********************
@@ -1410,6 +1490,10 @@ body {
   .outlet {
     grid-column-start: 4;
   }
+}
+.e-cell-popup,
+.e-event-popup {
+  display: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */

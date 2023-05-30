@@ -180,7 +180,7 @@ export default function VeiacoForm() {
                         <ButtonSave
                           label="Salvar"
                           type="submit"
-                          styles="button-veiaco-form-confirm "
+                          styles="button-veiaco-form-confirm"
                         />
                       </div>
                     </div>

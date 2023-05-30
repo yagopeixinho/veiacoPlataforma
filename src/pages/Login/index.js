@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { userSchema } from "../../validations/user.validation";
 import UserService from "../../service/user.service";
 import { loginSchema } from "../../validations/login.validation";
-import { context } from "../../context/context";
+import { AppContext } from "../../context/context";
 import AuthenticationService from "../../service/authentication.service";
 import logoApp from "../../assets/logos/VeiacoDarkLogo.png";
 import LocalAlert from "../../components/common/LocalAlert";
@@ -18,7 +18,7 @@ import { localErrorStatus } from "../../utils/localErrorStatus";
 export default function Login() {
   const navigate = useNavigate();
   const [createUser, setCreateUser] = useState();
-  const { setUser } = useContext(context);
+  const { setUser } = useContext(AppContext);
   const [error, setError] = useState({});
   const [loginInitialValues] = useState({
     email: "",
@@ -40,23 +40,24 @@ export default function Login() {
     },
   };
 
-  async function handleLogIn(values) {
-    try {
-      const _authenticationService = new AuthenticationService();
-      const authenticationResponse = await _authenticationService.singIn(
-        values.email,
-        values.password
-      );
+  const _authenticationService = new AuthenticationService();
 
-      setUser(authenticationResponse);
-      navigate(`/veiacos`);
-    } catch (err) {
-      setError({
-        exist: true,
-        msg: err.response.data.error,
-        status: localErrorStatus.alert,
+  async function handleLogIn(values) {
+    debugger;
+    await _authenticationService
+      .singIn(values.email, values.password)
+      .then((res) => {
+        setUser(res);
+        localStorage.setItem("user", JSON.stringify(res));
+        navigate(`/veiacos`);
+      })
+      .catch((err) => {
+        setError({
+          exist: true,
+          msg: err.response.data.error,
+          status: localErrorStatus.alert,
+        });
       });
-    }
   }
 
   async function handleCreateUser(values) {

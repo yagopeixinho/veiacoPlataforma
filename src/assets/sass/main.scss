@@ -46,6 +46,8 @@
 @import "./pages/VeiacoForm";
 @import "./pages/DebtForm";
 @import "./pages/Login";
+@import "./pages/Schedule";
+@import "./pages/ScheduleModal";
 
 /********************
 ** Themes **/
@@ -58,4 +60,9 @@
   .outlet {
     grid-column-start: 4;
   }
+}
+
+.e-cell-popup,
+.e-event-popup {
+  display: none !important;
 }

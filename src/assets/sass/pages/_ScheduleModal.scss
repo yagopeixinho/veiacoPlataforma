@@ -1,0 +1,73 @@
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  border-color: #fff;
+  box-shadow: 24;
+  background-color: #fff;
+
+  .modal-wrapper {
+    .cards {
+      height: 55vh;
+      overflow: scroll;
+      padding: 1.8rem;
+      border-radius: 1.5rem;
+    }
+
+    .veiaco-modal-card {
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 2rem;
+
+      .card-info {
+      }
+
+      img {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: #ebebeb;
+      }
+    }
+
+    .modal-form-wrapper {
+      form {
+        padding: 20px 20px 0px 20px;
+
+        .buttons-container {
+          .button-veiaco-form-confirm {
+            @include button-cancel;
+            padding: 4px 14px;
+          }
+          .button-veiaco-form-cancel {
+            @include button-confirm;
+            padding: 4px 14px;
+          }
+
+          padding-top: 3rem;
+        }
+      }
+
+      .user-form-info {
+        padding: 1rem;
+        background-color: #ffcdd9;
+        text-align: center;
+
+        img {
+          width: 100%;
+        }
+
+        #name {
+          font-size: 20px;
+        }
+        #occupation {
+          font-size: 13px;
+          color: #575757;
+        }
+      }
+    }
+  }
+}

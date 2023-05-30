@@ -27,6 +27,15 @@ export default function AppSideBar() {
               Veiacos
             </Link>
           </label>
+
+          <label className="veiaco-container">
+            <span>
+              <img src={veiacoIcon} alt="Veiaco icon" />
+            </span>
+            <Link to="/agenda" className="veiaco-link">
+              Agenda
+            </Link>
+          </label>
         </div>
 
         <div>

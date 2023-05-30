@@ -8,6 +8,7 @@ export default class CoreApiService {
   }
 
   async create(item) {
+    debugger;
     const response = await api.post(
       `${this.endpoint}`,
       this.serializer.toJson(item)
