@@ -9,9 +9,17 @@
   background-color: #fff;
 
   .modal-wrapper {
+    .cards {
+      height: 55vh;
+      overflow: scroll;
+      padding: 1.8rem;
+      border-radius: 1.5rem;
+    }
+
     .veiaco-modal-card {
       text-align: center;
       cursor: pointer;
+      margin-bottom: 2rem;
 
       .card-info {
       }
@@ -27,7 +35,7 @@
 
     .modal-form-wrapper {
       form {
-        padding: 20px;
+        padding: 20px 20px 0px 20px;
 
         .buttons-container {
           .button-veiaco-form-confirm {

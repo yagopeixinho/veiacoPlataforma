@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import GenericOutletHeader from "../../components/layout/GenericOutletHeader";
 import NothingFoundAlert from "../../components/common/NothingFoundAlert";
-import { context } from "../../context/context";
+import { AppContext } from "../../context/context";
 
 export default function Dashboard() {
-  const { user } = useContext(context);
+  const { user } = useContext(AppContext);
+
+  console.log(user)
 
   return (
     <div>

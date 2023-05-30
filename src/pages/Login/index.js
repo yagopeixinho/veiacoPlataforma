@@ -9,14 +9,14 @@ import { useNavigate } from "react-router-dom";
 import { userSchema } from "../../validations/user.validation";
 import UserService from "../../service/user.service";
 import { loginSchema } from "../../validations/login.validation";
-import { context } from "../../context/context";
+import { AppContext } from "../../context/context";
 import AuthenticationService from "../../service/authentication.service";
 import logoApp from "../../assets/logos/VeiacoDarkLogo.png";
 
 export default function Login() {
   const navigate = useNavigate();
   const [createUser, setCreateUser] = useState();
-  const { setUser } = useContext(context);
+  const { setUser } = useContext(AppContext);
   const [loginInitialValues] = useState({
     email: "",
     password: "",
@@ -37,19 +37,20 @@ export default function Login() {
     },
   };
 
-  async function handleLogIn(values) {
-    try {
-      const _authenticationService = new AuthenticationService();
-      const authenticationResponse = await _authenticationService.singIn(
-        values.email,
-        values.password
-      );
+  const _authenticationService = new AuthenticationService();
 
-      setUser(authenticationResponse);
-      navigate(`/dashboard`);
-    } catch (err) {
-      console.log(err);
-    }
+  async function handleLogIn(values) {
+    debugger;
+    await _authenticationService
+      .singIn(values.email, values.password)
+      .then((res) => {
+        setUser(res);
+        localStorage.setItem("user", JSON.stringify(res));
+        navigate(`/dashboard`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   async function handleCreateUser(values) {

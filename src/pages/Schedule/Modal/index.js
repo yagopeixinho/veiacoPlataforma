@@ -5,6 +5,8 @@ import VeiacoService from "../../../service/veiaco.service";
 import { Row } from "reactstrap";
 import ModalForm from "./Form";
 import VeiacoCard from "./Card";
+import ScheduleService from "../../../service/schedule.service";
+import ConfirmationDialog from "../../../components/modals/ConfirmationDialog";
 
 export default function ScheduleModal({
   open,
@@ -16,17 +18,32 @@ export default function ScheduleModal({
 }) {
   const [veiacoList, setVeiacoList] = useState([]);
   const [veiaco, setVeiaco] = useState({});
-  const [showVeiacoList, setShowVeiacoList] = useState(true);
+  const [showVeiacoList, setShowVeiacoList] = useState(false);
+
+  const veiacoService = new VeiacoService();
+  const schedulesService = new ScheduleService();
 
   useEffect(() => {
-    const fetchVeiacoData = async () => {
-      const veiacoService = new VeiacoService();
-      const response = await veiacoService.list();
-      setVeiacoList(response);
-    };
+    if (formValues?.id) {
+      setShowVeiacoList(false);
+      fetchVeiacoAndSchedule();
+    } else {
+      setShowVeiacoList(true);
+      fetchVeiacos();
+    }
+  }, [formValues?.id]);
 
-    fetchVeiacoData();
-  }, []);
+  const fetchVeiacoAndSchedule = async () => {
+    const getSchedule = await schedulesService.read(formValues.id);
+    const getVeiaco = await veiacoService.read(getSchedule.VeiacoId);
+
+    setVeiaco(getVeiaco);
+  };
+
+  const fetchVeiacos = async () => {
+    const response = await veiacoService.list();
+    setVeiacoList(response);
+  };
 
   const handleVeiacoCardClick = (veiaco) => {
     setFormValues({ ...formValues, veiacoId: veiaco.id });
@@ -40,7 +57,7 @@ export default function ScheduleModal({
   };
 
   return (
-    <div>
+    <>
       <Modal
         open={open}
         onClose={handleCloseModal}
@@ -50,7 +67,7 @@ export default function ScheduleModal({
         <Box className="modal-box">
           <div className="modal-wrapper">
             {showVeiacoList ? (
-              <Row>
+              <Row className="cards">
                 {veiacoList.map((veiaco) => (
                   <VeiacoCard
                     key={veiaco.id}
@@ -73,6 +90,6 @@ export default function ScheduleModal({
           </div>
         </Box>
       </Modal>
-    </div>
+    </>
   );
 }
