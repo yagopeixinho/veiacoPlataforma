@@ -49,10 +49,14 @@ export default function Login() {
       .then((res) => {
         setUser(res);
         localStorage.setItem("user", JSON.stringify(res));
-        navigate(`/dashboard`);
+        navigate(`/veiacos`);
       })
       .catch((err) => {
-        console.log(err);
+        setError({
+          exist: true,
+          msg: err.response.data.error,
+          status: localErrorStatus.alert,
+        });
       });
   }
 

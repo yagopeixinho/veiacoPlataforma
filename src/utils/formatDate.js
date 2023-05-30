@@ -1,8 +1,8 @@
 export function formatDate(dateString) {
   var date = new Date(dateString);
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
+  var day = date.getUTCDate();
+  var month = date.getUTCMonth() + 1;
+  var year = date.getUTCFullYear();
 
   if (day < 10) {
     day = "0" + day;
@@ -24,4 +24,20 @@ export function toDateISO(date, fusoParam = null) {
   const segundos = date.getSeconds().toString().padStart(2, "0");
 
   return `${ano}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
+}
+
+export function formatDateForms(dateString) {
+  var date = new Date(dateString);
+  var day = date.getUTCDate();
+  var month = date.getUTCMonth() + 1;
+  var year = date.getUTCFullYear();
+
+  if (day < 10) {
+    day = "0" + day;
+  }
+  if (month < 10) {
+    month = "0" + month;
+  }
+
+  return year + "-" + month + "-" + day;
 }

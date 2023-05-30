@@ -31,13 +31,16 @@ export default class DebtGraphicService extends CoreApiService {
       `${this.parentEndpoint}/${parentId}/${this.endpoint}`
     );
 
-    const data = response.data;
-    if (data.hasOwnProperty("items") && isListView) {
-      return this.convertData(data, data._meta);
-    } else if (data.hasOwnProperty("items")) {
-      return this.convertData(data.items);
-    } else {
-      return this.convertData(data);
-    }
+    return response.data.items;
+  }
+
+  async totalDebt(parentId, isListView = null) {
+    this.endpoint = "total_debt";
+
+    const response = await api.get(
+      `${this.parentEndpoint}/${parentId}/${this.endpoint}`
+    );
+
+    return response.data.items;
   }
 }

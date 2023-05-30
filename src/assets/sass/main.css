@@ -703,7 +703,8 @@ template {
   padding: 5px 26px;
 }
 .container-debt-preview-table .preview-table tbody tr td .status-inactive {
-  background-color: #f6dde6;
+  background-color: #ac4797;
+  color: #fff;
   border-radius: 10px;
   padding: 5px 14px;
 }
@@ -877,8 +878,37 @@ body {
   text-align: left;
 }
 .veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer {
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100%;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .total-debt-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  background-color: #f7f7f7;
+  border-radius: 16px;
+  padding: 14px 20px;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .total-debt-container h1 {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(105, 201, 105);
+  line-height: 0;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .total-debt-container label {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #bdbdbd;
 }
 .veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .button-whatsapp-action {
   display: flex;
@@ -886,7 +916,7 @@ body {
   gap: 18px;
   background-color: #f7f7f7;
   border-radius: 16px;
-  padding: 10px 20px;
+  padding: 6px 20px;
   cursor: pointer;
 }
 .veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .button-whatsapp-action p {

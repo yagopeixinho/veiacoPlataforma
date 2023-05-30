@@ -1,5 +1,5 @@
 import CategorySerializer from "./category.serializer";
-import { formatDate } from "../../utils/formatDate";
+import { formatDate, formatDateForms } from "../../utils/formatDate";
 
 export default class DebtSerializer {
   constructor() {
@@ -19,7 +19,7 @@ export default class DebtSerializer {
         category: this.categorySerializer.fromJson(json.category),
       },
       json.date && {
-        date: json.date,
+        date: formatDateForms(json.date),
         dateLabel: formatDate(json.date),
       },
       json.hasOwnProperty("status") && { status: json.status }
