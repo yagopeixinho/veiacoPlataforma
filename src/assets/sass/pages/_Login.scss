@@ -107,6 +107,10 @@
         flex-direction: column;
         gap: 18px;
 
+        .alert-message {
+          text-align: center;
+        }
+
         .login-headline-content {
           display: flex;
           flex-direction: column;

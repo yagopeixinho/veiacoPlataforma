@@ -24,4 +24,17 @@ export default class VeiacoService extends CoreApiService {
       return this.convertData(data);
     }
   }
+
+  async getFicaslNote(id) {
+    this.parentEndpoint = "fiscal_note";
+    this.serializer = new DebtSerializer();
+
+    const response = await api.get(
+      `${this.endpoint}/${id}/${this.parentEndpoint}`
+    );
+
+    const data = response.data;
+
+    return this.convertData(data);
+  }
 }

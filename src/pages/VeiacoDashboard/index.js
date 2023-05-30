@@ -13,6 +13,8 @@ import VeiacoBarChart from "../../components/graphics/VeiacoBarChart";
 import DebtGraphicService from "../../service/debt-graphic.service";
 import VeiacoPieChart from "../../components/graphics/VeiacoPieChart";
 import NothingFoundAlert from "../../components/common/NothingFoundAlert";
+import LogoWhatsApp from "../../assets/icons/logo-whatsapp.svg";
+import { fiscalNoteMessages } from "../../utils/fiscalNoteMessages";
 
 export default function VeiacoDashboard() {
   const navigate = useNavigate();
@@ -51,6 +53,33 @@ export default function VeiacoDashboard() {
     await _veiacoService.delete(id);
 
     navigate("/veiacos");
+  }
+
+  async function generateFiscalNote(id) {
+    const fiscalNote = await _veiacoService.getFicaslNote(id);
+    debugger;
+    let text = `🤑 Veiaco!%0A${
+      fiscalNoteMessages[Math.floor(Math.random() * fiscalNoteMessages.length)]
+    } %0A%0A🧾 Nota fiscal%0A*Dívida* | *Valor* | *Data*`;
+
+    fiscalNote.forEach((item) => {
+      if (item.value && item.name) {
+        text =
+          text +
+          "%0A" +
+          item.name +
+          ` - R$${item.value}, ` +
+          (item.dateLabel ? item.dateLabel : "");
+      }
+    });
+
+    text =
+      text + "%0A%0A%0A_Essa é uma mensagem enviada utilizando o APP Veiaco_";
+    debugger;
+
+    window.open(
+      `https://web.whatsapp.com/send?phone=${veiaco.phone}&text=${text}`
+    );
   }
 
   return (
@@ -121,8 +150,31 @@ export default function VeiacoDashboard() {
               />
             </div>
 
-            {veiaco.phone && <VeiacoLabelPhone phone={veiaco.phone} />}
-            {veiaco.email && <VeiacoLabelEmail email={veiaco.email} />}
+            <div className="veiaco-contact">
+              {veiaco.phone && <VeiacoLabelPhone phone={veiaco.phone} />}
+              {veiaco.email && <VeiacoLabelEmail email={veiaco.email} />}
+            </div>
+
+            <div className="veiaco-actions-footer">
+              {debtList.length ? (
+                <div
+                  className="button-whatsapp-action"
+                  onClick={() => {
+                    generateFiscalNote(id);
+                  }}
+                >
+                  <span>
+                    <img src={LogoWhatsApp} alt="Logo do APP WhatsApp" />
+                  </span>
+                  <span>
+                    <p>Enviar nota fiscal</p>
+                    <label>via WhatsApp</label>
+                  </span>
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </div>
       </div>

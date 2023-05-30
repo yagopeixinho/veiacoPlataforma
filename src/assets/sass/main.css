@@ -741,6 +741,30 @@ template {
   padding: 0 40px;
 }
 
+.success {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  color: #62bb5f;
+}
+
+.alert {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  color: #ce4949;
+}
+
+.warning {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  color: #ce4949;
+}
+
 /********************
 ** Layout **/
 .veiaco-sidebar {
@@ -848,6 +872,42 @@ body {
   padding: 62px 30px 0 30px;
   align-items: center;
   height: 80vh;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-contact {
+  text-align: left;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer {
+  margin-top: 50px;
+  width: 100%;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .button-whatsapp-action {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background-color: #f7f7f7;
+  border-radius: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .button-whatsapp-action p {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #303030;
+  line-height: 0;
+}
+.veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-actions-footer .button-whatsapp-action label {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #bdbdbd;
+  line-height: 0;
 }
 .veiaco-dashboard-container .veiaco-right-side .container-veiaco-info .veiaco-header-info {
   display: flex;
@@ -1244,6 +1304,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+.login-page .login-page-left .login-container .login-content .alert-message {
+  text-align: center;
 }
 .login-page .login-page-left .login-container .login-content .login-headline-content {
   display: flex;

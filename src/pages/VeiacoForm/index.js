@@ -8,6 +8,8 @@ import { veiacoSchema } from "../../validations/veiaco.validation";
 import avatarVeiacoCard from "../../assets/images/avatar-veiaco-card-1.png";
 import ButtonDelete from "../../components/common/ButtonDelete";
 import ConfirmationDialog from "../../components/modals/ConfirmationDialog";
+import LocalAlert from "../../components/common/LocalAlert";
+import { localErrorStatus } from "../../utils/localErrorStatus";
 
 export default function VeiacoForm() {
   const { id } = useParams();
@@ -16,6 +18,7 @@ export default function VeiacoForm() {
   const [veiacoFormInitialValues, setVeiacoFormInitialValues] = useState({});
   const [veiaco, setVeiaco] = useState();
   const [confirmationDialog, setConfirmationDialog] = useState(false);
+  const [alertMessage, setAlertMessage] = useState({});
 
   const _veiacoService = new VeiacoService();
 
@@ -58,6 +61,11 @@ export default function VeiacoForm() {
         .then((response) => {
           setVeiacoFormInitialValues(response);
           setVeiaco(response);
+          setAlertMessage({
+            exist: true,
+            msg: "Veiaco atualizado com sucesso!",
+            status: localErrorStatus.success,
+          });
         })
         .catch((err) => console.log(err))
         .finally(() => {});
@@ -146,7 +154,7 @@ export default function VeiacoForm() {
                       fieldName="email"
                       classes="input-veiaco-form"
                     />
-                    
+
                     <TextInput
                       label="Cargo"
                       name="occupation"
@@ -175,6 +183,15 @@ export default function VeiacoForm() {
                         />
                       </div>
                     </div>
+
+                    {alertMessage.exist && (
+                      <div className="alert-message">
+                        <LocalAlert
+                          msg={alertMessage.msg}
+                          status={alertMessage.status}
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

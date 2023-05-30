@@ -1,0 +1,14 @@
+.success {
+  @include label-2-raleway;
+  color: $success-color-1;
+}
+
+.alert {
+  @include label-2-raleway;
+  color: $danger-color-1;
+}
+
+.warning {
+  @include label-2-raleway;
+  color: $danger-color-1;
+}
