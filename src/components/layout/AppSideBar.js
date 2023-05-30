@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import veiacoIcon from "../../assets/icons/temp2.svg";
+import scheduleIcon from "../../assets/icons/schedule-icon.svg";
 import logoutIcon from "../../assets/icons/sair-veiaco-icon.svg";
 import appLogo from "../../assets/logos/VeiacoLightLogo.png";
 
@@ -30,7 +31,7 @@ export default function AppSideBar() {
 
           <label className="veiaco-container">
             <span>
-              <img src={veiacoIcon} alt="Veiaco icon" />
+              <img src={scheduleIcon} alt="Veiaco icon" />
             </span>
             <Link to="/agenda" className="veiaco-link">
               Agenda

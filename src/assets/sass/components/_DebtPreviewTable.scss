@@ -12,6 +12,7 @@
   .preview-table {
     width: 100%;
     border-spacing: 0px 20px;
+    text-align: center;
 
     thead {
       tr {
@@ -57,14 +58,14 @@
           .status-active {
             background-color: $main-color-6;
             border-radius: 10px;
-            padding: 5px 26px;
+            padding: 0px 33px;
           }
 
           .status-inactive {
             background-color: $main-color-1;
             color: $main-color-light-fff;
             border-radius: 10px;
-            padding: 5px 14px;
+            padding: 0px 22px;
           }
         }
       }
