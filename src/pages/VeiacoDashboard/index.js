@@ -24,22 +24,26 @@ export default function VeiacoDashboard() {
     useState(false);
   const [debtBarChartData, setDebtBarChartData] = useState([]);
   const [responseDebtGraphic, setResponseDebtGraphic] = useState([]);
+  const [totalDebt, setTotalDebt] = useState(0);
   const [debtList, setListDebt] = useState([]);
 
   const _veiacoService = new VeiacoService();
+  const _chartService = new DebtGraphicService();
 
   useEffect(() => {
     async function init() {
       const responseService = await _veiacoService.read(id);
       setVeiaco(responseService);
 
-      const _debtBarChart = new DebtGraphicService();
-      const responseBarChart = await _debtBarChart.getBarChart(id);
+      const responseBarChart = await _chartService.getBarChart(id);
       setDebtBarChartData(responseBarChart);
 
-      const _debtPieChart = new DebtGraphicService();
-      const responsePieChart = await _debtPieChart.getPieChart(id);
+      const responsePieChart = await _chartService.getPieChart(id);
       setResponseDebtGraphic(responsePieChart);
+
+      const responseTotalDebt = await _chartService.totalDebt(id);
+      setTotalDebt(responseTotalDebt);
+      console.log(responseTotalDebt);
 
       const veiacoDebtsResponse = await _veiacoService.listVeiacoDebt(id);
       setListDebt(veiacoDebtsResponse);
@@ -57,7 +61,7 @@ export default function VeiacoDashboard() {
 
   async function generateFiscalNote(id) {
     const fiscalNote = await _veiacoService.getFicaslNote(id);
-    debugger;
+
     let text = `🤑 Veiaco!%0A${
       fiscalNoteMessages[Math.floor(Math.random() * fiscalNoteMessages.length)]
     } %0A%0A🧾 Nota fiscal%0A*Dívida* | *Valor* | *Data*`;
@@ -75,7 +79,6 @@ export default function VeiacoDashboard() {
 
     text =
       text + "%0A%0A%0A_Essa é uma mensagem enviada utilizando o APP Veiaco_";
-    debugger;
 
     window.open(
       `https://web.whatsapp.com/send?phone=${veiaco.phone}&text=${text}`
@@ -113,8 +116,14 @@ export default function VeiacoDashboard() {
 
           {debtList.length ? (
             <div className="grid-dashboard-info">
-              <VeiacoBarChart data={debtBarChartData} />
-              <VeiacoPieChart data={responseDebtGraphic} />
+              {debtBarChartData.length ? (
+                <VeiacoBarChart data={debtBarChartData} />
+              ) : null}
+
+              {responseDebtGraphic.category.length ? (
+                <VeiacoPieChart data={responseDebtGraphic} />
+              ) : null}
+
               <DebtPreviewTable />
             </div>
           ) : (
@@ -174,6 +183,11 @@ export default function VeiacoDashboard() {
               ) : (
                 <></>
               )}
+
+              <div className="total-debt-container">
+                <h1>R${totalDebt.totalValue}</h1>
+                <label>Dívida total</label>
+              </div>
             </div>
           </div>
         </div>

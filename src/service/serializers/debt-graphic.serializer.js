@@ -13,6 +13,7 @@ export default class DebtGraphicSerializer {
       debtGraphicFromJson,
       json.date && { dateLabel: formatDate(json.date) },
       json.total_value && { totalValue: json.total_value },
+      json.category && { category: json.category },
       json.debts && {
         debts: json.debts.map((item) => this.debtSerializer.fromJson(item)),
       }
