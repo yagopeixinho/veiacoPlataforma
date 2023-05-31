@@ -1515,7 +1515,7 @@ body {
   display: none !important;
 }
 
-.e-schedule {
+.e-schedule, .e-tbar-btn-text {
   font-family: "Poppins", sans-serif;
 }
 
