@@ -1423,13 +1423,18 @@ body {
   width: 600px;
   border-color: #fff;
   box-shadow: 24;
-  background-color: #fff;
+  background-color: #fbfaf4;
+  border-radius: 1.2rem;
 }
 .modal-box .modal-wrapper .cards {
   height: 55vh;
   overflow: scroll;
   padding: 1.8rem;
-  border-radius: 1.5rem;
+}
+.modal-box .modal-wrapper .cards h3 {
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 .modal-box .modal-wrapper .veiaco-modal-card {
   text-align: center;
@@ -1502,6 +1507,10 @@ body {
 .e-cell-popup,
 .e-event-popup {
   display: none !important;
+}
+
+.e-schedule {
+  font-family: "Poppins", sans-serif;
 }
 
 /*# sourceMappingURL=main.css.map */

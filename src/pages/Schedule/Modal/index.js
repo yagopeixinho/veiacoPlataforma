@@ -68,6 +68,10 @@ export default function ScheduleModal({
           <div className="modal-wrapper">
             {showVeiacoList ? (
               <Row className="cards">
+                {!veiacoList.length && (
+                  <h3>Ops! parece que você não tem nenhum veiaco.</h3>
+                )}
+
                 {veiacoList.map((veiaco) => (
                   <VeiacoCard
                     key={veiaco.id}
