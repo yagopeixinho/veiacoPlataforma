@@ -43,15 +43,17 @@ export default function Login() {
   const _authenticationService = new AuthenticationService();
 
   async function handleLogIn(values) {
-    debugger;
     await _authenticationService
       .singIn(values.email, values.password)
       .then((res) => {
+        debugger;
         setUser(res);
         localStorage.setItem("user", JSON.stringify(res));
         navigate(`/veiacos`);
       })
       .catch((err) => {
+        debugger;
+
         setError({
           exist: true,
           msg: err.response.data.error,

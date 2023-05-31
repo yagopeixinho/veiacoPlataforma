@@ -15,6 +15,7 @@ import VeiacoPieChart from "../../components/graphics/VeiacoPieChart";
 import NothingFoundAlert from "../../components/common/NothingFoundAlert";
 import LogoWhatsApp from "../../assets/icons/logo-whatsapp.svg";
 import { fiscalNoteMessages } from "../../utils/fiscalNoteMessages";
+import LoadingPage from "../../components/common/LoadingPage";
 
 export default function VeiacoDashboard() {
   const navigate = useNavigate();
@@ -26,12 +27,14 @@ export default function VeiacoDashboard() {
   const [responseDebtGraphic, setResponseDebtGraphic] = useState([]);
   const [totalDebt, setTotalDebt] = useState(0);
   const [debtList, setListDebt] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   const _veiacoService = new VeiacoService();
   const _chartService = new DebtGraphicService();
 
   useEffect(() => {
     async function init() {
+      setLoading(true)
       const responseService = await _veiacoService.read(id);
       setVeiaco(responseService);
 
@@ -47,6 +50,8 @@ export default function VeiacoDashboard() {
 
       const veiacoDebtsResponse = await _veiacoService.listVeiacoDebt(id);
       setListDebt(veiacoDebtsResponse);
+
+      setLoading(false)
     }
 
     init();
@@ -102,96 +107,98 @@ export default function VeiacoDashboard() {
         />
       )}
 
-      <div className="veiaco-dashboard-container">
-        <div className="veiaco-left-side">
-          <GenericOutletHeader
-            pageTitle="Dashboard"
-            inputSearchConfig={{ inputExist: false }}
-            addItemConfig={{
-              addItemExist: true,
-              addItemLabel: "Adicionar dívida",
-              addItemLink: `/veiaco/${id}/divida/adicionar`,
-            }}
-          />
+      <LoadingPage loading={loading}>
+        <div className="veiaco-dashboard-container">
+          <div className="veiaco-left-side">
+            <GenericOutletHeader
+              pageTitle="Dashboard"
+              inputSearchConfig={{ inputExist: false }}
+              addItemConfig={{
+                addItemExist: true,
+                addItemLabel: "Adicionar dívida",
+                addItemLink: `/veiaco/${id}/divida/adicionar`,
+              }}
+            />
 
-          {debtList.length ? (
-            <div className="grid-dashboard-info">
-              {debtBarChartData.length ? (
-                <VeiacoBarChart data={debtBarChartData} />
-              ) : null}
+            {debtList.length ? (
+              <div className="grid-dashboard-info">
+                {debtBarChartData.length ? (
+                  <VeiacoBarChart data={debtBarChartData} />
+                ) : null}
 
-              {responseDebtGraphic.category.length ? (
-                <VeiacoPieChart data={responseDebtGraphic} />
-              ) : null}
+                {responseDebtGraphic.category.length ? (
+                  <VeiacoPieChart data={responseDebtGraphic} />
+                ) : null}
 
-              <DebtPreviewTable />
-            </div>
-          ) : (
-            <NothingFoundAlert message="Esse veiaco não tem nenhuma dívida" />
-          )}
-        </div>
-        <div className="veiaco-right-side">
-          <div className="container-veiaco-info">
-            <div className="veiaco-image-container">
-              <img src={veiacoImage} alt="Veiaco user profile" />
-            </div>
-            <div className="veiaco-header-info">
-              <label className="veiaco-name">{veiaco.name}</label>
-              <label className="veiaco-occupation">{veiaco.occupation}</label>
-            </div>
-            <hr className="hr-info-veiaco" />
-            <div className="veiaco-actions">
-              <img
-                src={EditVeiacoIcon}
-                alt="Veiaco user profile"
-                className="image-edit-veiaco"
-                onClick={() => {
-                  navigate(`/veiaco/${id}/editar`);
-                }}
-              />
-              <img
-                src={DeleteVeiacoIcon}
-                alt="Veiaco delete"
-                className="image-delete-veiaco"
-                onClick={() => {
-                  setDisplayConfirmationDialog(true);
-                }}
-              />
-            </div>
-
-            <div className="veiaco-contact">
-              {veiaco.phone && <VeiacoLabelPhone phone={veiaco.phone} />}
-              {veiaco.email && <VeiacoLabelEmail email={veiaco.email} />}
-            </div>
-
-            <div className="veiaco-actions-footer">
-              {debtList.length ? (
-                <div
-                  className="button-whatsapp-action"
+                <DebtPreviewTable />
+              </div>
+            ) : (
+              <NothingFoundAlert message="Esse veiaco não tem nenhuma dívida" />
+            )}
+          </div>
+          <div className="veiaco-right-side">
+            <div className="container-veiaco-info">
+              <div className="veiaco-image-container">
+                <img src={veiacoImage} alt="Veiaco user profile" />
+              </div>
+              <div className="veiaco-header-info">
+                <label className="veiaco-name">{veiaco.name}</label>
+                <label className="veiaco-occupation">{veiaco.occupation}</label>
+              </div>
+              <hr className="hr-info-veiaco" />
+              <div className="veiaco-actions">
+                <img
+                  src={EditVeiacoIcon}
+                  alt="Veiaco user profile"
+                  className="image-edit-veiaco"
                   onClick={() => {
-                    generateFiscalNote(id);
+                    navigate(`/veiaco/${id}/editar`);
                   }}
-                >
-                  <span>
-                    <img src={LogoWhatsApp} alt="Logo do APP WhatsApp" />
-                  </span>
-                  <span>
-                    <p>Enviar nota fiscal</p>
-                    <label>via WhatsApp</label>
-                  </span>
-                </div>
-              ) : (
-                <></>
-              )}
+                />
+                <img
+                  src={DeleteVeiacoIcon}
+                  alt="Veiaco delete"
+                  className="image-delete-veiaco"
+                  onClick={() => {
+                    setDisplayConfirmationDialog(true);
+                  }}
+                />
+              </div>
 
-              <div className="total-debt-container">
-                <h1>R${totalDebt.totalValue}</h1>
-                <label>Dívida total</label>
+              <div className="veiaco-contact">
+                {veiaco.phone && <VeiacoLabelPhone phone={veiaco.phone} />}
+                {veiaco.email && <VeiacoLabelEmail email={veiaco.email} />}
+              </div>
+
+              <div className="veiaco-actions-footer">
+                {debtList.length ? (
+                  <div
+                    className="button-whatsapp-action"
+                    onClick={() => {
+                      generateFiscalNote(id);
+                    }}
+                  >
+                    <span>
+                      <img src={LogoWhatsApp} alt="Logo do APP WhatsApp" />
+                    </span>
+                    <span>
+                      <p>Enviar nota fiscal</p>
+                      <label>via WhatsApp</label>
+                    </span>
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                <div className="total-debt-container">
+                  <h1>R${totalDebt.totalValue}</h1>
+                  <label>Dívida total</label>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </LoadingPage>
     </>
   );
 }
